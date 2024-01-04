@@ -89,6 +89,7 @@
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
+                <version>2.11.0</version>
             </dependency>
 
 
@@ -108,17 +109,20 @@
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.5.0</version>
             </dependency>
 
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>transmittable-thread-local</artifactId>
+                <version>2.2.0</version>
             </dependency>
 
 
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis-spring</artifactId>
+                <version>2.0.6</version>
             </dependency>
 
             <dependency>
@@ -158,6 +162,7 @@
                 <artifactId>commons-lang</artifactId>
                 <version>2.6</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 

@@ -9,12 +9,8 @@ import org.junit.Test;
 public class DemoTest {
     @Test
     public void demo1() {
-        int a = 1;
-        Object obj = a;
-        if (obj instanceof Number) {
-            System.out.println("true");
-
-        }
+        String replace = "%sss%".replace("%", "%%");
+        System.out.println(replace);
     }
 
 

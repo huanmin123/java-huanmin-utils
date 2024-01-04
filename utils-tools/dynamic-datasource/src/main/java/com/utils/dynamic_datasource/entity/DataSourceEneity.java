@@ -1,4 +1,4 @@
-package org.huanmin.dynamic_datasource.entity;
+package com.utils.dynamic_datasource.entity;
 
 import lombok.Data;
 import org.springframework.boot.jdbc.DataSourceBuilder;

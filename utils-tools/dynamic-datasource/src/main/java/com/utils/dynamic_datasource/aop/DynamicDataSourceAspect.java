@@ -1,12 +1,12 @@
-package org.huanmin.dynamic_datasource.aop;
+package com.utils.dynamic_datasource.aop;
 
+import com.utils.dynamic_datasource.dynamic.DynamicDataSourceService;
 import org.apache.commons.lang.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.huanmin.dynamic_datasource.dynamic.DynamicDataSourceService;
 import org.springframework.stereotype.Component;
 
 
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 public class DynamicDataSourceAspect {
 
 
-    @Pointcut("@annotation(org.huanmin.dynamic_datasource.aop.DynamicDataSourceAnno)")
+    @Pointcut("@annotation(com.utils.dynamic_datasource.aop.DynamicDataSourceAnno)")
     public void dynamicDataSourceAnno() {
 
     }

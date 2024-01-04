@@ -1,6 +1,5 @@
 package com.utils.common.db;
 
-
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -47,7 +46,7 @@ public class SqlSessionTemplateUtil {
     //查询数量
     public int count(String sql, Object... params) throws SQLException {
         sql = sqlToCount(sql); //sql语句转count(1)
-        sql=emptying(sql);
+        sql = emptying(sql);
         log.info("old-count-sql:{}", sql);
         String format = format(sql, params);
         log.info("new-count-sql:{}", format);
@@ -69,7 +68,8 @@ public class SqlSessionTemplateUtil {
      * 支持: 字符串,8大数据类型,LocalDate,LocalDateTime,Date,List<8大数据类型> ,Map<String,8大数据类型>
      * 8大数据类型包括(和包装类型): byte,short,int,long,float,double,char,boolean
      * 数值类型不会加上单引号,其他类型都会加上单引号. 不支持自定义类型
-     * @param sql sql语句
+     *
+     * @param sql    sql语句
      * @param params 参数
      * @return
      */
@@ -80,8 +80,8 @@ public class SqlSessionTemplateUtil {
                 throw new RuntimeException("参数不能为null,请检第[" + i + "]个参数:" + collect.get(i));
             }
             Object transition = transition(collect.get(i));
-            if (transition!=null){
-                collect.set(i,transition);
+            if (transition != null) {
+                collect.set(i, transition);
                 continue;
             }
             //如果是map,那么需要将{key}替换为'value'
@@ -122,7 +122,18 @@ public class SqlSessionTemplateUtil {
     }
 
 
-
+    //特殊符号处理
+    private String specificSymbol(Object obj) {
+        if (obj instanceof String) {
+            //判断obj中是否存在有%的字符
+            if (obj.toString().contains("%")) {//将所有的%替换为%%
+                obj = ((String) obj).replace("%", "%%");
+            }
+            return obj.toString();
+        } else {
+            throw new RuntimeException("只能是字符串格式的才能进行特殊字符转义处理");
+        }
+    }
 
     private Object transition(Object obj) {
         if (obj == null) {
@@ -133,6 +144,8 @@ public class SqlSessionTemplateUtil {
             if (Strings.isBlank(obj.toString())) {
                 throw new RuntimeException("参数不能为''空字符串,请检参数:" + obj);
             }
+            //排除特殊字符
+            obj = specificSymbol(obj);
             return "'" + obj + "'";
         }
 
@@ -167,10 +180,12 @@ public class SqlSessionTemplateUtil {
         }
         return null;
     }
+
     private <T> String listToBrackets(List<T> list) {
         return list.stream().map(String::valueOf).collect(Collectors.joining("','", "('", "')"));
     }
-    private String  emptying(String sql){
+
+    private String emptying(String sql) {
         //将所有{}之间的空格去掉,不然会导致String.format报错
         sql = sql.replaceAll("\\{\\s*\\}", "{}");
         //将sql中的\n替换为空,不然会导致sql执行失败

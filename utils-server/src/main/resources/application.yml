@@ -4,9 +4,6 @@ server:
     uri-encoding: UTF-8
     accept-count: 500
     max-connections: 1000
-    accesslog:
-      enabled: true
-
 spring:
   profiles:
     # @environment@ 用于日志不同环境的区分,打包的时候自动会替换成dev,prod,test

@@ -1,4 +1,4 @@
-package org.huanmin.dynamic_datasource.dynamic;
+package com.utils.dynamic_datasource.dynamic;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;

@@ -1,4 +1,4 @@
-package org.huanmin.dynamic_datasource.aop;
+package com.utils.dynamic_datasource.aop;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

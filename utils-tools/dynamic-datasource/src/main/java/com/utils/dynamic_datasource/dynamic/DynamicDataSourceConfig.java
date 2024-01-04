@@ -1,5 +1,6 @@
-package org.huanmin.dynamic_datasource.dynamic;
+package com.utils.dynamic_datasource.dynamic;
 
+import com.utils.dynamic_datasource.dynamic.DynamicDataSource;
 import lombok.Data;
 import org.apache.ibatis.logging.Log;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -8,13 +9,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
+@Component
 @ConfigurationProperties(prefix = "mybatis")
 @Data
 public class DynamicDataSourceConfig {
