@@ -21,7 +21,7 @@ spring:
 mybatis:
   #1.classpath：只会到你的classes路径中查找找文件。
   #2.classpath*：不仅会到classes路径，还包括jar文件中(classes路径)进行查找。
-  mapper-locations: classpath*:/mapper/**/*Mapper.xml    # mapper映射文件位置
+  mapper-locations: classpath*:/**/*Mapper.xml    # mapper映射文件位置
   type-aliases-package: com.**.entity    # 实体类所在的位置
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   #用于控制台打印sql语句
