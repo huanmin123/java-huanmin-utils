@@ -50,7 +50,6 @@ public class YmlDataSourceProvider  {
     //在构造函数之后执行
     @PostConstruct
     public void init() {
-        System.out.println("YmlDataSourceProvider init");
         initDataSource();
     }
 

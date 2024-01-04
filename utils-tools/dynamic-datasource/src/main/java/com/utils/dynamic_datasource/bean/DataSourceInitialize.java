@@ -27,23 +27,9 @@ import java.util.List;
 //从数据库中查询出全部的数据源,添加到数据源容器中
 
 /**
- * 表结构如下:
-
- CREATE TABLE `t_datasource` (
-   `id` int(11) NOT NULL,
-   `key` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '绑定的key,用于数据源的切换',
-   `url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '数据库连接地址',
-   `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '数据库用户名',
-   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '数据库密码',
-   `driverClassName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '数据库驱动',
-   `type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '数据库类型:  mysql ,oracle,..',
-   `state` int(2) NOT NULL COMMENT '是否可用: 1可用 ,2不可用',
-   PRIMARY KEY (`id`),
-   UNIQUE KEY `key` (`key`)
- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
- * 上表要放入到默认数据源中的数据库里才行
+ * 表结构初始化文件: resources/sql/init.sql
  */
+
 //依赖于DynamicDataSourceConfig中的abstractRoutingDataSource
 @DependsOn("abstractRoutingDataSource")
 @Component
@@ -72,8 +58,4 @@ public class DataSourceInitialize implements ApplicationRunner  {
         }
     }
 
-    @PostConstruct
-    public void init() {
-        System.out.println("DataSourceInitialize init");
-    }
 }
