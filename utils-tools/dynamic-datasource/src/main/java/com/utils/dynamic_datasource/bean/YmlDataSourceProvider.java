@@ -1,6 +1,6 @@
-package com.utils.dynamic_datasource.dynamic;
+package com.utils.dynamic_datasource.bean;
 
-import com.utils.dynamic_datasource.dynamic.DynamicDataSourceService;
+import com.utils.dynamic_datasource.base.DynamicDataSourceService;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
@@ -50,6 +50,7 @@ public class YmlDataSourceProvider  {
     //在构造函数之后执行
     @PostConstruct
     public void init() {
+        System.out.println("YmlDataSourceProvider init");
         initDataSource();
     }
 

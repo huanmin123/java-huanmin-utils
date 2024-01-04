@@ -2,22 +2,16 @@
 spring:
   datasource:
     default-db-key: master
-    database-load-activate: false # 是否启用数据库加载
-    driver-class-name: com.mysql.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
-    username: osd_hr_workbench_rw@public#ob_public_dev_40000
-    password: 'MQ8!aQnVqt4WU#wz'
-    url: jdbc:mysql://ob-public-dev-40000.chj.cloud:3306/osd_hr_workbench?autoCommit=true&autoReconnect=true&useUnicode=true&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8&yearIsDateType=false&serverTimezone=Asia/Shanghai&trackSessionState=true
+    database-load-activate: true # 是否启用数据库加载
     multi-db:
       - master: # 数据源的key
-          driver-class-name: com.mysql.jdbc.Driver
+          driver-class-name: com.mysql.cj.jdbc.Driver
           type: com.alibaba.druid.pool.DruidDataSource
           username: osd_hr_workbench_rw@public#ob_public_dev_40000
           password: 'MQ8!aQnVqt4WU#wz'
           url: jdbc:mysql://ob-public-dev-40000.chj.cloud:3306/osd_hr_workbench?autoCommit=true&autoReconnect=true&useUnicode=true&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8&yearIsDateType=false&serverTimezone=Asia/Shanghai&trackSessionState=true
       - xcdef:
-#          driver-class-name: com.mysql.cj.jdbc.Driver
-          driver-class-name: com.mysql.jdbc.Driver
+          driver-class-name: com.mysql.cj.jdbc.Driver
           type: com.alibaba.druid.pool.DruidDataSource
           username: root
           password: root

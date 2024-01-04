@@ -1,8 +1,9 @@
 package com.utils.dynamic_datasource.config;
 
-import com.utils.dynamic_datasource.dal.mapper.DatasourceDao;
-import com.utils.dynamic_datasource.dynamic.*;
-import org.mybatis.spring.annotation.MapperScan;
+import com.utils.common.spring.utils.SpringContextHolder;
+import com.utils.dynamic_datasource.bean.DataSourceInitialize;
+import com.utils.dynamic_datasource.bean.DynamicDataSourceConfig;
+import com.utils.dynamic_datasource.bean.YmlDataSourceProvider;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
@@ -11,12 +12,11 @@ import org.springframework.context.annotation.Import;
  * @date 2024/1/4
  */
 @Configuration
-@Import({DataSourceInitialize.class,
-        DynamicDataSource.class,
+@Import({
+        SpringContextHolder.class,
         DynamicDataSourceConfig.class,
-        DynamicDataSourceService.class,
         YmlDataSourceProvider.class,
-        DatasourceDao.class
+        DataSourceInitialize.class,
 }
 )
 public class DynamicDatasourceMainConfig {

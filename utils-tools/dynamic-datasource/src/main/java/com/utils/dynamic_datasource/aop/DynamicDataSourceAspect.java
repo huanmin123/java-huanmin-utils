@@ -1,6 +1,6 @@
 package com.utils.dynamic_datasource.aop;
 
-import com.utils.dynamic_datasource.dynamic.DynamicDataSourceService;
+import com.utils.dynamic_datasource.base.DynamicDataSourceService;
 import org.apache.commons.lang.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
