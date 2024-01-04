@@ -2,7 +2,7 @@
 spring:
   datasource:
     default-db-key: master
-    database-load-activate: true # 是否启用数据库加载
+    database-load-activate: false # 是否启用数据库加载
     multi-db:
       - master: # 数据源的key
           driver-class-name: com.mysql.cj.jdbc.Driver
