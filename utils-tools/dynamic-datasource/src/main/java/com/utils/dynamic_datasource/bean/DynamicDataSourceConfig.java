@@ -68,8 +68,4 @@ public class DynamicDataSourceConfig {
     public PlatformTransactionManager transactionManager(@Autowired AbstractRoutingDataSource abstractRoutingDataSource) {
         return new DataSourceTransactionManager(abstractRoutingDataSource);
     }
-    @PostConstruct
-    public void init() {
-        System.out.println("DynamicDataSourceConfig init");
-    }
 }
