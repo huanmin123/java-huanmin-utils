@@ -1,6 +1,8 @@
 package com.utils.dynamic_datasource.config;
 
+import com.utils.dynamic_datasource.dal.mapper.DatasourceDao;
 import com.utils.dynamic_datasource.dynamic.*;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
@@ -13,7 +15,8 @@ import org.springframework.context.annotation.Import;
         DynamicDataSource.class,
         DynamicDataSourceConfig.class,
         DynamicDataSourceService.class,
-        YmlDataSourceProvider.class
+        YmlDataSourceProvider.class,
+        DatasourceDao.class
 }
 )
 public class DynamicDatasourceMainConfig {

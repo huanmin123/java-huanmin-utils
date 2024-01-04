@@ -165,37 +165,6 @@
 
     </dependencies>
 
-    <profiles>
-        <profile>
-            <!--不同环境Profile的唯一id-->
-            <id>dev</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <!--environment是自定义的字段（名字随便起），自定义字段可以有多个，确保与配置文件一致-->
-                <environment>dev</environment>
-            </properties>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <environment>prod</environment>
-            </properties>
-        </profile>
-        <profile>
-            <id>test</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <environment>test</environment>
-            </properties>
-        </profile>
-    </profiles>
 
     <build>
         <finalName>${package.name}-${project.version}</finalName>
@@ -233,43 +202,11 @@
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>print-custom-info</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
 
         </plugins>
 
         <!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 -->
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.yml</include>
-                    <include>**/*.properties</include>
-                    <include>**/*.xml</include>
-                </includes>
-                <filtering>false</filtering>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.yml</include>
-                    <include>**/*.properties</include>
-                    <include>**/*.xml</include>
-                </includes>
-                <filtering>false</filtering>
-            </resource>
-        </resources>
+
 
     </build>
 </project>
