@@ -6,3 +6,10 @@
 [utils-common](utils-common) :  对外提供的公共工具类 
 
 [utils-server](utils-server) :  对外提供的服务端实现
+
+## 启动说明
+必须先打包所有的模块，然后再启动服务端
+
+![img.png](img.png)
+
+然后在启动[utils-server](utils-server)模块的Application类,否则会导致有些自动加载的类没有加载到，导致启动失败
