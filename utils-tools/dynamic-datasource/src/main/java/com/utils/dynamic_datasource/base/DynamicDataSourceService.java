@@ -1,7 +1,7 @@
 package com.utils.dynamic_datasource.base;
 
 import com.alibaba.ttl.TransmittableThreadLocal;
-import com.utils.common.spring.utils.SpringContextHolder;
+import com.utils.common.spring.SpringContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.jdbc.DataSourceBuilder;

@@ -2,7 +2,7 @@ package com.utils.common.obj.reflect;
 
 
 import com.utils.common.base.AssertUtil;
-import com.utils.common.base.ObjectUtils;
+import com.utils.common.base.ObjUtil;
 import lombok.SneakyThrows;
 import org.springframework.util.Assert;
 
@@ -145,7 +145,7 @@ public final class FieldUtil {
      */
     public static Object getFieldValue(Object obj, String fieldName) {
         Assert.notNull(obj, "obj不能为空!");
-        if (ObjectUtils.isWrapperOrPrimitive(obj)) {
+        if (ObjUtil.isWrapperOrPrimitive(obj)) {
             return obj;
         }
         return getFieldValue(getField(obj.getClass(), fieldName), obj);

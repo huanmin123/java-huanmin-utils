@@ -1,7 +1,7 @@
 package com.utils.common.file;
 
-import com.commonutils.NullUtils;
-import com.string.StringUtil;
+import com.utils.common.base.NullUtils;
+import com.utils.common.string.StringUtil;
 import info.monitorenter.cpdetector.io.*;
 
 import java.io.*;

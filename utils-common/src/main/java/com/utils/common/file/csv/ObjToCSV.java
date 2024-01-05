@@ -1,6 +1,7 @@
 package com.utils.common.file.csv;
 
-import com.date.LocalDateUtils;
+
+import com.utils.common.base.LocalDateUtil;
 import lombok.Data;
 import lombok.SneakyThrows;
 
@@ -45,7 +46,7 @@ public class ObjToCSV<T> {
     private boolean fieldsAll = false;
     private  int number;//多少行一共
     //日期串 20220617204504
-    private  String createDate=LocalDateUtils.getLocalDateTimeStr1() ;
+    private  String createDate= LocalDateUtil.getLocalDateTimeStr1() ;
 
     private ObjToCSV(T object, String separator) {
         this.object = object;

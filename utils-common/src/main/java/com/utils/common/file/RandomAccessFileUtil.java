@@ -1,7 +1,7 @@
 package com.utils.common.file;
 
-import com.commonutils.NullUtils;
-import com.container.ArrayByteUtil;
+import com.utils.common.base.NullUtils;
+import com.utils.common.container.ArrayByteUtil;
 
 import java.io.File;
 import java.io.RandomAccessFile;

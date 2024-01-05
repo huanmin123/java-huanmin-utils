@@ -19,6 +19,7 @@
         <module>utils-client</module>
         <module>utils-common</module>
         <module>utils-tools</module>
+        <module>utils-test</module>
     </modules>
 
     <properties>
@@ -198,6 +199,61 @@
                 <groupId>org.elasticsearch.client</groupId>
                 <artifactId>elasticsearch-rest-high-level-client</artifactId>
                 <version>7.14.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.28</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.lecousin.compression</groupId>
+                <artifactId>gzip</artifactId>
+                <version>0.1.5</version>
+            </dependency>
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>1.6.1</version>
+            </dependency>
+            <!--判断文件的编码-->
+            <dependency>
+                <groupId>com.github.jiangxincode</groupId>
+                <artifactId>cpdetector</artifactId>
+                <version>1.0.10</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-compress</artifactId>
+                <version>1.21</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.ant</groupId>
+                <artifactId>ant</artifactId>
+                <version>1.10.5</version>
+            </dependency>
+            <!--        jwt加密-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>0.6.0</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.drewnoakes</groupId>
+                <artifactId>metadata-extractor</artifactId>
+                <version>2.15.0</version>
+            </dependency>
+            <!--        图片处理-->
+            <dependency>
+                <groupId>com.jhlabs</groupId>
+                <artifactId>filters</artifactId>
+                <version>2.0.235-1</version>
             </dependency>
 
         </dependencies>

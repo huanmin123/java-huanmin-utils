@@ -57,6 +57,8 @@ public class Es8Client implements InitializingBean {
 
     @Value("${es8.alals}")
     private boolean alals;
+    @Value("${es8.enable}")
+    private boolean enable;
 
     private ElasticsearchClient client;
     private ElasticsearchAsyncClient asyncClient;
@@ -75,12 +77,14 @@ public class Es8Client implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        RestClient restClient = RestClient.builder(new HttpHost(hostname, prot)).build();
-        ElasticsearchTransport transport =
-                new RestClientTransport(restClient, new JacksonJsonpMapper());
-        // es 客户端
-        this.client = new ElasticsearchClient(transport);
-        this.asyncClient = new ElasticsearchAsyncClient(transport);
+        if (enable){
+            RestClient restClient = RestClient.builder(new HttpHost(hostname, prot)).build();
+            ElasticsearchTransport transport =
+                    new RestClientTransport(restClient, new JacksonJsonpMapper());
+            // es 客户端
+            this.client = new ElasticsearchClient(transport);
+            this.asyncClient = new ElasticsearchAsyncClient(transport);
+        }
     }
 
     /**

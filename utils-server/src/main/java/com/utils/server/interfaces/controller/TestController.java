@@ -1,7 +1,7 @@
 package com.utils.server.interfaces.controller;
 
 
-import com.utils.common.base.HttpJsonResponse;
+import com.utils.common.spring.HttpJsonResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.CrossOrigin;

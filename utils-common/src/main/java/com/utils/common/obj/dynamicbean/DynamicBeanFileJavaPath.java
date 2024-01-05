@@ -1,6 +1,6 @@
 package com.utils.common.obj.dynamicbean;
 
-import com.file.FileSortUtil;
+import com.utils.common.file.FileSortUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -13,7 +13,6 @@ import java.net.URL;
 import java.net.URLClassLoader;
 @Slf4j
 public class DynamicBeanFileJavaPath {
-    private static final Logger logger = LoggerFactory.getLogger(FileSortUtil.class);
     /**
      *  文件版
      * @param fullBeanName  类的全路径名称  : com.obj1.TestB1

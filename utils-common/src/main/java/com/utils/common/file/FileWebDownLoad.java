@@ -1,8 +1,9 @@
 package com.utils.common.file;
 
 
-import com.application.ContextAttribuesUtils;
-import com.file.condense.ZipFileUtils;
+
+import com.utils.common.file.condense.ZipFileUtils;
+import com.utils.common.spring.ContextAttribuesUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

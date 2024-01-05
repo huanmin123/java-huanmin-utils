@@ -1,0 +1,24 @@
+
+spring:
+  aop:
+    proxy-target-class: true   # 开启动态代理
+
+session:
+  time: 1800  #单位秒
+cookie:
+  domain: 127.0.0.1      # .baidu.com
+  time:   -1   # 秒  -1永不过期
+  path:   /
+
+jwt:
+  config:
+    key: "6MNSobBRCHGIO0fS6MNSobBRCHGIO0fS"     #加盐
+    access: 120000  # 2分钟   (毫秒)
+    refresh: 2400000 #4小时       # 60000 过期时间60秒       #  604800000 过期时间7天
+
+
+
+logging:
+  config: classpath:logback-spring-base.xml
+  mypath: ./log  # 日志路径配置
+#  mylevel: dev   # 用于覆盖默认配置,一般用于调试

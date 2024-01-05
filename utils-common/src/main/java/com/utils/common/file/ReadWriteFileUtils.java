@@ -1,6 +1,6 @@
 package com.utils.common.file;
 
-import com.container.ArrayByteUtil;
+import com.utils.common.container.ArrayByteUtil;
 import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

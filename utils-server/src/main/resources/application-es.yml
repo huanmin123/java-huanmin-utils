@@ -3,7 +3,7 @@
 
 easy-es:
   schema: http # 默认为http
-  enable: true #默认为true,若为false则认为不启用本框架
+  enable: false #默认为true,若为false则认为不启用本框架
   address : 106.12.174.220:9200 # es的连接地址,必须含端口 若为集群,则可以用逗号隔开 例如:127.0.0.1:9200,127.0.0.2:9200
   banner: false # 是否打印广告
   keep-alive-millis: 18000 # 心跳策略时间 单位:ms
@@ -33,5 +33,6 @@ easy-es:
 
 es8:
   port: 9200
-  hostname:  106.12.174.220
+  hostname:  106.12.174.221
   alals: true
+  enable: true

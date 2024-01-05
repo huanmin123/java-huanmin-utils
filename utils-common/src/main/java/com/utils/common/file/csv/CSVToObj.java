@@ -1,8 +1,8 @@
 package com.utils.common.file.csv;
 
-import com.obj.converter.Converter;
-import com.reflect.ClassUtil;
-import com.string.PatternCommon;
+import com.utils.common.base.ObjConverter;
+import com.utils.common.obj.reflect.ClassUtil;
+import com.utils.common.string.PatternCommon;
 import lombok.SneakyThrows;
 import org.springframework.core.ParameterizedTypeReference;
 
@@ -56,7 +56,7 @@ public class CSVToObj<T> extends ParameterizedTypeReference<T> {
                 Field declaredField = declaredFields[i];
                 declaredField.setAccessible(true);
                 if (fieldsTypes.containsKey(declaredField.getName())) {
-                    declaredField.set(o, Converter.cast(split[i],fieldsTypes.get(declaredField.getName())));
+                    declaredField.set(o, ObjConverter.cast(split[i],fieldsTypes.get(declaredField.getName())));
                 }
             }
             list.add(o);

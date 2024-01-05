@@ -1,19 +1,12 @@
 package com.utils.dynamic_datasource.config;
 
 import com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration;
-import com.utils.common.spring.utils.SpringContextHolder;
+import com.utils.common.spring.SpringContextHolder;
 import com.utils.dynamic_datasource.bean.DataSourceInitialize;
 import com.utils.dynamic_datasource.bean.DynamicDataSourceConfig;
 import com.utils.dynamic_datasource.bean.YmlDataSourceProvider;
-import org.mybatis.spring.SqlSessionTemplate;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-
-import javax.annotation.PostConstruct;
-
-import static com.baomidou.mybatisplus.extension.toolkit.SqlHelper.sqlSessionFactory;
 
 /**
  * @author huanmin

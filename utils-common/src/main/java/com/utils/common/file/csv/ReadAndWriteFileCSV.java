@@ -1,9 +1,10 @@
 package com.utils.common.file.csv;
 
-import com.file.ReadFileBytesUtil;
-import com.file.ReadFileLineUtil;
-import com.file.ReadWriteFileUtils;
-import com.file.WriteFileBytesUtil;
+
+import com.utils.common.file.ReadFileBytesUtil;
+import com.utils.common.file.ReadFileLineUtil;
+import com.utils.common.file.ReadWriteFileUtils;
+import com.utils.common.file.WriteFileBytesUtil;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;

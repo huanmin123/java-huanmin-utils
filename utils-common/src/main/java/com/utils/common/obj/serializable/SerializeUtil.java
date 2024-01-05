@@ -1,8 +1,9 @@
 package com.utils.common.obj.serializable;
 
 
-import com.file.ReadFileBytesUtil;
-import com.file.WriteFileBytesUtil;
+
+import com.utils.common.file.ReadFileBytesUtil;
+import com.utils.common.file.WriteFileBytesUtil;
 
 import java.io.*;
 

@@ -1,0 +1,21 @@
+server:
+  port: 12346
+  tomcat:
+    uri-encoding: UTF-8
+    accept-count: 500
+    max-connections: 1000
+spring:
+  profiles:
+    # dev用于日志不同环境的区分,dev,prod,test
+    # 配置文件是可以通过外部文件覆盖的
+    # active的覆盖顺序是从左到右,后面的会覆盖前面的
+    active: dev, cloud,db,redis,es
+
+  application:
+    name: java-huanmin-utils
+  main:
+    allow-bean-definition-overriding: true #
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
