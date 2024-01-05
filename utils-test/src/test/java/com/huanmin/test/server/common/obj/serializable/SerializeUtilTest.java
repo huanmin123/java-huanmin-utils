@@ -1,7 +1,8 @@
 package com.huanmin.test.server.common.obj.serializable;
 
 
-import com.utils.common.entity.UserData;
+import com.huanmin.test.entity.UserData;
+import com.utils.common.base.ResourceFileUtil;
 import com.utils.common.obj.serializable.SerializeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

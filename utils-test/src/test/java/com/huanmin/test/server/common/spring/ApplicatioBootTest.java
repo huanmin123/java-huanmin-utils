@@ -1,9 +1,10 @@
 package com.huanmin.test.server.common.spring;
 
 
+import com.huanmin.test.entity.UserEsEneity;
 import com.utils.common.spring.AutoBeanInject;
 import com.utils.common.spring.SpringContextHolder;
-import com.utils.entity.UserEsEneity;
+
 import com.utils.server.WebApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,6 +1,7 @@
 package com.huanmin.test.server.common.obj.copy;
 
-import com.utils.common.entity.UserData;
+
+import com.huanmin.test.entity.UserData;
 import com.utils.common.obj.copy.BeanCopyUtil;
 import org.junit.Test;
 
