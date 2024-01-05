@@ -9,7 +9,7 @@ spring:
     # dev用于日志不同环境的区分,dev,prod,test
     # 配置文件是可以通过外部文件覆盖的
     # active的覆盖顺序是从左到右,后面的会覆盖前面的
-    active: dev, cloud,db,redis,es
+    active: dev, cloud,db,redis,es,common
 
   application:
     name: java-huanmin-utils
