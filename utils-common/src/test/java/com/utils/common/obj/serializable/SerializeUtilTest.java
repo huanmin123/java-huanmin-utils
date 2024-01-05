@@ -1,7 +1,7 @@
 package com.utils.common.obj.serializable;
 
-import com.entity.UserData;
-import com.path.ResourceFileUtil;
+
+import com.utils.common.entity.UserData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

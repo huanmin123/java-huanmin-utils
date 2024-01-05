@@ -1,7 +1,8 @@
 package com.utils.common.file.condense;
 
-import com.file.FileUtil;
-import com.file.WriteFileBytesUtil;
+
+import com.utils.common.file.FileUtil;
+import com.utils.common.file.WriteFileBytesUtil;
 import lombok.SneakyThrows;
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveOutputStream;
