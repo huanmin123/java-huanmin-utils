@@ -185,7 +185,7 @@ public class SqlSessionTemplateUtil {
         return list.stream().map(String::valueOf).collect(Collectors.joining("','", "('", "')"));
     }
 
-    private String emptying(String sql) {
+    private String  emptying(String sql){
         //将所有{}之间的空格去掉,不然会导致String.format报错
         sql = sql.replaceAll("\\{\\s*\\}", "{}");
         //将sql中的\n替换为空,不然会导致sql执行失败
@@ -200,7 +200,9 @@ public class SqlSessionTemplateUtil {
                 if (split.length == 1) {
                     return split[0].replaceAll("\\s*", "") + "}";
                 }
-                return split[0].replaceAll("\\s*", "") + "}" + split[1];
+                if (split.length == 2) {
+                    return split[0].replaceAll("\\s*", "") + "}" + split[1];
+                }
             }
             return s;
         }).collect(Collectors.toList());

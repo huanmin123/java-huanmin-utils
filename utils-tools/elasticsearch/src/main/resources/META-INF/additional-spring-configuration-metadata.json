@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "easy-es.requestTimeout",
+      "type": "java.lang.String",
+      "description": "Description for easy-es.requestTimeout."
+    },
+    {
+      "name": "easy-es.db-config.map-underscore-to-camel-case",
+      "type": "java.lang.String",
+      "description": "Description for easy-es.db-config.map-underscore-to-camel-case."
+    }
+  ] }

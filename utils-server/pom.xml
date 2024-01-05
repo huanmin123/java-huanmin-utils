@@ -37,6 +37,12 @@
             <artifactId>dynamic-datasource</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
+        <!-- es-->
+        <dependency>
+            <groupId>org.huanmin</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
 
 
         <dependency>
