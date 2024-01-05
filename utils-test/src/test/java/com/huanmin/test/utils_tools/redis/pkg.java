@@ -1,4 +1,4 @@
-package com.huanmin.test.redis;
+package com.huanmin.test.utils_tools.redis;
 
 /**
  * @Author spt_feather

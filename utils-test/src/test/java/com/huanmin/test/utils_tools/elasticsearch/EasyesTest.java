@@ -1,4 +1,4 @@
-package com.huanmin.test.elasticsearch;
+package com.huanmin.test.utils_tools.elasticsearch;
 
 import cn.easyes.core.conditions.LambdaEsQueryWrapper;
 import cn.easyes.core.conditions.LambdaEsUpdateWrapper;
