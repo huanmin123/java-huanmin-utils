@@ -17,16 +17,7 @@ import java.util.zip.ZipEntry;
  * @Description: 文件作用详细描述....
  */
 public class JarUtil {
-    // 获取当前项目打包后jar的绝对路径
-    public static File getCurrentProjectJarAbsolutePath() {
-        String path = JarUtil.class.getProtectionDomain().getCodeSource().getLocation().getFile();
-        try {
-            path = java.net.URLDecoder.decode(path, "UTF-8");
-        } catch (UnsupportedEncodingException ex) {
-            ex.printStackTrace();
-        }
-        return new File(path);
-    }
+
 
 
     /**

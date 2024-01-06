@@ -10,37 +10,8 @@ import java.util.concurrent.atomic.AtomicStampedReference;
 
 // 防止Aba问题(版本号) 版本戳为int类型。 关心改了几次,比AtomicMarkableReference更加安全,防止在内存中把值改了的情况,因为版本是递增的
 public class AtomicStampedReferenceDoubleUtils {
-    //这样的设计是,为了便于多个线程之间好共享变量
-    private static Map<String, AtomicStampedReference<Double>> map = new ConcurrentHashMap<>();
-    private String key;  // key 对应的自增
-    private AtomicStampedReference<Double> atomicStampedReference;
-    public AtomicStampedReferenceDoubleUtils(String key) {
-        this.key = key;
-        this.atomicStampedReference = initialize();
-    }
 
-    public static AtomicStampedReferenceDoubleUtils build(String key) {
-        if (StringUtils.isBlank(key)) {
-            throw new NullPointerException("不能为空");
-        }
-        return new AtomicStampedReferenceDoubleUtils(key);
-    }
-
-    private AtomicStampedReference<Double> initialize() {
-        AtomicStampedReference<Double> atomicStampedReference = map.get(key);
-        if (atomicStampedReference == null) {
-            synchronized (AtomicStampedReferenceDoubleUtils.class) {
-                atomicStampedReference = map.get(key);
-                if (atomicStampedReference == null) {
-                    AtomicStampedReference<Double> atomicStampedReference1 = new AtomicStampedReference<Double>(0.0, 0);
-                    map.put(key, atomicStampedReference1);
-                    atomicStampedReference = atomicStampedReference1;
-                }
-            }
-
-        }
-        return atomicStampedReference;
-    }
+    private AtomicStampedReference<Double> atomicStampedReference; //@TODO
 
 
 

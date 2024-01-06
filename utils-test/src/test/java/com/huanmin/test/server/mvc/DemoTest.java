@@ -1,6 +1,6 @@
 package com.huanmin.test.server.mvc;
 
-import com.utils.server.WebApplication;
+import com.huanmin.test.TestApplication;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {WebApplication.class})
+@SpringBootTest(classes = {TestApplication.class})
 @Slf4j
 public class DemoTest {
 

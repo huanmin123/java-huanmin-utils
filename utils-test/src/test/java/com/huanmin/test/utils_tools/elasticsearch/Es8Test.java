@@ -1,12 +1,11 @@
 package com.huanmin.test.utils_tools.elasticsearch;
 
 
-
 import co.elastic.clients.elasticsearch._types.aggregations.Aggregate;
 import co.elastic.clients.elasticsearch._types.aggregations.LongTermsBucket;
 import co.elastic.clients.elasticsearch._types.aggregations.StringTermsBucket;
 import co.elastic.clients.elasticsearch._types.query_dsl.Query;
-import com.utils.server.WebApplication;
+import com.huanmin.test.TestApplication;
 import com.huanmin.test.entity.UserEsEneity;
 import lombok.extern.slf4j.Slf4j;
 import org.huanmin.es8.utli.Es8Client;
@@ -27,7 +26,7 @@ import java.util.Map;
  */
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {WebApplication.class})
+@SpringBootTest(classes = {TestApplication.class})
 @Slf4j
 public class Es8Test {
     @Autowired

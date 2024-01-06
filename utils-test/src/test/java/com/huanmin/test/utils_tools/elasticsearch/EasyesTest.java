@@ -3,9 +3,9 @@ package com.huanmin.test.utils_tools.elasticsearch;
 import cn.easyes.core.conditions.LambdaEsQueryWrapper;
 import cn.easyes.core.conditions.LambdaEsUpdateWrapper;
 import cn.easyes.core.toolkit.EsWrappers;
+import com.huanmin.test.TestApplication;
 import com.huanmin.test.dao.DocumentMapper;
-import com.huanmin.test.entity.Document;
-import com.utils.server.WebApplication;
+import com.huanmin.test.entity.DocumentEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,7 +24,7 @@ import java.util.List;
  * @Description: 文件作用详细描述....
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {WebApplication.class})
+@SpringBootTest(classes = {TestApplication.class})
 public class EasyesTest {
     @Resource
     private DocumentMapper documentMapper;
@@ -32,7 +32,7 @@ public class EasyesTest {
     @Test
     public void testInsert() {
         // 测试插入数据
-        Document document = new Document();
+        DocumentEntity document = new DocumentEntity();
         document.setId(1L);
         document.setTitle("huanmin");
         document.setContent("es=========");
@@ -44,19 +44,19 @@ public class EasyesTest {
 
     @Test
     public void query() {
-        LambdaEsQueryWrapper<Document> eq = EsWrappers.lambdaQuery(Document.class).eq(Document::getId, 1L);
-        List<Document> documents = documentMapper.selectList(eq);
+        LambdaEsQueryWrapper<DocumentEntity> eq = EsWrappers.lambdaQuery(DocumentEntity.class).eq(DocumentEntity::getId, 1L);
+        List<DocumentEntity> documents = documentMapper.selectList(eq);
         System.out.println(documents);
     }
 
     @Test
     public void update() {
 
-        Document document = documentMapper.selectById(1L);
+        DocumentEntity document = documentMapper.selectById(1L);
         document.setTitle("huanmin12222");
-        LambdaEsUpdateWrapper<Document> updateWrapper =
-                EsWrappers.lambdaUpdate(Document.class).
-                        eq(Document::getId, 1L);
+        LambdaEsUpdateWrapper<DocumentEntity> updateWrapper =
+                EsWrappers.lambdaUpdate(DocumentEntity.class).
+                        eq(DocumentEntity::getId, 1L);
 
     }
 }

@@ -549,9 +549,10 @@ public class FileUtil {
      * @return
      */
     public static String cutFirstSeparatorAdaptation(String relativePath) {
-        String substring = relativePath.substring(0, 1);
-        if (substring.matches("\\?|/?")) {
-            relativePath = relativePath.substring(1); //去掉第一个/
+        char c = relativePath.charAt(0);
+        if (c == '/' || c == '\\') {//判断首个是否是分割符
+            relativePath= relativePath.substring(1);
+            return cutFirstSeparatorAdaptation(relativePath);//递归
         }
         //适配当前系统的分割符
         relativePath = relativePath.replace("\\*|/*", File.separator);
@@ -565,9 +566,11 @@ public class FileUtil {
      * @return
      */
     public static String cutLastSeparatorAdaptation(String relativePath) {
-        String substring = relativePath.substring(relativePath.length() - 1);
-        if (substring.matches("\\?|/?")) {
+        //判断结尾是否是分割符
+        char c = relativePath.charAt(relativePath.length() - 1);
+        if (c == '/' || c == '\\') {//判断结尾是否是分割符
             relativePath = relativePath.substring(0, relativePath.length() - 1); //去掉第一个/
+            return cutLastSeparatorAdaptation(relativePath);//递归
         }
         //适配当前系统的分割符
         relativePath = relativePath.replace("\\*|/*", File.separator);

@@ -56,12 +56,12 @@ public  class ColourLog {
         if (System.console() != null) {
             enableColor = true;
             // windows dos, do not support color
-            if (OSUtils.isWindows()) {
+            if (OSUtil.isWindows()) {
                 enableColor = false;
             }
         }
         // cygwin and mingw support color
-        if (OSUtils.isCygwinOrMinGW()) {
+        if (OSUtil.isCygwinOrMinGW()) {
             enableColor = true;
         }
     }

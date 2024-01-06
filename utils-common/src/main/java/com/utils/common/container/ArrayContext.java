@@ -54,7 +54,7 @@ public class ArrayContext<T> {
        this.matrix =   new ArrayMatrix(matrix,matrixIndex,matrixSize,matrixtotal);
     }
     @Data
-        class  ArrayMatrix{
+    public  class  ArrayMatrix{
         private  T[][] matrix;//矩阵
         private  int matrixIndex;//当前矩阵下标  (从0开始)
         private int matrixSize; //单个矩阵数量

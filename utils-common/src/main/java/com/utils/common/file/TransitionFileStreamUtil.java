@@ -14,18 +14,20 @@ public class TransitionFileStreamUtil {
      * @return
      */
     public static String readIoToStr(InputStream is) {
-        String result = null;
-        try {
-            byte[] data = new byte[is.available()];
-            is.read(data);
-            
-            Base64.Encoder encoder = Base64.getEncoder();
-            result = encoder.encodeToString(data);
-            
-        } catch (Exception e) {
-            e.printStackTrace();
+        byte[] bytes = inputStreamTobyte(is);
+        return new String(bytes, StandardCharsets.UTF_8);
+    }
+    // 文件流InputStream转byte
+    @SneakyThrows
+    public static byte[] inputStreamTobyte(InputStream inputStream) {
+        ByteArrayOutputStream swapStream = new ByteArrayOutputStream();
+        int available = inputStream.available();
+        byte[] buff = new byte[available]; //buff用于存放循环读取的临时数据
+        int rc = 0;
+        while ((rc = inputStream.read(buff, 0, available)) > 0) {
+            swapStream.write(buff, 0, rc);
         }
-        return result;
+        return swapStream.toByteArray();
     }
     
     /*
@@ -40,6 +42,11 @@ public class TransitionFileStreamUtil {
     public static InputStream byteToIo(byte[] bytes) {
         return new ByteArrayInputStream(bytes);
     }
+
+
+
+
+
     
     //将输入流转换为输出流
     public static void inToOut(InputStream in, OutputStream out) throws IOException {
@@ -60,18 +67,7 @@ public class TransitionFileStreamUtil {
         return null;
     }
     
-    // 文件流InputStream转byte
-    @SneakyThrows
-    public static byte[] inputStreamTobyte(InputStream inputStream) {
-        ByteArrayOutputStream swapStream = new ByteArrayOutputStream();
-        int available = inputStream.available();
-        byte[] buff = new byte[available]; //buff用于存放循环读取的临时数据
-        int rc = 0;
-        while ((rc = inputStream.read(buff, 0, available)) > 0) {
-            swapStream.write(buff, 0, rc);
-        }
-        return swapStream.toByteArray();
-    }
+
     //文件流FileInputStream转byte
     @SneakyThrows
     public static byte[] fileInputStreamTobyte(FileInputStream fileInputStream) {

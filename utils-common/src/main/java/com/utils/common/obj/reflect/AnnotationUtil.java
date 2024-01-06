@@ -4,6 +4,7 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class AnnotationUtil {
@@ -59,7 +60,7 @@ public class AnnotationUtil {
         }
         return  map;
     }
-
+    //获取类中方法指定注解
     public static Map<Method, Annotation> getAnnotationsMethods(Class clazz, Class annotationType) {
         Map<Method, Annotation> map = new HashMap<>();
         Map<Object, Annotation> aClass = AnnotationUtil.getAnnotations(clazz, annotationType, "methods");
@@ -77,4 +78,5 @@ public class AnnotationUtil {
         }
         return  map;
     }
+
 }

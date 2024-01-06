@@ -57,7 +57,7 @@ public class AESFileUtil {
                     encryptionPrefixByte,
                     (bytes) -> {
                         // 加密
-                        byte[] encrypt = AESCBCUtils.encrypt(bytes, key, iv);
+                        byte[] encrypt = AESCBCUtil.encrypt(bytes, key, iv);
                         //字节长度填充
                         encrypt = ArrayByteUtil.fillBytes(encrypt,  encryptionPrefixByte*2);
                         return encrypt;
@@ -74,7 +74,7 @@ public class AESFileUtil {
                         if (start.get()) {
                             start.set(false);
                             // 加密
-                            byte[] encrypt = AESCBCUtils.encrypt(bytes, key, iv);
+                            byte[] encrypt = AESCBCUtil.encrypt(bytes, key, iv);
                             //字节长度填充
                             bytes = ArrayByteUtil.fillBytes(encrypt,  encryptionPrefixByte1*2);
                         }
@@ -97,7 +97,7 @@ public class AESFileUtil {
                     (bytes) -> {
                         bytes = ArrayByteUtil.getActualBytes(bytes);
                         // 解密
-                        byte[] bytes1 = AESCBCUtils.decrypt(bytes, key, iv);
+                        byte[] bytes1 = AESCBCUtil.decrypt(bytes, key, iv);
                         return bytes1;
                     });
         }else{ //二进制文件
@@ -113,7 +113,7 @@ public class AESFileUtil {
                             start.set(false);
                             bytes = ArrayByteUtil.getActualBytes(bytes);
                             // 解密
-                            bytes = AESCBCUtils.decrypt(bytes, key, iv);
+                            bytes = AESCBCUtil.decrypt(bytes, key, iv);
                         }
                         return bytes;
                     });

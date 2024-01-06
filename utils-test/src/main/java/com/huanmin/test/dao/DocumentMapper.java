@@ -2,7 +2,7 @@ package com.huanmin.test.dao;
 
 
 import cn.easyes.core.conditions.interfaces.BaseEsMapper;
-import com.huanmin.test.entity.Document;
+import com.huanmin.test.entity.DocumentEntity;
 
 /**
  * 简要描述
@@ -12,6 +12,6 @@ import com.huanmin.test.entity.Document;
  * @Version: 1.0
  * @Description: 文件作用详细描述....
  */
-public interface DocumentMapper extends BaseEsMapper<Document> {
+public interface DocumentMapper extends BaseEsMapper<DocumentEntity> {
 }
 

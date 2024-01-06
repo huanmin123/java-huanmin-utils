@@ -11,44 +11,9 @@ import java.util.function.Supplier;
 
 // 防止Aba问题  版本戳为boolean类型。 不关心改了几次, 只关系改了没改, (在内存里如果将值改了,那么就可能绕过版本检查)
 public class AtomicMarkableReferenceStringUtils {
-    //这样的设计是,为了便于多个线程之间好共享变量
-    private static Map<String, AtomicMarkableReference<String>> map = new ConcurrentHashMap<>();
-    private String key;  // key 对应的自增
-    private AtomicMarkableReference<String> atomicMarkableReference;
-    private AtomicStringUtils atomicStringUtils;
 
-    public AtomicMarkableReferenceStringUtils(String key) {
-        this.key = key;
-        this.atomicMarkableReference = initialize();
-        this.atomicStringUtils = AtomicStringUtils.build(key);
-    }
+    private AtomicMarkableReference<String> atomicMarkableReference; //@TODO
 
-
-    public static AtomicMarkableReferenceStringUtils build(String key) {
-        if (StringUtils.isBlank(key)) {
-            throw new NullPointerException("不能为空");
-        }
-        return new AtomicMarkableReferenceStringUtils(key);
-    }
-
-
-    private AtomicMarkableReference<String> initialize() {
-        AtomicMarkableReference<String> atomicMarkableReference = map.get(key);
-        if (atomicMarkableReference == null) {
-            synchronized (AtomicMarkableReferenceStringUtils.class) {
-                atomicMarkableReference = map.get(key);
-                if (atomicMarkableReference == null) {
-
-                    // 初始值   ,初始版本号
-                    AtomicMarkableReference<String> atomicMarkableReference1 = new AtomicMarkableReference<String>("", true);
-                    map.put(key, atomicMarkableReference1);
-                    atomicMarkableReference = atomicMarkableReference1;
-                }
-            }
-
-        }
-        return atomicMarkableReference;
-    }
 
     /**
      * 修改 , 以原子的方式修改值 ,没有任何副作用(线程安全的) 并且防止ABA问题

@@ -1,5 +1,5 @@
 server:
-  port: 12346
+  port: 12345
   tomcat:
     uri-encoding: UTF-8
     accept-count: 500
@@ -19,3 +19,5 @@ spring:
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB
+
+

@@ -1,8 +1,7 @@
 package com.utils.common.file;
 
 
-
-import com.utils.common.file.condense.ZipFileUtils;
+import com.utils.common.file.condense.ZipFileUtil;
 import com.utils.common.spring.ContextAttribuesUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
@@ -58,7 +57,7 @@ public class FileWebDownLoad {
     public static void downloadZipFile(List<File> filePaths, String zipName, HttpServletResponse response) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         ZipOutputStream zip = new ZipOutputStream(outputStream);
-        ZipFileUtils.zip(zip, filePaths);
+        ZipFileUtil.zip(zip, filePaths);
         byte[] data = outputStream.toByteArray();
         response.setContentType("application/octet-stream; charset=UTF-8");
         response.setHeader("Content-Disposition", "attachment;filename=" + new String((zipName + ".zip").getBytes(), StandardCharsets.UTF_8));

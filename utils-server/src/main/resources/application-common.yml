@@ -22,3 +22,7 @@ logging:
   config: classpath:logback-spring-base.xml
   mypath: ./log  # 日志路径配置
 #  mylevel: dev   # 用于覆盖默认配置,一般用于调试
+
+
+# 打印加载的配置文件位置
+logging.level.org.springframework.boot.context.config.ConfigFileApplicationListener: trace
