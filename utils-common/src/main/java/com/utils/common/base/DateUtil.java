@@ -40,7 +40,7 @@ public class DateUtil {
         try {
             parse = sdf.parse(str);
         } catch (ParseException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return parse;
     }
@@ -51,7 +51,7 @@ public class DateUtil {
         try {
             return sdf.parse(str).getTime();
         } catch (ParseException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return 0;
     }
@@ -113,7 +113,7 @@ public class DateUtil {
         try {
             return sdf.parse(dateStr).getTime();
         } catch (ParseException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return 0;
     }
@@ -178,7 +178,7 @@ public class DateUtil {
         try {
             time = df.parse(strdate);
         } catch (ParseException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
             return 0;
         }
         Date data = new Date(); //获取本地时间
@@ -202,7 +202,7 @@ public class DateUtil {
             time1 = df.parse(strDate1);
             time2 = df.parse(strDate2);
         } catch (ParseException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
             return 0;
         }
 
@@ -245,7 +245,7 @@ public class DateUtil {
             date1 = format.parse(endDate);
             date2 = format.parse(nowDate);
         } catch (ParseException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
         long nd = 1000 * 24 * 60 * 60;
@@ -630,7 +630,7 @@ public class DateUtil {
         try {
             date = sdf.parse(time);
         } catch (ParseException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         SimpleDateFormat sdf1 = new SimpleDateFormat(newFormat.getValue());
         return sdf1.format(date);

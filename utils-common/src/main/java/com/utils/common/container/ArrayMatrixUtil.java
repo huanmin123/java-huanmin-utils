@@ -1,5 +1,7 @@
 package com.utils.common.container;
 
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,9 +15,9 @@ import java.util.function.Consumer;
  * @Description:
  * 遍历和处理二维矩阵   (只适用int,Integer,和double,Double,等这些类型)(一般矩阵都是长和宽都是一样的,如果不够那么自行补充0,或者null,保证长宽一致)
  */
-
+@Slf4j
 public class ArrayMatrixUtil {
-    private static final Logger logger = LoggerFactory.getLogger(ArrayMatrixUtil.class);
+
 
     //二维数组,基本类型(int)转包装类型(Integer)
     public static Integer[][] intToIntegerByMatrix(int[][] arrays) {
@@ -182,7 +184,7 @@ public class ArrayMatrixUtil {
      * @param algorithm   3*3 , 4,4, 4*3  ,3*4
      * @param <T>
      */
-    public static <T> void arrayInsideMatrixByIteration(T[][] objects, String algorithm, Consumer<ArrayContext<T>> consumer) {
+    public static  <T> void arrayInsideMatrixByIteration(T[][] objects, String algorithm, Consumer<ArrayContext<T>> consumer) {
         int length = objects.length;
         String[] split = algorithm.split("\\*");
         int row = Integer.parseInt(split[0]);//行
@@ -241,7 +243,7 @@ public class ArrayMatrixUtil {
         if(matrixtotal==pointer){
             System.out.println("-----矩阵遍历读取完毕--------");
         }else {
-            logger.error("-----矩阵读取有误---读取小矩阵的数量不对--------");
+            log.error("-----矩阵读取有误---读取小矩阵的数量不对--------");
         }
     }
 
@@ -287,13 +289,94 @@ public class ArrayMatrixUtil {
         }
     }
 
-    public static void main(String[] args) {
-        List<int[]> ints = aroundCoordinate(4, 4, 8, 2);
 
-        for (int[] anInt : ints) {
 
-            System.out.println(Arrays.toString(anInt));
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Data
+    public static class ArrayContext<T> {
+        private  T[] rows;
+        private T[] cols;
+        private int row; //下标  (从0开始)
+        private int col; //下标  (从0开始)
+        private  int rowLength; //行长度
+        private  int colLength; //列长度
+
+        private ArrayMatrix<T> matrix;//小矩阵
+
+        public ArrayContext() {
+        }
+
+        public ArrayContext(T[] rows, T[] cols) {
+            this.rows = rows;
+            this.cols = cols;
+        }
+
+        public ArrayContext(T[] rows, T[] cols, int row, int col) {
+            this.rows = rows;
+            this.cols = cols;
+            this.row = row;
+            this.col = col;
+        }
+
+        public ArrayContext(T[] rows, T[] cols, int row, int col, int rowLength, int colLength) {
+            this.rows = rows;
+            this.cols = cols;
+            this.row = row;
+            this.col = col;
+            this.rowLength = rowLength;
+            this.colLength = colLength;
+        }
+
+
+        public ArrayMatrix<T> getArrayMatrix(){
+            return this.matrix;
+        }
+
+        /**
+         *
+         * @param matrix  小矩阵
+         * @param matrixIndex  当前矩阵的下标
+         * @param matrixSize  小矩阵的大小
+         * @param matrixtotal 一共多少矩阵
+         */
+        public  void createArrayMatrix(T[][] matrix, int matrixIndex, int matrixSize, int matrixtotal){
+
+            this.matrix = new ArrayMatrix<T>(matrix, matrixIndex, matrixSize, matrixtotal);
+        }
+
+    }
+    @Data
+    public static class  ArrayMatrix<T>{
+        private  T[][] matrix;//矩阵
+        private  int matrixIndex;//当前矩阵下标  (从0开始)
+        private int matrixSize; //单个矩阵数量
+        private int matrixtotal; //一共多少矩阵
+
+
+        public ArrayMatrix(T[][] matrix, int matrixIndex, int matrixSize, int matrixtotal) {
+            this.matrix = matrix;
+            this.matrixIndex = matrixIndex;
+            this.matrixSize = matrixSize;
+            this.matrixtotal = matrixtotal;
         }
     }
 

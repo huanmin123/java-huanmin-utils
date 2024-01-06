@@ -1,6 +1,7 @@
 package com.utils.common.file;
 
 import com.utils.common.base.NullUtils;
+import com.utils.common.base.UniversalException;
 import com.utils.common.string.StringUtil;
 import info.monitorenter.cpdetector.io.*;
 
@@ -61,7 +62,7 @@ public class FileTool {
                 bw.write(c, 0, len);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
     
@@ -107,7 +108,7 @@ public class FileTool {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         
     }
@@ -144,7 +145,7 @@ public class FileTool {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         
     }
@@ -202,7 +203,7 @@ public class FileTool {
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(outFile))) {
                 bw.write(s);
             } catch (IOException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         }
     }

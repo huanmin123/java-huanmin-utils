@@ -1,5 +1,7 @@
 package com.utils.common.obj.dynamicbean;
 
+import com.utils.common.base.UniversalException;
+
 import javax.tools.*;
 import java.io.File;
 import java.net.URI;
@@ -37,7 +39,7 @@ public class DynamicClassLoader {
             try {
                 return Class.forName(className);
             } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         }
         return null;

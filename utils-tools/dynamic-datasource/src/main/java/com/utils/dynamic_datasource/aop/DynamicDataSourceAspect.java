@@ -1,5 +1,6 @@
 package com.utils.dynamic_datasource.aop;
 
+import com.utils.common.base.UniversalException;
 import com.utils.dynamic_datasource.base.DynamicDataSourceService;
 import org.apache.commons.lang.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -38,7 +39,7 @@ public class DynamicDataSourceAspect {
             }
             object = joinPoint.proceed();
         } catch (Throwable e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }finally {
             //还原为默认配置
             DynamicDataSourceService.resetDb();

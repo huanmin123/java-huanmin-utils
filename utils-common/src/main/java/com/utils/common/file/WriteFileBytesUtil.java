@@ -1,5 +1,7 @@
 package com.utils.common.file;
 
+import com.utils.common.base.UniversalException;
+
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -14,7 +16,7 @@ public class WriteFileBytesUtil {
                 BufferedOutputStream fos = new BufferedOutputStream(fos1);) {
             fos.write(b, 0, b.length); // 写入数据
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
     

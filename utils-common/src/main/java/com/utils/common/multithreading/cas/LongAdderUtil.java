@@ -1,15 +1,11 @@
 package com.utils.common.multithreading.cas;
 
-import org.apache.commons.lang.StringUtils;
-
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.LongAdder;
 
 /**
  * 高性能,累加器,多线程自增  原子性(不能保证ABA问题)
  */
-public class LongAdderUtils {
+public class LongAdderUtil {
     private  LongAdder longAdder; //@TODO
 
     /**

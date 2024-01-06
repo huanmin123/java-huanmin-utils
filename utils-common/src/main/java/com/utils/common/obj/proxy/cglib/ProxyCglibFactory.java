@@ -1,6 +1,7 @@
 package com.utils.common.obj.proxy.cglib;
 
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.obj.proxy.ActionProxy;
 import com.utils.common.obj.proxy.MethodImpl;
 import org.springframework.cglib.proxy.MethodInterceptor;
@@ -53,7 +54,7 @@ public class ProxyCglibFactory implements MethodInterceptor {
                 actionProxy.returnBefore(method,args);
             } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
                 actionProxy.exceptionHandling(method,args,e);
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }finally {
                 actionProxy.end(method,args);
             }

@@ -1,9 +1,10 @@
 package com.huanmin.test.utils_common.multithreading.cas;
 
-import com.function.impl.CodeStartAndStopTimeUtil;
-import com.multithreading.executor.ExecutorUtil;
-import com.multithreading.executor.ThreadFactoryUtil;
-import com.utils.common.multithreading.cas.AtomicMarkableReferenceStringUtils;
+import com.utils.common.base.CodeTimeUtil;
+import com.utils.common.base.UniversalException;
+import com.utils.common.multithreading.cas.AtomicMarkableReferenceStringUtil;
+import com.utils.common.multithreading.executor.ExecutorUtil;
+import com.utils.common.multithreading.executor.ThreadFactoryUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,8 +16,8 @@ import java.util.concurrent.Future;
 public class AtomicStampedReferenceStringUtilsTest {
     private static final Logger logger = LoggerFactory.getLogger(AtomicStampedReferenceStringUtilsTest.class);
     public   static void main(String[] args) throws Exception {
-        CodeStartAndStopTimeUtil.creator(()->{
-            AtomicMarkableReferenceStringUtils build = AtomicMarkableReferenceStringUtils.build("da1");
+        CodeTimeUtil.creator(()->{
+            AtomicMarkableReferenceStringUtil build = new AtomicMarkableReferenceStringUtil();
             Collection<Future<?>> futures = new LinkedList<Future<?>>();
             for (int i1 = 0; i1 < 1000; i1++) {
                 Future<?> future = ExecutorUtil.createFuture(ThreadFactoryUtil.ThreadConfig.TEST,()->{
@@ -31,9 +32,9 @@ public class AtomicStampedReferenceStringUtilsTest {
                 try {
                     future.get();
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 } catch (ExecutionException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             }
             System.out.println(String.valueOf(build.get()));

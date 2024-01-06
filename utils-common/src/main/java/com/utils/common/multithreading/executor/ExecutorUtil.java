@@ -1,5 +1,7 @@
 package com.utils.common.multithreading.executor;
 
+import com.utils.common.base.UniversalException;
+
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -81,7 +83,7 @@ public class ExecutorUtil {
                 consumer.accept(completionService.take());
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
     //一堆线程同时执行,谁先执行完毕那么就采用谁的结果,其余线程结果不管  ,注意如果执行了,
@@ -95,7 +97,7 @@ public class ExecutorUtil {
         try {
             result=completionService.take().get();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
         return result;
@@ -113,7 +115,7 @@ public class ExecutorUtil {
             try {
                 future.get();
             } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         }
     }
@@ -122,7 +124,7 @@ public class ExecutorUtil {
         try {
             future.get();
         } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 

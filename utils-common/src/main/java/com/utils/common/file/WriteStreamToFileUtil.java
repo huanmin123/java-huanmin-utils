@@ -1,5 +1,7 @@
 package com.utils.common.file;
 
+import com.utils.common.base.UniversalException;
+
 import java.io.*;
 import java.nio.file.Files;
 
@@ -16,7 +18,7 @@ public class WriteStreamToFileUtil {
                 bos.write(data, 0, len); // 写入数据
             }
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
     

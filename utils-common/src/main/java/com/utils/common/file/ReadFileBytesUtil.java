@@ -1,5 +1,6 @@
 package com.utils.common.file;
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.container.ArrayByteUtil;
 import lombok.SneakyThrows;
 
@@ -16,7 +17,7 @@ public class ReadFileBytesUtil {
         try (BufferedInputStream fis = new BufferedInputStream(Files.newInputStream(read.toPath()));) {
             fis.read(data);
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return data;
     }
@@ -31,7 +32,7 @@ public class ReadFileBytesUtil {
         try (BufferedInputStream fis = new BufferedInputStream(fileInputStream);) {
             fis.read(data);
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         // 调整data的大小为实际的大小
         data = ArrayByteUtil.getActualBytes(data);

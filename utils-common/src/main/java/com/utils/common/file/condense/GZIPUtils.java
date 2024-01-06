@@ -1,6 +1,7 @@
 package com.utils.common.file.condense;
 
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.file.FileUtil;
 import com.utils.common.file.WriteFileBytesUtil;
 import lombok.SneakyThrows;
@@ -51,7 +52,7 @@ public class GZIPUtils {
          gzip.write(str.getBytes(encoding));
             gzip.close();
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return out.toByteArray();
     }
@@ -63,7 +64,7 @@ public class GZIPUtils {
         ) {
             gzip.write(bytes);
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return out.toByteArray();
     }
@@ -89,7 +90,7 @@ public class GZIPUtils {
         ) {
             fos.write(bytes);
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 
@@ -107,7 +108,7 @@ public class GZIPUtils {
                 fos.write(data, 0, len); // 写入数据
             }
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 
@@ -124,7 +125,7 @@ public class GZIPUtils {
                 consumer.accept(len);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
     }
@@ -140,7 +141,7 @@ public class GZIPUtils {
             fis.read(body);
             return body;
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return null;
     }
@@ -166,7 +167,7 @@ public class GZIPUtils {
                 out.write(buffer, 0, n);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
         return out.toByteArray();
@@ -204,7 +205,7 @@ public class GZIPUtils {
             }
             return out.toString(GZIP_ENCODE_UTF_8);
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return null;
     }
@@ -233,7 +234,7 @@ public class GZIPUtils {
                 addFilesToTarGZ(oneFile.getPath(), parentDirectoryName + File.separator, tarOs);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 

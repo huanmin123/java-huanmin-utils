@@ -1,5 +1,6 @@
 package com.utils.common.multithreading.aqs.semaphore;
 
+import com.utils.common.base.UniversalException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -57,7 +58,7 @@ public class SemaphoreAop {
                 try {
                     res = joinPoint.proceed();
                 } catch (Throwable e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             } else {
                 //在一定时间内拿不到令牌那么就访问失败

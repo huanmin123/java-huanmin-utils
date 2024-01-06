@@ -1,5 +1,7 @@
 package com.utils.common.file;
 
+import com.utils.common.base.UniversalException;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,7 +36,7 @@ public class WriteFileStrUtil {
                      new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path, type)));) {
             bw.write(str);
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 }

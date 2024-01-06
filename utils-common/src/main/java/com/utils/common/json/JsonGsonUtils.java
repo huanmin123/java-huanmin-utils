@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
+import com.utils.common.base.UniversalException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class JsonGsonUtils<T> {
             }.getType());
 
         } catch (JsonSyntaxException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return res;
     }
@@ -47,7 +48,7 @@ public class JsonGsonUtils<T> {
         try {
             res =  (T)gson.fromJson(json,clazz);
         } catch (JsonSyntaxException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return res;
     }
@@ -61,7 +62,7 @@ public class JsonGsonUtils<T> {
             res = gson.fromJson(json, new TypeToken<ArrayList<T>>() {}.getType());
 
         } catch (JsonSyntaxException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         for (T re : res) {
             newres.add(JsonGsonUtils.jsonTurnJavaBena(JsonGsonUtils.objTurnJson(re),clazz));

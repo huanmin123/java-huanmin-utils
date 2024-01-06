@@ -1,5 +1,7 @@
 package com.utils.common.container;
 
+import com.utils.common.base.UniversalException;
+
 import java.lang.reflect.Array;
 
 /**
@@ -103,7 +105,7 @@ public class ArrayCopyUtils {
                 throw new Exception("参数不是数组");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
             return  false;
         }
         return  true;

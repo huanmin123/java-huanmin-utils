@@ -1,5 +1,6 @@
 package com.huanmin.test.utils_common.obj.proxy;
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.obj.proxy.ActionProxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,7 +38,7 @@ public class ActionProxyTestImpl implements ActionProxy {
         try {
             invoke= method.invoke(o,args);
         } catch (InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
         return invoke;

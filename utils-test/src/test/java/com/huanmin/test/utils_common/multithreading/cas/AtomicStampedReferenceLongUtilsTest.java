@@ -1,8 +1,8 @@
 package com.huanmin.test.utils_common.multithreading.cas;
 
-import com.multithreading.executor.ExecutorUtil;
-import com.multithreading.executor.ThreadFactoryUtil;
-import com.utils.common.multithreading.cas.AtomicStampedReferenceDoubleUtils;
+import com.utils.common.multithreading.cas.AtomicStampedReferenceDoubleUtil;
+import com.utils.common.multithreading.executor.ExecutorUtil;
+import com.utils.common.multithreading.executor.ThreadFactoryUtil;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +18,7 @@ public class AtomicStampedReferenceLongUtilsTest {
 
     @Test
     public void  show(){
-        AtomicStampedReferenceDoubleUtils build = AtomicStampedReferenceDoubleUtils.build("da1");
+        AtomicStampedReferenceDoubleUtil build = new AtomicStampedReferenceDoubleUtil();
         for (int i2 = 0; i2 < 1000; i2++) {
             build.update(build.get()+i2);
         }
@@ -28,7 +28,7 @@ public class AtomicStampedReferenceLongUtilsTest {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-        AtomicStampedReferenceDoubleUtils build = AtomicStampedReferenceDoubleUtils.build("da1");
+        AtomicStampedReferenceDoubleUtil build = new AtomicStampedReferenceDoubleUtil();
         Collection<Future<?>> futures = new LinkedList<Future<?>>();
         for (int i = 0; i < 1000; i++) {
             Future<?> future = ExecutorUtil.createFuture(ThreadFactoryUtil.ThreadConfig.TEST,()->{

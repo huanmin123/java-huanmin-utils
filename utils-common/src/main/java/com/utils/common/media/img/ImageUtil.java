@@ -5,6 +5,7 @@ import com.drew.imaging.ImageProcessingException;
 import com.drew.metadata.Directory;
 import com.drew.metadata.Metadata;
 import com.drew.metadata.Tag;
+import com.utils.common.base.UniversalException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -120,7 +121,7 @@ public class ImageUtil implements Serializable {
       }
 
     } catch (ImageProcessingException | IOException e) {
-      e.printStackTrace();
+       UniversalException.logError(e);
     }
     if (pd) {
       jpegFile.delete();
@@ -152,7 +153,7 @@ public class ImageUtil implements Serializable {
         }
       } catch (Exception e) {
         System.out.println("新建文件操作出错");
-        e.printStackTrace();
+         UniversalException.logError(e);
       }
       // 下载
       urlfile = new URL(url);
@@ -165,7 +166,7 @@ public class ImageUtil implements Serializable {
         os.write(buffer, 0, bytesRead);
       }
     } catch (Exception e) {
-      e.printStackTrace();
+       UniversalException.logError(e);
     } finally {
       try {
         if (null != os) {
@@ -176,7 +177,7 @@ public class ImageUtil implements Serializable {
         }
 
       } catch (Exception e) {
-        e.printStackTrace();
+         UniversalException.logError(e);
       }
     }
 
@@ -206,7 +207,7 @@ public class ImageUtil implements Serializable {
       dataInputStream.close();
       fileOutputStream.close();
     } catch (IOException e) {
-      e.printStackTrace();
+       UniversalException.logError(e);
     }
   }
 

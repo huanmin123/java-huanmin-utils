@@ -1,8 +1,11 @@
 package com.huanmin.test.utils_common.multithreading.cas;
 
-import com.multithreading.executor.ExecutorUtil;
-import com.multithreading.executor.ThreadFactoryUtil;
-import com.multithreading.utils.SleepTools;
+
+import com.utils.common.base.UniversalException;
+import com.utils.common.multithreading.cas.AtomicIntegerUtil;
+import com.utils.common.multithreading.executor.ExecutorUtil;
+import com.utils.common.multithreading.executor.ThreadFactoryUtil;
+import com.utils.common.multithreading.utils.SleepTools;
 import org.junit.Test;
 
 /**
@@ -19,7 +22,7 @@ public class AtomicIntegerUtilsTest {
     // 测试多线程的下使用AtomicInteger可见性
     @Test
     public void show(){
-        AtomicIntegerUtils a = AtomicIntegerUtils.build("a");
+        AtomicIntegerUtil a = new AtomicIntegerUtil();
 
         for (int i = 0; i < 100; i++) {
             ExecutorUtil.create(ThreadFactoryUtil.ThreadConfig.TEST,()->{
@@ -27,7 +30,7 @@ public class AtomicIntegerUtilsTest {
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             });
 
@@ -41,7 +44,7 @@ public class AtomicIntegerUtilsTest {
     }
     @Test
     public void show1(){
-        AtomicIntegerUtils a = AtomicIntegerUtils.build("a");
+        AtomicIntegerUtil a = new AtomicIntegerUtil();
 
         for (int i = 0; i < 100; i++) {
             int finalI = i;
@@ -50,7 +53,7 @@ public class AtomicIntegerUtilsTest {
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             });
 

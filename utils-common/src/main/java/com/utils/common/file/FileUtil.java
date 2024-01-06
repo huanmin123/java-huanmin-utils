@@ -1,6 +1,7 @@
 package com.utils.common.file;
 
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.multithreading.executor.ExecutorUtil;
 import com.utils.common.multithreading.executor.ThreadFactoryUtil;
 import com.utils.common.string.StringUtil;
@@ -134,7 +135,7 @@ public class FileUtil {
                     return;
                 }
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         });
     }
@@ -160,7 +161,7 @@ public class FileUtil {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
             return false;
         }
         //根文件夹也 一起删除
@@ -197,7 +198,7 @@ public class FileUtil {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
             return false;
         }
         //根文件夹也 一起删除
@@ -219,7 +220,7 @@ public class FileUtil {
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             }
     }
@@ -235,7 +236,7 @@ public class FileUtil {
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             }
         });
@@ -324,7 +325,7 @@ public class FileUtil {
                     fos.write(data, 0, num);//写入数据
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         } else {
             System.out.println("这不是文件类型 ");
@@ -522,7 +523,7 @@ public class FileUtil {
                 try {
                     fis.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             }
         }
@@ -615,7 +616,7 @@ public class FileUtil {
                     throw new RuntimeException("创建临时文件失败");
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         }
         return file;

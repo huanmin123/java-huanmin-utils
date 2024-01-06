@@ -1,5 +1,6 @@
 package com.utils.common.obj.copy;
 
+import com.utils.common.base.UniversalException;
 import org.springframework.beans.BeanUtils;
 
 import java.io.*;
@@ -99,7 +100,7 @@ public class BeanCopyUtil extends BeanUtils {
                 setMethod.invoke(target, new Object[]{value});
             }
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
     }
@@ -139,7 +140,7 @@ public class BeanCopyUtil extends BeanUtils {
             }
             return (T)objectCopy;
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
         return  null;

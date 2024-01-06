@@ -2,15 +2,12 @@ package com.utils.common.multithreading.cas;
 
 
 import com.utils.common.multithreading.utils.SleepTools;
-import org.apache.commons.lang.StringUtils;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.function.Supplier;
 
 // 防止Aba问题  版本戳为boolean类型。 不关心改了几次, 只关系改了没改, (在内存里如果将值改了,那么就可能绕过版本检查)
-public class AtomicMarkableReferenceStringUtils {
+public class AtomicMarkableReferenceStringUtil {
 
     private AtomicMarkableReference<String> atomicMarkableReference; //@TODO
 

@@ -1,5 +1,7 @@
 package com.utils.common.encryption.des;
 
+import com.utils.common.base.UniversalException;
+
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
@@ -69,7 +71,7 @@ public class DESUtil {
                 return new String(cipher.doFinal(Objects.requireNonNull(parseHexStr2Byte(res))));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return null;
     }

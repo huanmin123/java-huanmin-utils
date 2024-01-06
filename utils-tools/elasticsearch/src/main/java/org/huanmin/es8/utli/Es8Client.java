@@ -20,6 +20,7 @@ import co.elastic.clients.transport.rest_client.RestClientTransport;
 import co.elastic.clients.util.ObjectBuilder;
 import com.alibaba.fastjson.JSONObject;
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.obj.copy.BeanCopyUtil;
 import com.utils.common.obj.reflect.ClassUtil;
 import com.utils.common.string.PatternCommon;
@@ -170,7 +171,7 @@ public class Es8Client implements InitializingBean {
             indices = client.cat().indices().valueBody();
 
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         assert indices != null;
         return indices.stream().map(IndicesRecord::index).collect(Collectors.toList());
@@ -182,7 +183,7 @@ public class Es8Client implements InitializingBean {
         try {
             aliasesRecords = client.cat().aliases().valueBody();
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         assert aliasesRecords != null;
         return aliasesRecords.stream().map(AliasesRecord::alias).collect(Collectors.toList());
@@ -217,7 +218,7 @@ public class Es8Client implements InitializingBean {
                 try {
                     id = declaredField.get(o);
                 } catch (IllegalAccessException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             }
         }
@@ -237,7 +238,7 @@ public class Es8Client implements InitializingBean {
             }
             response = client.index(indexReqBuilder.build());
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         assert response != null;
         return response.id();
@@ -262,7 +263,7 @@ public class Es8Client implements InitializingBean {
                     try {
                         id = declaredField.get(o);
                     } catch (IllegalAccessException e) {
-                        e.printStackTrace();
+                         UniversalException.logError(e);
                     }
                 }
             }
@@ -285,7 +286,7 @@ public class Es8Client implements InitializingBean {
         try {
             result = client.bulk(br.build());
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         // Log errors, if any
         assert result != null;
@@ -305,7 +306,7 @@ public class Es8Client implements InitializingBean {
 
             response = client.get(g -> g.index(getClassAlias(clazz)).id(DocId), clazz);
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
         assert response != null;
@@ -479,7 +480,7 @@ public class Es8Client implements InitializingBean {
                 try {
                     id = (Long) declaredField.get(o);
                 } catch (IllegalAccessException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             }
         }

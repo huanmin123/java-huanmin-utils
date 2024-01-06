@@ -1,5 +1,6 @@
 package org.huanmin.timerwheel.timerspring;
 
+import com.utils.common.base.UniversalException;
 import org.apache.commons.lang.StringUtils;
 import org.huanmin.timerwheel.Timer;
 import org.huanmin.timerwheel.timerannotation.Distributed;
@@ -60,12 +61,12 @@ public class TimerSpringInit implements ApplicationListener<ContextRefreshedEven
                         }, null);
 
                     } catch (Exception e) {
-                        e.printStackTrace();
+                         UniversalException.logError(e);
                     }
                 }
             }
         } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
     }

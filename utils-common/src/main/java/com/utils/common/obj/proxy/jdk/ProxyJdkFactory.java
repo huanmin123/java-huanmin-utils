@@ -3,6 +3,7 @@ package com.utils.common.obj.proxy.jdk;
 
 
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.obj.proxy.ActionProxy;
 import com.utils.common.obj.proxy.MethodImpl;
 
@@ -47,7 +48,7 @@ public class ProxyJdkFactory implements InvocationHandler {
                 actionProxy.returnBefore(method,args);
             } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
                 actionProxy.exceptionHandling(method,args,e);
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }finally {
                 actionProxy.end(method,args);
             }

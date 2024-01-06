@@ -1,6 +1,7 @@
 package com.huanmin.test.utils_common.json;
 
-import com.entity.UserData;
+
+import com.huanmin.test.entity.UserEntity;
 import com.utils.common.json.JsonGsonUtils;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -16,7 +17,7 @@ public class JsonGsonUtilsTest {
     //实体类转 json字符串
     @Test
     public void show1(){
-        UserData ben=new UserData();
+        UserEntity ben=new UserEntity();
         ben.setName("abc");
         ben.setAge(22);
         String s = JsonGsonUtils.objTurnJson(ben);
@@ -28,15 +29,15 @@ public class JsonGsonUtilsTest {
 
     @Test
     public void show2(){
-        UserData  ben=new UserData();
+        UserEntity  ben=new UserEntity();
         ben.setName("abc");
         ben.setAge(22);
-        UserData  ben1=new UserData();
+        UserEntity  ben1=new UserEntity();
         ben.setName("abc1");
         ben.setAge(221);
 
 
-        List<UserData> list=new ArrayList();
+        List<UserEntity> list=new ArrayList();
         list.add(ben);
         list.add(ben1);
         String s = JsonGsonUtils.objTurnJson(list);
@@ -81,7 +82,7 @@ public class JsonGsonUtilsTest {
     @Test
     public void show23(){
         String str="{\"name\":\"abc2\",\"age\":\"1222231\"}";
-        UserData o = JsonGsonUtils.jsonTurnJavaBena(str, UserData.class);
+        UserEntity o = JsonGsonUtils.jsonTurnJavaBena(str, UserEntity.class);
         System.out.println(o.getName());
     }
 
@@ -101,23 +102,23 @@ public class JsonGsonUtilsTest {
                 "        }\n" +
                 "    ]";
 
-        List<UserData> list = JsonGsonUtils.jsonTurnList(str,UserData.class);
+        List<UserEntity> list = JsonGsonUtils.jsonTurnList(str,UserEntity.class);
 
-        for (UserData UserData : list) {
-            System.out.println(UserData.getName());
+        for (UserEntity UserEntity : list) {
+            System.out.println(UserEntity.getName());
         }
 
     }
 
 
-    // Map 和   UserData  组合
+    // Map 和   UserEntity  组合
     @Test
     public void sh1o2w23(){
         String str="{ \"name\":\"abc\",obj:\"{name:abc,age:123}\" }";
         Map<String, Object> stringObjectMap = JsonGsonUtils.jsonTurnMap(str);
         String str1 = (String) stringObjectMap.get("obj");    //obj  的值必须是 字符串 "{name:abc,age:123}"
-        UserData UserData = JsonGsonUtils.jsonTurnJavaBena(str1,UserData.class);
-        System.out.println("sh1o2w23"+UserData);
+        UserEntity UserEntity = JsonGsonUtils.jsonTurnJavaBena(str1,UserEntity.class);
+        System.out.println("sh1o2w23"+UserEntity);
 
 
 
@@ -133,7 +134,7 @@ public class JsonGsonUtilsTest {
 
         String list = (String) JsonGsonUtils.objTurnJson(stringObjectMap.get("list")) ;
 
-        List<UserData> list1 = JsonGsonUtils.jsonTurnList(list,UserData.class);
+        List<UserEntity> list1 = JsonGsonUtils.jsonTurnList(list,UserEntity.class);
         for (Object person1 : list1) {
             System.out.println( "sh1ow23"+person1 );
         }

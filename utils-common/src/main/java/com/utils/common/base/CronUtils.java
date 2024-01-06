@@ -29,7 +29,7 @@ public class CronUtils {
         try {
             cronExpression = new CronExpression(cron);
         } catch (ParseException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
         // 转换成下次执行时间戳 是为了给最近一次执行时间一个初始时间，这里给当前时间

@@ -1,5 +1,7 @@
 package com.utils.common.file;
 
+import com.utils.common.base.UniversalException;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -25,7 +27,7 @@ public class ExeUtil {
         try {
             Runtime.getRuntime().exec(cmd);
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
     //exe生成快捷方式
@@ -38,7 +40,7 @@ public class ExeUtil {
         try {
             Runtime.getRuntime().exec(cmd);
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 

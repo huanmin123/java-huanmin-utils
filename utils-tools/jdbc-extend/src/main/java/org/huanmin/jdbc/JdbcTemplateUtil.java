@@ -1,6 +1,7 @@
-package com.utils.common.db;
+package org.huanmin.jdbc;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
+import com.utils.common.base.UniversalException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -27,7 +28,7 @@ public class JdbcTemplateUtil {
         try {
             pro.load(JdbcTemplateUtil.class.getClassLoader().getResourceAsStream("druid.properties"));
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         //创建一个DataSource
         try {
@@ -36,7 +37,7 @@ public class JdbcTemplateUtil {
             connection= Objects.requireNonNull(jdbcTemplate.getDataSource()).getConnection();
 
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
         //不用 管连接的创建  因为  JdbcTemplate  他内部 会自动给你 创建 和关闭的
@@ -49,7 +50,7 @@ public class JdbcTemplateUtil {
         try {
             connection.setAutoCommit(false);
         } catch (SQLException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 
@@ -58,7 +59,7 @@ public class JdbcTemplateUtil {
         try {
             connection.commit();
         } catch (SQLException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 
@@ -66,7 +67,7 @@ public class JdbcTemplateUtil {
         try {
             connection.rollback();
         } catch (SQLException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 
@@ -74,7 +75,7 @@ public class JdbcTemplateUtil {
         try {
             connection.setAutoCommit(true);
         } catch (SQLException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 

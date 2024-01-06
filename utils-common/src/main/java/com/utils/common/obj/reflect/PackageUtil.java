@@ -1,5 +1,7 @@
 package com.utils.common.obj.reflect;
 
+import com.utils.common.base.UniversalException;
+
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
@@ -93,7 +95,7 @@ public class PackageUtil {
                                             // log
                                             // .error("添加用户自定义视图类错误
                                             // 找不到此类的.class文件");
-                                            e.printStackTrace();
+                                             UniversalException.logError(e);
                                         }
                                     }
                                 }
@@ -101,12 +103,12 @@ public class PackageUtil {
                         }
                     } catch (IOException e) {
                         // log.error("在扫描用户定义视图时从jar包获取文件出错");
-                        e.printStackTrace();
+                         UniversalException.logError(e);
                     }
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
         return classes;
@@ -155,7 +157,7 @@ public class PackageUtil {
                             Thread.currentThread().getContextClassLoader().loadClass(packageName + '.' + className));
                 } catch (ClassNotFoundException e) {
                     // log.error("添加用户自定义视图类错误 找不到此类的.class文件");
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             }
         }

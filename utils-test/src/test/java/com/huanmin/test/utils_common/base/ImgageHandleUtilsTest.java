@@ -1,7 +1,10 @@
 package com.huanmin.test.utils_common.base;
 
 import com.jhlabs.image.GaussianFilter;
-import com.path.ResourceFileUtil;
+
+import com.utils.common.base.ResourceFileUtil;
+import com.utils.common.base.UniversalException;
+import com.utils.common.media.img.ImgageHandleUtil;
 import org.junit.Test;
 
 import javax.imageio.ImageIO;
@@ -15,23 +18,23 @@ public class ImgageHandleUtilsTest {
 
     @Test
     public void show1() throws FileNotFoundException {
-        File file = ResourceFileUtil.getFile("img/a.jpg");
-        ImgageHandleUtils.imgSize(file,200,200);
+        File file = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("img/a.jpg");
+        ImgageHandleUtil.imgSize(file,200,200);
     }
 
     @Test
     public void show2() throws IOException {
-        File file = ResourceFileUtil.getFile("img/a.jpg");
+        File file = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("img/a.jpg");
         // 使用高斯过滤器
-        ImgageHandleUtils.imgFilter(file,new GaussianFilter(10));
+        ImgageHandleUtil.imgFilter(file,new GaussianFilter(10));
     }
 
     // 自定义图片
     @Test
     public void show3() throws IOException {
-        File file = new File(ResourceFileUtil.getAbsolutePath("img"+File.separator+"creator.jpg"));
+        File file = new File(ResourceFileUtil.getCurrentProjectResourcesAbsolutePath("img"+File.separator+"creator.jpg"));
 
-        ImgageHandleUtils.creatorImgage(500,500,(img)->{
+        ImgageHandleUtil.creatorImgage(500,500,(img)->{
 
             //设置字体颜色黑色,宋体,大小20 ,加粗
             img.setColor(Color.BLACK);
@@ -46,12 +49,12 @@ public class ImgageHandleUtilsTest {
 
             //添加一个图片
             try {
-                File file1 = new File(ResourceFileUtil.getAbsolutePath("img"+File.separator+"a.jpg"));
+                File file1 = new File(ResourceFileUtil.getCurrentProjectTargetTestClassAbsolutePath("img"+File.separator+"a.jpg"));
                 BufferedImage sourceImage = ImageIO.read(file1);
                 Image add = sourceImage.getScaledInstance(100, 100, Image.SCALE_DEFAULT);
                 img.drawImage(add,150,200,null);
             } catch (IOException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
             //添加一个空心矩形
             img.setColor(Color.BLUE);
@@ -72,8 +75,8 @@ public class ImgageHandleUtilsTest {
 
     @Test
     public void show4() throws IOException {
-        File file = ResourceFileUtil.getFile("img/a.jpg");
-        ImgageHandleUtils.ImgageWatermark(file,(img)->{
+        File file = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("img/a.jpg");
+        ImgageHandleUtil.ImgageWatermark(file,(img)->{
             //在上面写上淡灰色胡安民
             img.setColor(Color.decode("#eaeef1"));
             Font font = new Font("宋体", Font.BOLD, 20);

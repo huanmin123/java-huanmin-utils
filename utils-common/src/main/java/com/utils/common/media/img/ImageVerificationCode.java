@@ -1,5 +1,7 @@
 package com.utils.common.media.img;
 
+import com.utils.common.base.UniversalException;
+
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -120,7 +122,7 @@ public class ImageVerificationCode {
             ImageIO.write(buffImg, "jpg", sos);
             sos.close();
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 

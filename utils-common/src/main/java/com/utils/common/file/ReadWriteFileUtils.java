@@ -1,5 +1,6 @@
 package com.utils.common.file;
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.container.ArrayByteUtil;
 import lombok.SneakyThrows;
 import org.slf4j.Logger;
@@ -49,7 +50,7 @@ public class ReadWriteFileUtils {
             bw.write(builder.toString());
             builder = new StringBuilder();
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
     
@@ -79,7 +80,7 @@ public class ReadWriteFileUtils {
                 fos.write(data, 0, len); // 写入数据
             }
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         };
     }
     
@@ -118,10 +119,10 @@ public class ReadWriteFileUtils {
                 data = new byte[size]; // 清空数组
             }
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
             return;
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 

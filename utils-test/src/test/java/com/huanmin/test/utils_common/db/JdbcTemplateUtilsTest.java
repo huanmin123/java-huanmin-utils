@@ -1,6 +1,7 @@
 package com.huanmin.test.utils_common.db;
 
-import com.utils.common.db.JdbcTemplateUtil;
+import com.utils.common.base.UniversalException;
+import org.huanmin.jdbc.JdbcTemplateUtil;
 import org.huanmin.jdbc.ConnectionPond;
 import org.huanmin.jdbc.JdbcUtils;
 import org.junit.Test;
@@ -25,7 +26,7 @@ public class JdbcTemplateUtilsTest {
 
             map = JdbcTemplateUtil.jdbcTemplate.queryForMap(sql,"hu");
         } catch (DataAccessException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
         System.out.println(String.valueOf(map));

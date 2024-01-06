@@ -1,5 +1,7 @@
 package com.utils.common.multithreading.queue.delay;
 
+import com.utils.common.base.UniversalException;
+
 import java.util.concurrent.DelayQueue;
 import java.util.function.Consumer;
 
@@ -23,7 +25,7 @@ public class ConsumerDelayed<T> implements Runnable {
                     consumer.accept(take);
                 }
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         }
     }

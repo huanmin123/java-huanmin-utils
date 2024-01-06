@@ -1,8 +1,8 @@
 package com.huanmin.test.utils_common.multithreading.cas;
 
-import com.multithreading.executor.ExecutorUtil;
-import com.multithreading.executor.ThreadFactoryUtil;
-import com.utils.common.multithreading.cas.LongAdderUtils;
+import com.utils.common.multithreading.cas.LongAdderUtil;
+import com.utils.common.multithreading.executor.ExecutorUtil;
+import com.utils.common.multithreading.executor.ThreadFactoryUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +16,7 @@ public class LongAdderUtilsTest {
 
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        LongAdderUtils build = LongAdderUtils.build("da1");
+        LongAdderUtil build = new LongAdderUtil();
         Collection<Future<?>> futures = new LinkedList<Future<?>>();
         for (int i = 0; i < 5; i++) {
             Future<?> future = ExecutorUtil.createFuture(ThreadFactoryUtil.ThreadConfig.TEST,()->{

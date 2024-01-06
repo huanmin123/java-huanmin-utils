@@ -1,5 +1,7 @@
 package com.utils.common.file.condense;
 
+import com.utils.common.base.UniversalException;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
@@ -101,7 +103,7 @@ public class ZipFileUtil {
 
             }
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 

@@ -1,5 +1,6 @@
 package com.huanmin.test.utils_common.multithreading.executor;
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.multithreading.executor.ExecutorUtil;
 import com.utils.common.multithreading.executor.ThreadFactoryUtil;
 import org.junit.Test;
@@ -41,7 +42,7 @@ public class ExecutorTest {
             try {
                 System.out.println(o.get()); //如果某个线程出现异常则抛出异常我们这里可以捕捉到
             } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         });
     }
@@ -66,7 +67,7 @@ public class ExecutorTest {
             Integer test = (Integer) ExecutorUtil.createCompletionServicesOne(ThreadFactoryUtil.ThreadConfig.TEST, callables);
             System.out.println("result:"+test);
         } catch (ExecutionException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
 

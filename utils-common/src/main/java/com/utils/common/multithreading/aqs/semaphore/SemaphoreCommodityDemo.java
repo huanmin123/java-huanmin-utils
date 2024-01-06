@@ -1,5 +1,6 @@
 package com.utils.common.multithreading.aqs.semaphore;
 
+import com.utils.common.base.UniversalException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -63,7 +64,7 @@ public class SemaphoreCommodityDemo {
                 try {
                     System.out.println(semaphoreCommodity.getbuy("computer"));
                 } catch (Exception e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             }).start();
         }

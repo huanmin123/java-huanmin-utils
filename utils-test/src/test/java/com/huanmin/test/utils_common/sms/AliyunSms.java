@@ -8,6 +8,7 @@ import com.aliyuncs.IAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
+import com.utils.common.base.UniversalException;
 import org.junit.Test;
 
 import java.util.Map;
@@ -43,7 +44,7 @@ public class AliyunSms {
                 System.out.println("验证码发送失败");
             }
         } catch (ClientException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
     @Test

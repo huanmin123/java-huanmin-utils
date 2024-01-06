@@ -1,9 +1,11 @@
 package com.huanmin.test.utils_common.multithreading.cas;
 
-import com.function.impl.CodeStartAndStopTimeUtil;
-import com.multithreading.executor.ExecutorUtil;
-import com.multithreading.executor.ThreadFactoryUtil;
-import com.utils.common.multithreading.cas.AtomicStringUtils;
+
+import com.utils.common.base.CodeTimeUtil;
+import com.utils.common.base.UniversalException;
+import com.utils.common.multithreading.cas.AtomicStringUtil;
+import com.utils.common.multithreading.executor.ExecutorUtil;
+import com.utils.common.multithreading.executor.ThreadFactoryUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,8 +18,8 @@ public class AtomicStringUtilsTest {
     private static final Logger logger = LoggerFactory.getLogger(AtomicStringUtilsTest.class);
     public static void main(String[] args) throws Exception {
 
-        CodeStartAndStopTimeUtil.creator(()->{
-            AtomicStringUtils build = AtomicStringUtils.build("da1");
+        CodeTimeUtil.creator(()->{
+            AtomicStringUtil build = new AtomicStringUtil();
             Collection<Future<?>> futures = new LinkedList<Future<?>>();
             for (int i1 = 0; i1 < 5000; i1++) {
                 Future<?> future = ExecutorUtil.createFuture(ThreadFactoryUtil.ThreadConfig.TEST,()->{
@@ -32,7 +34,7 @@ public class AtomicStringUtilsTest {
                 try {
                     future.get();
                 } catch (InterruptedException | ExecutionException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             }
             System.out.println(build.get());

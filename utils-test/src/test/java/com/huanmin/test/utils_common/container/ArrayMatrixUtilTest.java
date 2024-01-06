@@ -1,7 +1,7 @@
 package com.huanmin.test.utils_common.container;
 
 import com.utils.common.container.ArrayMatrixUtil;
-import com.utils.common.container.ArrayContext;
+
 import org.junit.Test;
 
 public class ArrayMatrixUtilTest {
@@ -29,36 +29,37 @@ public class ArrayMatrixUtilTest {
     };
 
     @Test
-    public  void  intToIntegerByMatrix(){
+    public void intToIntegerByMatrix() {
         Integer[][] integers = ArrayMatrixUtil.intToIntegerByMatrix(ints);
-        ArrayMatrixUtil.show( integers);
-    }
-    @Test
-    public  void  doubleToDoubleByMatrix(){
-        Double[][] doubles = ArrayMatrixUtil.doubleToDoubleByMatrix(ints1);
-        ArrayMatrixUtil.show( doubles);
+        ArrayMatrixUtil.show(integers);
     }
 
+    @Test
+    public void doubleToDoubleByMatrix() {
+        Double[][] doubles = ArrayMatrixUtil.doubleToDoubleByMatrix(ints1);
+        ArrayMatrixUtil.show(doubles);
+    }
 
 
     //依据指定的矩阵大小进行按照从左到右从上到下遍历,如果不够那么就自行换行补充
     @Test
-    public  void arrayInsideMatrixByIteration(){
+    public void arrayInsideMatrixByIteration() {
         Integer[][] integers = ArrayMatrixUtil.intToIntegerByMatrix(ints);
         ArrayMatrixUtil.arrayInsideMatrixByIteration(integers, "4*4", (data) -> {
-            ArrayContext<Integer>.ArrayMatrix arrayMatrix = data.getArrayMatrix();
-            ArrayMatrixUtil.show( arrayMatrix.getMatrix());
+            ArrayMatrixUtil.ArrayMatrix<Integer> arrayMatrix = data.getArrayMatrix();
+            ArrayMatrixUtil.show(arrayMatrix.getMatrix());
         });
 
         //--------------------------------------------
         Double[][] doubles = ArrayMatrixUtil.doubleToDoubleByMatrix(ints1);
         ArrayMatrixUtil.arrayInsideMatrixByIteration(doubles, "4*4", (data) -> {
-            ArrayContext<Double>.ArrayMatrix arrayMatrix1 = data.getArrayMatrix();
-            ArrayMatrixUtil.show( arrayMatrix1.getMatrix());
+            ArrayMatrixUtil.ArrayMatrix<Double> arrayMatrix1 = data.getArrayMatrix();
+            ArrayMatrixUtil.show(arrayMatrix1.getMatrix());
         });
     }
+
     @Test
-    public void arrayRowAndColByIteration(){
+    public void arrayRowAndColByIteration() {
 
     }
 }

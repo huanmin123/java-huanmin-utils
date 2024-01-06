@@ -1,6 +1,7 @@
 package com.utils.common.file;
 
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.file.condense.ZipFileUtil;
 import com.utils.common.spring.ContextAttribuesUtils;
 import org.apache.commons.io.IOUtils;
@@ -94,7 +95,7 @@ public class FileWebDownLoad {
 
             outputStream.write(context);
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 

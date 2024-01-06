@@ -10,25 +10,16 @@ import java.util.function.Function;
 
 //最常用的多线程队列,有界和无界  ,无界就是一直可以添加不会被阻塞,有界就是达到界限就会阻塞,直到不满了才继续执行
 public class LinkedBlockingQueueUtil<T> {
-    private LinkedBlockingQueue<T> linkedBlockingQueue;
-
-    private LinkedBlockingQueueUtil(int capacity) {
-        this.linkedBlockingQueue = new LinkedBlockingQueue(capacity);
-    }
-
-    private LinkedBlockingQueueUtil() {
-        this.linkedBlockingQueue = new LinkedBlockingQueue();
-    }
-
+    private final LinkedBlockingQueue<T> linkedBlockingQueue;
     //有界创建
-    public static <T> LinkedBlockingQueueUtil build(int capacity) {
-        return new LinkedBlockingQueueUtil<T>(capacity);
+    public LinkedBlockingQueueUtil(int capacity) {
+        this.linkedBlockingQueue = new LinkedBlockingQueue<T>(capacity);
+    }
+    //无界创建
+    public LinkedBlockingQueueUtil() {
+        this.linkedBlockingQueue = new LinkedBlockingQueue<T>();
     }
 
-    //无界创建
-    public static <T> LinkedBlockingQueueUtil build(String key) {
-        return new LinkedBlockingQueueUtil<T>();
-    }
 
     //如果队列满了，一直阻塞，直到队列不满了或者线程被中断-->阻塞
     public void add(T data) {
@@ -87,8 +78,13 @@ public class LinkedBlockingQueueUtil<T> {
     }
 
     //一直等待获取到为止
-    public T take() throws InterruptedException {
-        return linkedBlockingQueue.take();
+    public T take() {
+        try {
+            return linkedBlockingQueue.take();
+        } catch (InterruptedException e) {
+            UniversalException.logError(e);
+        }
+        return null;
     }
 
 

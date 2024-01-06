@@ -1,4 +1,4 @@
-package com.utils.common.db;
+package org.huanmin.mybaitis;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
  */
 @Component
 @Slf4j
-public class SqlSessionTemplateUtil {
+public class MybaitisTemplateUtil {
 
     @Autowired
     private SqlSessionTemplate sqlSessionTemplate;

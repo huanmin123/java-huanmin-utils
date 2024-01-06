@@ -1,6 +1,7 @@
 package org.huanmin.jdbc;
 
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.multithreading.executor.ExecutorUtil;
 import com.utils.common.multithreading.utils.SleepTools;
 import org.apache.commons.lang.StringUtils;
@@ -23,12 +24,12 @@ public class JdbcUtils {
         try {
             properties.load(is);
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         try {
             Class.forName(properties.getProperty("driver"));
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
 
@@ -125,7 +126,7 @@ public class JdbcUtils {
             }
             resultSet.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         } finally {
             //使用完毕
             connectionPond.setUseFalse();
@@ -149,7 +150,7 @@ public class JdbcUtils {
             ResultSet resultSet = preparedStatement.executeQuery();
             maps = dataGroup(resultSet);
         } catch (SQLException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         } finally {
             //使用完毕
             connectionPond.setUseFalse();
@@ -189,7 +190,7 @@ public class JdbcUtils {
             }
             i1 = preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         } finally {
             //使用完毕
             connectionPond.setUseFalse();
@@ -219,7 +220,7 @@ public class JdbcUtils {
             connectionPond.commit();
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
             //回滚事物
             connectionPond.rollback();
         } finally {

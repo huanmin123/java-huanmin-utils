@@ -1,5 +1,6 @@
 package org.huanmin.jdbc;
 
+import com.utils.common.base.UniversalException;
 import lombok.Data;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -49,7 +50,7 @@ public  class ConnectionPond {
             try {
                 connection.close();
             } catch (SQLException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
             //删除在线程池中的对象
             map.remove(this.getKey());
@@ -69,7 +70,7 @@ public  class ConnectionPond {
             Properties properties = JdbcUtils.getProperties();
             this.connection= DriverManager.getConnection(properties.getProperty("url"),properties.getProperty("username"),properties.getProperty("password"));
         } catch (SQLException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         //创建空闲时间为30分钟(当前时间+30分钟)  如果空闲时间超过30分钟那么就删除连接
         this.localDateTime= LocalDateTime.now().plus(30, ChronoUnit.MINUTES);
@@ -86,7 +87,7 @@ public  class ConnectionPond {
         try {
             getConnection().setAutoCommit(false);
         } catch (SQLException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 
@@ -94,7 +95,7 @@ public  class ConnectionPond {
         try {
             getConnection().commit();
         } catch (SQLException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 
@@ -102,7 +103,7 @@ public  class ConnectionPond {
         try {
             getConnection().rollback();
         } catch (SQLException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 
@@ -110,7 +111,7 @@ public  class ConnectionPond {
         try {
             getConnection().setAutoCommit(true);
         } catch (SQLException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 

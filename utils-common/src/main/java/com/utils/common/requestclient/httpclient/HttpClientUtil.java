@@ -1,6 +1,7 @@
 package com.utils.common.requestclient.httpclient;
 
 import com.alibaba.fastjson.JSON;
+import com.utils.common.base.UniversalException;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.*;
@@ -138,7 +139,7 @@ public class HttpClientUtil implements Serializable {
             HttpEntity entity = httpResponse.getEntity();
             result = EntityUtils.toString(entity);
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return result;
     }
@@ -425,12 +426,12 @@ public class HttpClientUtil implements Serializable {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         } finally {
             try {
                 httpClient.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         }
         return result;
@@ -465,12 +466,12 @@ public class HttpClientUtil implements Serializable {
                 result = EntityUtils.toString(responseEntity, StandardCharsets.UTF_8);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         } finally {
             try {
                 httpClient.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         }
         return result;
@@ -508,12 +509,12 @@ public class HttpClientUtil implements Serializable {
                 result = EntityUtils.toString(responseEntity, StandardCharsets.UTF_8);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         } finally {
             try {
                 httpClient.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         }
         return result;
@@ -551,12 +552,12 @@ public class HttpClientUtil implements Serializable {
                 result = EntityUtils.toString(responseEntity, StandardCharsets.UTF_8);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         } finally {
             try {
                 httpClient.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         }
         return result;
@@ -601,7 +602,7 @@ public class HttpClientUtil implements Serializable {
             fileout.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return "下载成功";
     }
@@ -659,7 +660,7 @@ public class HttpClientUtil implements Serializable {
                         //filename=URLDecoder.decode(param.getValue(),"utf-8");
 //                        filename = param.getValue();
                     } catch (Exception e) {
-                        e.printStackTrace();
+                         UniversalException.logError(e);
                     }
                 }
             }
@@ -708,7 +709,7 @@ public class HttpClientUtil implements Serializable {
             SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslContext);
             return HttpClients.custom().setSSLSocketFactory(sslsf).build();
         } catch (KeyManagementException | KeyStoreException | NoSuchAlgorithmException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return HttpClients.createDefault();
 

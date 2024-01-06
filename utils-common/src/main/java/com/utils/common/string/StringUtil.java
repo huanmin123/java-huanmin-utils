@@ -1,6 +1,7 @@
 package com.utils.common.string;
 
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.file.TransitionFileStreamUtil;
 import info.monitorenter.cpdetector.io.*;
 import lombok.SneakyThrows;
@@ -612,7 +613,7 @@ public static String str_calculate_one(String a, String symbol) {
                 consumer.accept(line);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 

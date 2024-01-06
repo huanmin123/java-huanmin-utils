@@ -3,8 +3,9 @@ package com.huanmin.test.utils_common.json;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.entity.UserData;
-import com.path.ResourceFileUtil;
+
+import com.utils.common.base.ResourceFileUtil;
+import com.utils.common.base.UserData;
 import com.utils.common.json.JsonFastJsonUtil;
 import com.utils.common.json.JsonJacksonUtil;
 import org.junit.Test;
@@ -72,7 +73,7 @@ public class JsonFastJsonUtilTest {
     @Test
     public void test4(){
 
-        String absoluteFilePathAndCreate = ResourceFileUtil.getAbsoluteFileOrDirPathAndCreate("JSON.txt");
+        String absoluteFilePathAndCreate = ResourceFileUtil.getCurrentProjectResourcesAbsolutePath("JSON.txt");
         System.out.println(absoluteFilePathAndCreate);
 
 
@@ -95,7 +96,7 @@ public class JsonFastJsonUtilTest {
     @Test
     public void test5(){
 
-        String absoluteFilePathAndCreate = ResourceFileUtil.getAbsoluteFileOrDirPathAndCreate("JSON.txt");
+        String absoluteFilePathAndCreate = ResourceFileUtil.getCurrentProjectResourcesAbsolutePath("JSON.txt");
         String s = JsonJacksonUtil.readFileJson(new File(absoluteFilePathAndCreate));
 
         System.out.println(s );

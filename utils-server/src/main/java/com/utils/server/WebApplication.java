@@ -1,6 +1,7 @@
 package com.utils.server;
 
 
+import com.utils.common.base.UniversalException;
 import com.utils.dynamic_datasource.config.DynamicDatasourceMainConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
@@ -35,7 +36,7 @@ public class WebApplication {
                     env.getProperty("server.port"),
                     env.getProperty("server.port"));
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
 
     }

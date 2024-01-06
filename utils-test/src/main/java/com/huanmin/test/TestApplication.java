@@ -1,5 +1,6 @@
 package com.huanmin.test;
 
+import com.utils.common.base.UniversalException;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -18,7 +19,7 @@ public class TestApplication {
         try {
             SpringApplication.run(TestApplication.class, args);
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 }

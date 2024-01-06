@@ -1,5 +1,7 @@
 package com.utils.common.file;
 
+import com.utils.common.base.UniversalException;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
@@ -19,7 +21,7 @@ public class ReadFileLineUtil {
                 sb.append(lin).append("\n");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return sb.toString();
 
@@ -38,7 +40,7 @@ public class ReadFileLineUtil {
                 consumer.accept(lin);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         long endTime = System.currentTimeMillis();
     }
@@ -56,7 +58,7 @@ public class ReadFileLineUtil {
                 consumer.accept(lin);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
     
@@ -73,7 +75,7 @@ public class ReadFileLineUtil {
             }
             
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return line;
     }
@@ -103,7 +105,7 @@ public class ReadFileLineUtil {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
     
@@ -135,7 +137,7 @@ public class ReadFileLineUtil {
             consumer.accept(builder);
             builder = new StringBuilder();
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.utils.common.spring;
 
+import com.utils.common.base.UniversalException;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,7 +56,7 @@ public class IPUtil {
                 try {
                     inet = InetAddress.getLocalHost();
                 } catch (UnknownHostException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
                 assert inet != null;
                 ipString= inet.getHostAddress();
@@ -84,13 +85,13 @@ public class IPUtil {
             socket.setSoTimeout(timeOut);
             socket.connect(new InetSocketAddress(host, port));
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
             return false;
         } finally {
             try {
                 socket.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         }
         return true;
@@ -101,9 +102,9 @@ public class IPUtil {
         try {
             return InetAddress.getByName(host).isReachable(timeOut);
         } catch (UnknownHostException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return false;
     }

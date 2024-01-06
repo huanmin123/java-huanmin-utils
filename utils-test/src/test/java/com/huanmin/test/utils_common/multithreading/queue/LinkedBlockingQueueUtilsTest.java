@@ -7,22 +7,13 @@ import org.slf4j.LoggerFactory;
 public class LinkedBlockingQueueUtilsTest {
     private static final Logger logger = LoggerFactory.getLogger(LinkedBlockingQueueUtilsTest.class);
     public static void main(String[] args) {
-        LinkedBlockingQueueUtil build = LinkedBlockingQueueUtil.build("da1");
+        LinkedBlockingQueueUtil<Integer> build = new LinkedBlockingQueueUtil<>();
 
         build.add(1);
         build.add(2);
         build.add(3);
+        Integer take1 = build.take();
+        System.out.println(take1);
 
-//        build.iteration((data)->{
-//            System.out.println(data);
-//            return  false;
-//        },Integer.class);
-
-//        System.out.println(build.getData(Integer.class));
-
-        String dataHandle = build.getDataHandle((data) -> {
-            return "hello:" + data;
-        }, String.class);
-        System.out.println(dataHandle);
     }
 }

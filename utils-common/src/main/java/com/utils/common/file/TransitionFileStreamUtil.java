@@ -1,5 +1,6 @@
 package com.utils.common.file;
 
+import com.utils.common.base.UniversalException;
 import lombok.SneakyThrows;
 
 import java.io.*;
@@ -62,7 +63,7 @@ public class TransitionFileStreamUtil {
         try {
             return new FileInputStream(file);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return null;
     }

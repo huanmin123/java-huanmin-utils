@@ -1,6 +1,7 @@
 package com.utils.common.requestclient.okhttp;
 
 import com.alibaba.fastjson.JSON;
+import com.utils.common.base.UniversalException;
 import okhttp3.*;
 
 import javax.net.ssl.SSLContext;
@@ -135,7 +136,7 @@ public class OkHttpUtil {
                             append("&");
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
             urlBuilder.deleteCharAt(urlBuilder.length() - 1);
         }
@@ -315,7 +316,7 @@ public class OkHttpUtil {
             assert response.body() != null;
             return response.body().bytes();
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
             return null;
         }
     }
@@ -327,7 +328,7 @@ public class OkHttpUtil {
             assert response.body() != null;
             return response.body().byteStream();
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
             return null;
         }
     }
@@ -344,7 +345,7 @@ public class OkHttpUtil {
             assert response.body() != null;
             return response.body().string();
         } catch (IOException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
             return "请求失败：" + e.getMessage();
         }
     }
@@ -373,7 +374,7 @@ public class OkHttpUtil {
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return buffer.toString();
     }
@@ -411,7 +412,7 @@ public class OkHttpUtil {
                     request.addHeader(entry.getKey(), entry.getValue());
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         }
     }
@@ -429,7 +430,7 @@ public class OkHttpUtil {
             sc.init(null, trustAllCerts, new SecureRandom());
             ssfFactory = sc.getSocketFactory();
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return ssfFactory;
     }

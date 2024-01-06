@@ -1,5 +1,7 @@
 package com.utils.common.obj.dynamicbean;
 
+import com.utils.common.base.UniversalException;
+
 import java.lang.instrument.ClassFileTransformer;
 import java.security.ProtectionDomain;
 
@@ -11,7 +13,7 @@ public class ClassTransformer implements ClassFileTransformer {
                 System.out.println("class name: " + className);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
         return null;
     }

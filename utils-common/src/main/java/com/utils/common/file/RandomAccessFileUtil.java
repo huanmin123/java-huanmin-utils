@@ -1,6 +1,7 @@
 package com.utils.common.file;
 
 import com.utils.common.base.NullUtils;
+import com.utils.common.base.UniversalException;
 import com.utils.common.container.ArrayByteUtil;
 
 import java.io.File;
@@ -26,7 +27,7 @@ public class RandomAccessFileUtil {
             r.seek(begin);
             r.read(bytes);
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
     
@@ -103,7 +104,7 @@ public class RandomAccessFileUtil {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
     
@@ -170,7 +171,7 @@ public class RandomAccessFileUtil {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
     

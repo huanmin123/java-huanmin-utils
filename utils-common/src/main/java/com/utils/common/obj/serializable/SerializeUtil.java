@@ -2,6 +2,7 @@ package com.utils.common.obj.serializable;
 
 
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.file.ReadFileBytesUtil;
 import com.utils.common.file.WriteFileBytesUtil;
 
@@ -20,7 +21,7 @@ public class SerializeUtil {
             byte[] bytes = baos.toByteArray();
             return bytes;
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
             System.err.println(e.getMessage());
         }
         return null;

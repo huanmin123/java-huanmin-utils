@@ -1,5 +1,7 @@
 package com.utils.common.multithreading.readwritelock;
 
+import com.utils.common.base.UniversalException;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Lock;
@@ -26,7 +28,7 @@ public class ReadWriteLockUtil {
         try {
             runnable.run();
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         } finally {
             lock1.unlock();
         }
@@ -45,7 +47,7 @@ public class ReadWriteLockUtil {
         try {
             runnable.run();
         } catch (Exception e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         } finally {
             lock1.unlock();
         }

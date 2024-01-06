@@ -1,6 +1,7 @@
 package org.huanmin.timerwheel;
 
 
+import com.utils.common.base.UniversalException;
 import com.utils.common.obj.reflect.AnnotationUtil;
 import com.utils.common.obj.reflect.PackageUtil;
 import org.apache.commons.lang.StringUtils;
@@ -64,7 +65,7 @@ public class TimerContext {
                             return invoke;
                         }, null);
                     } catch (Exception e) {
-                        e.printStackTrace();
+                         UniversalException.logError(e);
                     }
                 }
             }

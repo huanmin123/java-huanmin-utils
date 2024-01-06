@@ -2,14 +2,11 @@ package com.utils.common.multithreading.cas;
 
 
 import com.utils.common.multithreading.utils.SleepTools;
-import org.apache.commons.lang.StringUtils;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicReference;
 
 //AtomicReference的方式是直接替换地址
-public class AtomicStringUtils {
+public class AtomicStringUtil {
 
     private AtomicReference<String> atomicReference; //@TODO
 

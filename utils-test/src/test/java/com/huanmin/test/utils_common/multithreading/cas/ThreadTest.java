@@ -1,8 +1,10 @@
 package com.huanmin.test.utils_common.multithreading.cas;
 
-import com.function.impl.CodeStartAndStopTimeUtil;
-import com.multithreading.executor.ExecutorUtil;
-import com.multithreading.executor.ThreadFactoryUtil;
+
+import com.utils.common.base.CodeTimeUtil;
+import com.utils.common.base.UniversalException;
+import com.utils.common.multithreading.executor.ExecutorUtil;
+import com.utils.common.multithreading.executor.ThreadFactoryUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +17,7 @@ public class ThreadTest {
     private static final Logger logger = LoggerFactory.getLogger(ThreadTest.class);
     public static void main(String[] args) throws Exception {
 
-        CodeStartAndStopTimeUtil.creator(()->{
+        CodeTimeUtil.creator(()->{
             StringBuffer build = new StringBuffer();
             Collection<Future<?>> futures = new LinkedList<Future<?>>();
             for (int i1 = 0; i1 < 5; i1++) {
@@ -33,9 +35,9 @@ public class ThreadTest {
                 try {
                     future.get();
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 } catch (ExecutionException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             }
             System.out.println(String.valueOf(build.length()));
@@ -59,9 +61,9 @@ public class ThreadTest {
 //                try {
 //                    future.get();
 //                } catch (InterruptedException e) {
-//                    e.printStackTrace();
+//                     UniversalException.logError(e);
 //                } catch (ExecutionException e) {
-//                    e.printStackTrace();
+//                     UniversalException.logError(e);
 //                }
 //            }
 //            System.out.println(num);

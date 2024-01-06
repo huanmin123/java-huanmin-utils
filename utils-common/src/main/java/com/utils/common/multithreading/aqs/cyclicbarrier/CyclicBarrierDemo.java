@@ -1,5 +1,7 @@
 package com.utils.common.multithreading.aqs.cyclicbarrier;
 
+import com.utils.common.base.UniversalException;
+
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
@@ -18,7 +20,7 @@ public class CyclicBarrierDemo {
                     //cyclicBarrier.await(10, TimeUnit.SECONDS);
                     System.out.println(Thread.currentThread().getName()+"开始执行");
                 } catch (InterruptedException | BrokenBarrierException e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             }).start();
         }

@@ -1,6 +1,7 @@
 package com.utils.common.encryption.rsa;
 
 
+import com.utils.common.base.UniversalException;
 import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.BadPaddingException;
@@ -71,7 +72,7 @@ public class RSAUtil {
         try {
             keyPairGen = KeyPairGenerator.getInstance("RSA");
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
 
         }
         // 初始化密钥对生成器，密钥大小为96-1024位
@@ -107,7 +108,7 @@ public class RSAUtil {
             cipher.init(Cipher.ENCRYPT_MODE, pubKey);
             outStr = Base64.encodeBase64String(cipher.doFinal(str.getBytes(StandardCharsets.UTF_8)));
         } catch (InvalidKeySpecException | BadPaddingException | IllegalBlockSizeException | InvalidKeyException | NoSuchPaddingException | NoSuchAlgorithmException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
 
         }
         //RSA加密
@@ -136,7 +137,7 @@ public class RSAUtil {
             cipher.init(Cipher.DECRYPT_MODE, priKey);
             outStr = new String(cipher.doFinal(inputByte));
         } catch (InvalidKeySpecException | NoSuchAlgorithmException | NoSuchPaddingException | BadPaddingException | IllegalBlockSizeException | InvalidKeyException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
 
         }
         return outStr;

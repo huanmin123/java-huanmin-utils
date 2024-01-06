@@ -40,7 +40,7 @@ public class ThreadFactoryUtil {
         LinkedTransferQueueUtils("LinkedTransferQueueUtils",20,1000,"LinkedTransferQueueUtils"),
         CustomTimerUtils("CustomTimerUtils",20,1000,"CustomTimerUtils"),
         FIleSliceUploadController("FIleSliceUploadController",20,1000,"FIleSliceUploadController"),
-        SynchronousQueueUtils("SynchronousQueueUtils",20,1000,"SynchronousQueueUtils"),
+        SynchronousQueueUtil("SynchronousQueueUtils",20,1000,"SynchronousQueueUtils"),
         BucketSortUtil("BucketSortUtil",20,1000,"BucketSortUtil"),
         Netty("Netty",20,1000,"Netty");
 

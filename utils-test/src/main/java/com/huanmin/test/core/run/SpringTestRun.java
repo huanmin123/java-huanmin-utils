@@ -46,7 +46,7 @@ public class SpringTestRun  implements ApplicationListener<ContextRefreshedEvent
                 try {
                     method.invoke(bean1);//执行方法
                 } catch (Exception e) {
-                    e.printStackTrace();
+                     UniversalException.logError(e);
                 }
             });
 

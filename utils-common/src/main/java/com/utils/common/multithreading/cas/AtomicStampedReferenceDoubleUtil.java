@@ -2,14 +2,11 @@ package com.utils.common.multithreading.cas;
 
 
 import com.utils.common.multithreading.utils.SleepTools;
-import org.apache.commons.lang.StringUtils;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicStampedReference;
 
 // 防止Aba问题(版本号) 版本戳为int类型。 关心改了几次,比AtomicMarkableReference更加安全,防止在内存中把值改了的情况,因为版本是递增的
-public class AtomicStampedReferenceDoubleUtils {
+public class AtomicStampedReferenceDoubleUtil {
 
     private AtomicStampedReference<Double> atomicStampedReference; //@TODO
 

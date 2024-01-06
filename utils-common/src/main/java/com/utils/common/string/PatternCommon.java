@@ -1,5 +1,6 @@
 package com.utils.common.string;
 
+import com.utils.common.base.UniversalException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -226,7 +227,7 @@ public class PatternCommon {
             try {
                 map.put(field.getName(), String.valueOf(field.get(obj)));//获取属性值填充到map
             } catch (IllegalAccessException e) {
-                e.printStackTrace();
+                 UniversalException.logError(e);
             }
         }
         return renderString(content, map);

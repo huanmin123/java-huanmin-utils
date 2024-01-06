@@ -1,5 +1,7 @@
 package com.utils.common.multithreading.aqs.marriagephaser;
 
+import com.utils.common.base.UniversalException;
+
 import java.util.Random;
 import java.util.concurrent.Phaser;
 import java.util.concurrent.TimeUnit;
@@ -11,7 +13,7 @@ public class MarriagePhaserDemo {
         try {
             TimeUnit.MICROSECONDS.sleep(milli);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+             UniversalException.logError(e);
         }
     }
     
