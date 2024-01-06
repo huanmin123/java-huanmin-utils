@@ -256,6 +256,14 @@
                 <version>2.0.235-1</version>
             </dependency>
 
+
+            <dependency>
+                <groupId>io.gitee.xinsuinian</groupId>
+                <artifactId>log-trace-spring-boot-starter</artifactId>
+                <version>0.0.3</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 

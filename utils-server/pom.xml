@@ -164,6 +164,11 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>io.gitee.xinsuinian</groupId>
+            <artifactId>log-trace-spring-boot-starter</artifactId>
+        </dependency>
+
     </dependencies>
 
 
