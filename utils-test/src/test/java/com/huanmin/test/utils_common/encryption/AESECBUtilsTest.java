@@ -1,7 +1,6 @@
 package com.huanmin.test.utils_common.encryption;
 
-import com.encryption.aes.AESCBCUtils;
-import com.encryption.aes.AESECBUtils;
+
 import com.utils.common.encryption.aes.AESCBCUtil;
 import com.utils.common.encryption.aes.AESECBUtil;
 

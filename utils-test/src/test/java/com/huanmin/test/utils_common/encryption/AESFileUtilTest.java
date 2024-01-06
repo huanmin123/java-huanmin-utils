@@ -45,7 +45,7 @@ public class AESFileUtilTest {
 
     @Test
     public void test3() throws FileNotFoundException {
-        File file = ResourceFileUtil.getFile("mp4/2222.mp4");
+        File file = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("mp4/2222.mp4");
         String absolutePath = file.getAbsolutePath();
         String key = "1234567891234567";
         AESFileUtil.encryption(absolutePath, key, false);
@@ -54,14 +54,14 @@ public class AESFileUtilTest {
     @Test
     public void test5() throws IOException {
         String key = "1234567891234567";
-        File file = ResourceFileUtil.getFile("mp4/2222_encrypt_926-2022eV5qG3jW18mG46sR22sQ-487.mp4");
+        File file = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("mp4/2222_encrypt_926-2022eV5qG3jW18mG46sR22sQ-487.mp4");
         String absolutePath = file.getAbsolutePath();
         AESFileUtil.decrypt(absolutePath, key, false);
     }
 
     @Test
     public void test6() throws FileNotFoundException {
-        File file = ResourceFileUtil.getFile("img/a.jpg");
+        File file = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("img/a.jpg");
         String absolutePath = file.getAbsolutePath();
         String key = "1234567891234567";
         AESFileUtil.encryption(absolutePath, key, false);
@@ -70,7 +70,7 @@ public class AESFileUtilTest {
     @Test
     public void test7() throws IOException {
         String key = "1234567891234567";
-        File file = ResourceFileUtil.getFile("img/a.jpg_encrypt_455-2023xX4xY19pC15yO55lX1wX-5.jpg");
+        File file = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("img/a.jpg_encrypt_455-2023xX4xY19pC15yO55lX1wX-5.jpg");
         String absolutePath = file.getAbsolutePath();
         AESFileUtil.decrypt(absolutePath, key, false);
     }
