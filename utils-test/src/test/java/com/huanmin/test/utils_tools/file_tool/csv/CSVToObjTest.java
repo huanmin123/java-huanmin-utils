@@ -4,8 +4,9 @@ package com.huanmin.test.utils_tools.file_tool.csv;
 import com.huanmin.test.entity.UserEntity;
 import com.utils.common.file.ResourceFileUtil;
 import com.utils.common.base.UserData;
-import com.utils.common.file.csv.CSVToObj;
-import com.utils.common.file.csv.ReadAndWriteFileCSV;
+
+import org.huanmin.file_tool.csv.CSVToObj;
+import org.huanmin.file_tool.csv.ReadAndWriteFileCSV;
 import org.junit.Test;
 
 import java.io.File;

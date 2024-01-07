@@ -2,7 +2,7 @@ package com.huanmin.test.utils_tools.file_tool.email;
 
 
 import com.utils.common.file.ResourceFileUtil;
-import org.huanmin.file_tool.email.MailServiceUtils;
+import org.huanmin.file_tool.email.MailServiceUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ import java.util.Map;
 public class MailServiceTest {
 
     @Autowired
-    private MailServiceUtils mailService;
+    private MailServiceUtil mailService;
 
     @Resource
     private TemplateEngine templateEngine;

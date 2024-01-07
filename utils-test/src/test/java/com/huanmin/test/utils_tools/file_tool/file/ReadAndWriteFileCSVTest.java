@@ -5,8 +5,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.utils.common.base.FakerData;
 import com.utils.common.file.ResourceFileUtil;
 import com.utils.common.base.UserData;
-import com.utils.common.file.csv.ObjToCSV;
-import com.utils.common.file.csv.ReadAndWriteFileCSV;
+
+import org.huanmin.file_tool.csv.ObjToCSV;
+import org.huanmin.file_tool.csv.ReadAndWriteFileCSV;
 import org.junit.Test;
 
 import java.io.File;

@@ -22,34 +22,29 @@
         <dependency>
             <groupId>org.huanmin</groupId>
             <artifactId>utils-server</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
         <!-- es-->
         <dependency>
             <groupId>org.huanmin</groupId>
             <artifactId>elasticsearch</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
         <!--时间伦定时器-->
         <dependency>
             <groupId>org.huanmin</groupId>
             <artifactId>timerwheel</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
 
         <dependency>
             <groupId>org.huanmin</groupId>
             <artifactId>jdbc-extend</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.huanmin</groupId>
             <artifactId>redis</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
 
@@ -57,14 +52,12 @@
         <dependency>
             <groupId>org.huanmin</groupId>
             <artifactId>file-tool</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
 
         <dependency>
             <groupId>org.huanmin</groupId>
             <artifactId>xss</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
 

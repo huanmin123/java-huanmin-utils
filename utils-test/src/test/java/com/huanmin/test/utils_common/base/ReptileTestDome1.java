@@ -1,10 +1,10 @@
 package com.huanmin.test.utils_common.base;
 
-import com.file.WriteFileStrUtil;
-import com.path.ResourceFileUtil;
-import com.reptile.ChromeDriverUtil;
-import com.requestclient.okhttp.OkHttpUtil;
-import com.string.PatternCommon;
+import com.utils.common.base.ChromeDriverUtil;
+import com.utils.common.file.ResourceFileUtil;
+import com.utils.common.file.WriteFileStrUtil;
+import com.utils.common.requestclient.okhttp.OkHttpUtil;
+import com.utils.common.string.PatternCommon;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -184,7 +184,7 @@ public class ReptileTestDome1 {
         }
 
         //将内容按行写入到csv文件中
-        String absoluteFilePathAndCreate = ResourceFileUtil.getAbsoluteFileOrDirPathAndCreate("/weather.csv");
+        String absoluteFilePathAndCreate = ResourceFileUtil.getCurrentProjectTargetTestClassAbsolutePath("/weather.csv");
         WriteFileStrUtil.writeStrCover(new File(absoluteFilePathAndCreate), stringBuilder0.toString());
 
     }

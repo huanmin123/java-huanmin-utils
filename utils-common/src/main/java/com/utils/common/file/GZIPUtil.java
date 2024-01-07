@@ -21,7 +21,7 @@ import java.util.zip.GZIPOutputStream;
 /**
  * 将内容进行gz压缩或者将压缩后的内容输出为gz文件,或者打包为tar.gz压缩文件,和解压缩
  */
-public class GZIPUtils {
+public class GZIPUtil {
     public static final String GZIP_ENCODE_UTF_8 = "UTF-8";
 
     /**

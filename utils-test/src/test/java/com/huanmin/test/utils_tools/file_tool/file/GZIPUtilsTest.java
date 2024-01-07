@@ -1,9 +1,9 @@
 package com.huanmin.test.utils_tools.file_tool.file;
 
 
+import com.utils.common.file.GZIPUtil;
 import com.utils.common.file.ResourceFileUtil;
 import com.utils.common.file.ReadFileBytesUtil;
-import com.utils.common.file.condense.GZIPUtils;
 import lombok.SneakyThrows;
 import org.junit.Test;
 
@@ -19,12 +19,12 @@ public class GZIPUtilsTest {
         File file1 = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("file/DES3DecodeOutput-Java.txt");
         System.out.println(file1.getAbsolutePath());
         File absoluteFileOrDirPathAndCreateNewFile = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("/file/bac.gz");
-        GZIPUtils.writeGzFile(absoluteFileOrDirPathAndCreateNewFile,file1);
+        GZIPUtil.writeGzFile(absoluteFileOrDirPathAndCreateNewFile,file1);
     }
     @Test
     public void read() throws FileNotFoundException {
         File file1 = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("file/bac.gz");
-        GZIPUtils.readGzFile(file1,(len)->{
+        GZIPUtil.readGzFile(file1,(len)->{
             System.out.println(len);
         });
     }
@@ -35,14 +35,14 @@ public class GZIPUtilsTest {
         List<File> file=new ArrayList<>();
         file.add(ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("file/DES3DecodeOutput-Java.txt"));
         file.add(ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("file/DES3EncodeOutput-Java.txt"));
-        GZIPUtils.compressTarGz(file,bac111);
+        GZIPUtil.compressTarGz(file,bac111);
     }
     @SneakyThrows
     @Test
     public void unTarGz(){
         String bac111 = ResourceFileUtil.getCurrentProjectResourcesAbsolutePath("/file/bac111.tar.gz")  ;
         String outbac111 = ResourceFileUtil.getCurrentProjectResourcesAbsolutePath("/file/bac/")  ;
-        GZIPUtils.unTarGz(bac111,outbac111);
+        GZIPUtil.unTarGz(bac111,outbac111);
     }
 
 
@@ -57,7 +57,7 @@ public class GZIPUtilsTest {
         String str = "111111111111111111111111111111111111111111111111111111111111111111111";
 
         File absoluteFileOrDirPathAndCreateNewFile = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("/file/compress.gz");
-        GZIPUtils.compressFileWrite(absoluteFileOrDirPathAndCreateNewFile,str,true);
+        GZIPUtil.compressFileWrite(absoluteFileOrDirPathAndCreateNewFile,str,true);
 
 
     }
@@ -66,7 +66,7 @@ public class GZIPUtilsTest {
     public void compr3ess1(){
         String str = "2222222222222222222222222222222222222222222222222";
         File absoluteFileOrDirPathAndCreateNewFile = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("/file/compress.gz");
-        GZIPUtils.compressFileWrite(absoluteFileOrDirPathAndCreateNewFile,str,true);
+        GZIPUtil.compressFileWrite(absoluteFileOrDirPathAndCreateNewFile,str,true);
 
     }
     @SneakyThrows
@@ -74,7 +74,7 @@ public class GZIPUtilsTest {
     public void compress1(){
         String str = "3333333333333333333333333333333";
         File absoluteFileOrDirPathAndCreateNewFile = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("/file/compress.gz");
-        GZIPUtils.compressFileWrite(absoluteFileOrDirPathAndCreateNewFile,str,true);
+        GZIPUtil.compressFileWrite(absoluteFileOrDirPathAndCreateNewFile,str,true);
 
 
     }
@@ -84,6 +84,6 @@ public class GZIPUtilsTest {
     public void show(){
         File absoluteFileOrDirPathAndCreateNewFile = ResourceFileUtil.getCurrentProjectResourcesAbsoluteFile("/file/compress.gz");
         byte[] bytes = ReadFileBytesUtil.readByte(absoluteFileOrDirPathAndCreateNewFile);
-        System.out.println("解压缩后字符串：" + GZIPUtils.uncompressToString(bytes));
+        System.out.println("解压缩后字符串：" + GZIPUtil.uncompressToString(bytes));
     }
 }
