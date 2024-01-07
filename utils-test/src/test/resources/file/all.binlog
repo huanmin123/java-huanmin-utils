@@ -1,0 +1,1526 @@
+/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=1*/;
+/*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/;
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+DELIMITER /*!*/;
+# at 4
+#220326  6:52:55 server id 2  end_log_pos 124 CRC32 0xdc8f58bc 	Start: binlog v 4, server v 8.0.16 created 220326  6:52:55
+# Warning: this binlog is either in use or was not closed properly.
+# at 124
+#220326  6:52:55 server id 2  end_log_pos 155 CRC32 0x28cf0a06 	Previous-GTIDs
+# [empty]
+# at 155
+#220326  6:53:11 server id 2  end_log_pos 234 CRC32 0x55a1c75a 	Anonymous_GTID	last_committed=0	sequence_number=1	rbr_only=yes	original_committed_timestamp=1648277591428581	immediate_commit_timestamp=1648277591428581	transaction_length=363
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648277591428581 (2022-03-26 06:53:11.428581 UTC)
+# immediate_commit_timestamp=1648277591428581 (2022-03-26 06:53:11.428581 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648277591428581*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 234
+#220326  6:53:11 server id 2  end_log_pos 311 CRC32 0x4a7b7b4b 	Query	thread_id=13	exec_time=0	error_code=0
+SET TIMESTAMP=1648277591/*!*/;
+SET @@session.pseudo_thread_id=13/*!*/;
+SET @@session.foreign_key_checks=1, @@session.sql_auto_is_null=0, @@session.unique_checks=1, @@session.autocommit=1/*!*/;
+SET @@session.sql_mode=1168113696/*!*/;
+SET @@session.auto_increment_increment=1, @@session.auto_increment_offset=1/*!*/;
+/*!\C utf8mb4 *//*!*/;
+SET @@session.character_set_client=255,@@session.collation_connection=255,@@session.collation_server=46/*!*/;
+SET @@session.lc_time_names=0/*!*/;
+SET @@session.collation_database=DEFAULT/*!*/;
+/*!80011 SET @@session.default_collation_for_utf8mb4=255*//*!*/;
+BEGIN
+/*!*/;
+# at 311
+#220326  6:53:11 server id 2  end_log_pos 383 CRC32 0x0846f174 	Table_map: `voidme`.`t_user` mapped to number 98
+# at 383
+#220326  6:53:11 server id 2  end_log_pos 487 CRC32 0x5981ca32 	Delete_rows: table id 98 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_user`
+### WHERE
+###   @1=13
+###   @2='uh'
+###   @3='cfa4e145a550cb21ad63d2a9d416717b'
+###   @4='17632242222'
+###   @5=0
+###   @6='2021-10-25 01:30:14'
+###   @7='uh'
+# at 487
+#220326  6:53:11 server id 2  end_log_pos 518 CRC32 0x6b624395 	Xid = 198
+COMMIT/*!*/;
+# at 518
+#220326  6:58:02 server id 2  end_log_pos 597 CRC32 0x5fddee69 	Anonymous_GTID	last_committed=1	sequence_number=2	rbr_only=yes	original_committed_timestamp=1648277882703184	immediate_commit_timestamp=1648277882703184	transaction_length=335
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648277882703184 (2022-03-26 06:58:02.703184 UTC)
+# immediate_commit_timestamp=1648277882703184 (2022-03-26 06:58:02.703184 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648277882703184*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 597
+#220326  6:58:02 server id 2  end_log_pos 674 CRC32 0x7f26ff8c 	Query	thread_id=13	exec_time=0	error_code=0
+SET TIMESTAMP=1648277882/*!*/;
+BEGIN
+/*!*/;
+# at 674
+#220326  6:58:02 server id 2  end_log_pos 746 CRC32 0xc482704c 	Table_map: `voidme`.`t_user` mapped to number 98
+# at 746
+#220326  6:58:02 server id 2  end_log_pos 822 CRC32 0xb3324056 	Write_rows: table id 98 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_user`
+### SET
+###   @1=55
+###   @2='xxx'
+###   @3='asdadasdasd'
+###   @4='1111'
+###   @5=1
+###   @6='2022-03-26 14:57:58'
+###   @7='1'
+# at 822
+#220326  6:58:02 server id 2  end_log_pos 853 CRC32 0x646a39ce 	Xid = 207
+COMMIT/*!*/;
+# at 853
+#220326  7:01:07 server id 2  end_log_pos 932 CRC32 0xab2839f8 	Anonymous_GTID	last_committed=2	sequence_number=3	rbr_only=yes	original_committed_timestamp=1648278067798079	immediate_commit_timestamp=1648278067798079	transaction_length=388
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648278067798079 (2022-03-26 07:01:07.798079 UTC)
+# immediate_commit_timestamp=1648278067798079 (2022-03-26 07:01:07.798079 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648278067798079*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 932
+#220326  7:01:07 server id 2  end_log_pos 1018 CRC32 0x5259212a 	Query	thread_id=13	exec_time=0	error_code=0
+SET TIMESTAMP=1648278067/*!*/;
+BEGIN
+/*!*/;
+# at 1018
+#220326  7:01:07 server id 2  end_log_pos 1090 CRC32 0x0461be6b 	Table_map: `voidme`.`t_user` mapped to number 98
+# at 1090
+#220326  7:01:07 server id 2  end_log_pos 1210 CRC32 0x721172fd 	Update_rows: table id 98 flags: STMT_END_F
+### UPDATE `voidme`.`t_user`
+### WHERE
+###   @1=55
+###   @2='xxx'
+###   @3='asdadasdasd'
+###   @4='1111'
+###   @5=1
+###   @6='2022-03-26 14:57:58'
+###   @7='1'
+### SET
+###   @1=55
+###   @2='hu123'
+###   @3='asdadasdasd'
+###   @4='2222'
+###   @5=1
+###   @6='2022-03-26 14:57:58'
+###   @7='0'
+# at 1210
+#220326  7:01:07 server id 2  end_log_pos 1241 CRC32 0xf6b1f2d3 	Xid = 217
+COMMIT/*!*/;
+# at 1241
+#220326  7:22:51 server id 2  end_log_pos 1318 CRC32 0x780afffc 	Anonymous_GTID	last_committed=3	sequence_number=4	rbr_only=no	original_committed_timestamp=1648279371400010	immediate_commit_timestamp=1648279371400010	transaction_length=250
+# original_commit_timestamp=1648279371400010 (2022-03-26 07:22:51.400010 UTC)
+# immediate_commit_timestamp=1648279371400010 (2022-03-26 07:22:51.400010 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648279371400010*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 1318
+#220326  7:22:51 server id 2  end_log_pos 1491 CRC32 0xb9f1b9c3 	Query	thread_id=16	exec_time=0	error_code=0	Xid = 250
+use `voidme`/*!*/;
+SET TIMESTAMP=1648279371/*!*/;
+/*!80013 SET @@session.sql_require_primary_key=0*//*!*/;
+ALTER TABLE `voidme`.`t_user` 
+ADD COLUMN `test` varchar(255) NULL AFTER `email`
+/*!*/;
+# at 1491
+#220326  7:26:46 server id 2  end_log_pos 1570 CRC32 0x96522901 	Anonymous_GTID	last_committed=4	sequence_number=5	rbr_only=no	original_committed_timestamp=1648279606921346	immediate_commit_timestamp=1648279606921346	transaction_length=314
+# original_commit_timestamp=1648279606921346 (2022-03-26 07:26:46.921346 UTC)
+# immediate_commit_timestamp=1648279606921346 (2022-03-26 07:26:46.921346 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648279606921346*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 1570
+#220326  7:26:46 server id 2  end_log_pos 1805 CRC32 0x5a15ca3f 	Query	thread_id=16	exec_time=0	error_code=0	Xid = 289
+SET TIMESTAMP=1648279606/*!*/;
+/*!80013 SET @@session.sql_require_primary_key=0*//*!*/;
+ALTER TABLE `voidme`.`t_user` 
+MODIFY COLUMN `test` char(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL AFTER `email`
+/*!*/;
+# at 1805
+#220326  9:11:14 server id 2  end_log_pos 1884 CRC32 0x1ee0b7f9 	Anonymous_GTID	last_committed=5	sequence_number=6	rbr_only=yes	original_committed_timestamp=1648285874766003	immediate_commit_timestamp=1648285874766003	transaction_length=340
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648285874766003 (2022-03-26 09:11:14.766003 UTC)
+# immediate_commit_timestamp=1648285874766003 (2022-03-26 09:11:14.766003 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648285874766003*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 1884
+#220326  9:11:14 server id 2  end_log_pos 1961 CRC32 0x30a05703 	Query	thread_id=16	exec_time=0	error_code=0
+SET TIMESTAMP=1648285874/*!*/;
+BEGIN
+/*!*/;
+# at 1961
+#220326  9:11:14 server id 2  end_log_pos 2036 CRC32 0xe3a03bb2 	Table_map: `voidme`.`t_user` mapped to number 107
+# at 2036
+#220326  9:11:14 server id 2  end_log_pos 2114 CRC32 0x999aea23 	Delete_rows: table id 107 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_user`
+### WHERE
+###   @1=55
+###   @2='hu123'
+###   @3='asdadasdasd'
+###   @4='2222'
+###   @5=1
+###   @6='2022-03-26 14:57:58'
+###   @7='0'
+###   @8=NULL
+# at 2114
+#220326  9:11:14 server id 2  end_log_pos 2145 CRC32 0xe1c91228 	Xid = 705
+COMMIT/*!*/;
+# at 2145
+#220326  9:14:45 server id 2  end_log_pos 2224 CRC32 0x6accc2ee 	Anonymous_GTID	last_committed=6	sequence_number=7	rbr_only=no	original_committed_timestamp=1648286085646012	immediate_commit_timestamp=1648286085646012	transaction_length=301
+# original_commit_timestamp=1648286085646012 (2022-03-26 09:14:45.646012 UTC)
+# immediate_commit_timestamp=1648286085646012 (2022-03-26 09:14:45.646012 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648286085646012*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 2224
+#220326  9:14:45 server id 2  end_log_pos 2446 CRC32 0x69fba803 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 778
+SET TIMESTAMP=1648286085/*!*/;
+/*!80013 SET @@session.sql_require_primary_key=0*//*!*/;
+ALTER TABLE `voidme`.`t_user` 
+DROP INDEX `username`,
+ADD UNIQUE INDEX `username`(`username`, `password`, `ustatus`) USING BTREE
+/*!*/;
+# at 2446
+#220326  9:15:14 server id 2  end_log_pos 2523 CRC32 0x508d273c 	Anonymous_GTID	last_committed=7	sequence_number=8	rbr_only=no	original_committed_timestamp=1648286114177908	immediate_commit_timestamp=1648286114177908	transaction_length=222
+# original_commit_timestamp=1648286114177908 (2022-03-26 09:15:14.177908 UTC)
+# immediate_commit_timestamp=1648286114177908 (2022-03-26 09:15:14.177908 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648286114177908*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 2523
+#220326  9:15:14 server id 2  end_log_pos 2668 CRC32 0x48e584bb 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 882
+SET TIMESTAMP=1648286114/*!*/;
+/*!80013 SET @@session.sql_require_primary_key=0*//*!*/;
+ALTER TABLE `voidme`.`t_user` 
+DROP INDEX `username`
+/*!*/;
+# at 2668
+#220326  9:45:55 server id 2  end_log_pos 2747 CRC32 0x0b984258 	Anonymous_GTID	last_committed=8	sequence_number=9	rbr_only=yes	original_committed_timestamp=1648287955132673	immediate_commit_timestamp=1648287955132673	transaction_length=338
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648287955132673 (2022-03-26 09:45:55.132673 UTC)
+# immediate_commit_timestamp=1648287955132673 (2022-03-26 09:45:55.132673 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648287955132673*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 2747
+#220326  9:45:55 server id 2  end_log_pos 2824 CRC32 0x388f0160 	Query	thread_id=16	exec_time=0	error_code=0
+SET TIMESTAMP=1648287955/*!*/;
+BEGIN
+/*!*/;
+# at 2824
+#220326  9:45:55 server id 2  end_log_pos 2899 CRC32 0xf04e33df 	Table_map: `voidme`.`t_user` mapped to number 109
+# at 2899
+#220326  9:45:55 server id 2  end_log_pos 2975 CRC32 0xc5f21e16 	Write_rows: table id 109 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_user`
+### SET
+###   @1=55
+###   @2='xxx'
+###   @3='asdadasdasd'
+###   @4='1111'
+###   @5=1
+###   @6='2022-03-26 14:57:58'
+###   @7='1'
+###   @8=NULL
+# at 2975
+#220326  9:45:55 server id 2  end_log_pos 3006 CRC32 0x903de788 	Xid = 1226
+COMMIT/*!*/;
+# at 3006
+#220326 10:16:10 server id 2  end_log_pos 3085 CRC32 0x3cc1bd11 	Anonymous_GTID	last_committed=9	sequence_number=10	rbr_only=yes	original_committed_timestamp=1648289770658991	immediate_commit_timestamp=1648289770658991	transaction_length=366
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648289770658991 (2022-03-26 10:16:10.658991 UTC)
+# immediate_commit_timestamp=1648289770658991 (2022-03-26 10:16:10.658991 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648289770658991*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 3085
+#220326 10:16:10 server id 2  end_log_pos 3162 CRC32 0x989d9b91 	Query	thread_id=16	exec_time=0	error_code=0
+SET TIMESTAMP=1648289770/*!*/;
+BEGIN
+/*!*/;
+# at 3162
+#220326 10:16:10 server id 2  end_log_pos 3237 CRC32 0x2d152c5b 	Table_map: `voidme`.`t_user` mapped to number 109
+# at 3237
+#220326 10:16:10 server id 2  end_log_pos 3341 CRC32 0x0f8a2db1 	Write_rows: table id 109 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_user`
+### SET
+###   @1=13
+###   @2='uh'
+###   @3='cfa4e145a550cb21ad63d2a9d416717b'
+###   @4='17632242222'
+###   @5=0
+###   @6='2021-10-25 01:30:14'
+###   @7='uh'
+###   @8=NULL
+# at 3341
+#220326 10:16:10 server id 2  end_log_pos 3372 CRC32 0x652da359 	Xid = 1423
+COMMIT/*!*/;
+# at 3372
+#220326 11:13:06 server id 2  end_log_pos 3451 CRC32 0x87f68314 	Anonymous_GTID	last_committed=10	sequence_number=11	rbr_only=yes	original_committed_timestamp=1648293186868966	immediate_commit_timestamp=1648293186868966	transaction_length=366
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293186868966 (2022-03-26 11:13:06.868966 UTC)
+# immediate_commit_timestamp=1648293186868966 (2022-03-26 11:13:06.868966 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293186868966*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 3451
+#220326 11:13:06 server id 2  end_log_pos 3528 CRC32 0x65d781fb 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293186/*!*/;
+BEGIN
+/*!*/;
+# at 3528
+#220326 11:13:06 server id 2  end_log_pos 3603 CRC32 0x281bc7b4 	Table_map: `voidme`.`t_user` mapped to number 109
+# at 3603
+#220326 11:13:06 server id 2  end_log_pos 3707 CRC32 0xa2965277 	Delete_rows: table id 109 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_user`
+### WHERE
+###   @1=13
+###   @2='uh'
+###   @3='cfa4e145a550cb21ad63d2a9d416717b'
+###   @4='17632242222'
+###   @5=0
+###   @6='2021-10-25 01:30:14'
+###   @7='uh'
+###   @8=NULL
+# at 3707
+#220326 11:13:06 server id 2  end_log_pos 3738 CRC32 0x59349e67 	Xid = 1705
+COMMIT/*!*/;
+# at 3738
+#220326 11:13:32 server id 2  end_log_pos 3817 CRC32 0x44f1d8f9 	Anonymous_GTID	last_committed=11	sequence_number=12	rbr_only=yes	original_committed_timestamp=1648293212125269	immediate_commit_timestamp=1648293212125269	transaction_length=366
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293212125269 (2022-03-26 11:13:32.125269 UTC)
+# immediate_commit_timestamp=1648293212125269 (2022-03-26 11:13:32.125269 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293212125269*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 3817
+#220326 11:13:32 server id 2  end_log_pos 3894 CRC32 0xee49b286 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293212/*!*/;
+BEGIN
+/*!*/;
+# at 3894
+#220326 11:13:32 server id 2  end_log_pos 3969 CRC32 0xc6b77bce 	Table_map: `voidme`.`t_user` mapped to number 109
+# at 3969
+#220326 11:13:32 server id 2  end_log_pos 4073 CRC32 0x7fe8485b 	Write_rows: table id 109 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_user`
+### SET
+###   @1=13
+###   @2='uh'
+###   @3='cfa4e145a550cb21ad63d2a9d416717b'
+###   @4='17632242222'
+###   @5=0
+###   @6='2021-10-25 01:30:14'
+###   @7='uh'
+###   @8=NULL
+# at 4073
+#220326 11:13:32 server id 2  end_log_pos 4104 CRC32 0x7b350d52 	Xid = 1708
+COMMIT/*!*/;
+# at 4104
+#220326 11:15:29 server id 2  end_log_pos 4183 CRC32 0xa27402ed 	Anonymous_GTID	last_committed=12	sequence_number=13	rbr_only=yes	original_committed_timestamp=1648293329148765	immediate_commit_timestamp=1648293329148765	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293329148765 (2022-03-26 11:15:29.148765 UTC)
+# immediate_commit_timestamp=1648293329148765 (2022-03-26 11:15:29.148765 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293329148765*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 4183
+#220326 11:15:29 server id 2  end_log_pos 4260 CRC32 0x637cf4f9 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293329/*!*/;
+BEGIN
+/*!*/;
+# at 4260
+#220326 11:15:29 server id 2  end_log_pos 4327 CRC32 0x94d24732 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 4327
+#220326 11:15:29 server id 2  end_log_pos 4375 CRC32 0x9dec8003 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=3
+###   @2=4
+###   @3=2
+# at 4375
+#220326 11:15:29 server id 2  end_log_pos 4406 CRC32 0x7127acf2 	Xid = 1753
+COMMIT/*!*/;
+# at 4406
+#220326 11:15:29 server id 2  end_log_pos 4485 CRC32 0x8cf15e8f 	Anonymous_GTID	last_committed=13	sequence_number=14	rbr_only=yes	original_committed_timestamp=1648293329150935	immediate_commit_timestamp=1648293329150935	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293329150935 (2022-03-26 11:15:29.150935 UTC)
+# immediate_commit_timestamp=1648293329150935 (2022-03-26 11:15:29.150935 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293329150935*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 4485
+#220326 11:15:29 server id 2  end_log_pos 4562 CRC32 0x98a1ec48 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293329/*!*/;
+BEGIN
+/*!*/;
+# at 4562
+#220326 11:15:29 server id 2  end_log_pos 4629 CRC32 0xe2d3a1cc 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 4629
+#220326 11:15:29 server id 2  end_log_pos 4677 CRC32 0xe9c04f81 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=4
+###   @2=4
+###   @3=3
+# at 4677
+#220326 11:15:29 server id 2  end_log_pos 4708 CRC32 0x8407c8ef 	Xid = 1754
+COMMIT/*!*/;
+# at 4708
+#220326 11:15:29 server id 2  end_log_pos 4787 CRC32 0x19abc506 	Anonymous_GTID	last_committed=14	sequence_number=15	rbr_only=yes	original_committed_timestamp=1648293329152437	immediate_commit_timestamp=1648293329152437	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293329152437 (2022-03-26 11:15:29.152437 UTC)
+# immediate_commit_timestamp=1648293329152437 (2022-03-26 11:15:29.152437 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293329152437*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 4787
+#220326 11:15:29 server id 2  end_log_pos 4864 CRC32 0xaa5dedfa 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293329/*!*/;
+BEGIN
+/*!*/;
+# at 4864
+#220326 11:15:29 server id 2  end_log_pos 4931 CRC32 0x5551ad52 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 4931
+#220326 11:15:29 server id 2  end_log_pos 4979 CRC32 0x1c703bc8 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=5
+###   @2=4
+###   @3=4
+# at 4979
+#220326 11:15:29 server id 2  end_log_pos 5010 CRC32 0x04e506e5 	Xid = 1755
+COMMIT/*!*/;
+# at 5010
+#220326 11:20:52 server id 2  end_log_pos 5089 CRC32 0x423a1b11 	Anonymous_GTID	last_committed=15	sequence_number=16	rbr_only=yes	original_committed_timestamp=1648293652278277	immediate_commit_timestamp=1648293652278277	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293652278277 (2022-03-26 11:20:52.278277 UTC)
+# immediate_commit_timestamp=1648293652278277 (2022-03-26 11:20:52.278277 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293652278277*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 5089
+#220326 11:20:52 server id 2  end_log_pos 5166 CRC32 0x0c68bb58 	Query	thread_id=16	exec_time=0	error_code=0
+SET TIMESTAMP=1648293652/*!*/;
+BEGIN
+/*!*/;
+# at 5166
+#220326 11:20:52 server id 2  end_log_pos 5233 CRC32 0xe69f8685 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 5233
+#220326 11:20:52 server id 2  end_log_pos 5281 CRC32 0x20f1ecdb 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=3
+###   @2=4
+###   @3=2
+# at 5281
+#220326 11:20:52 server id 2  end_log_pos 5312 CRC32 0x945c7e27 	Xid = 1871
+COMMIT/*!*/;
+# at 5312
+#220326 11:21:18 server id 2  end_log_pos 5391 CRC32 0x064b245c 	Anonymous_GTID	last_committed=16	sequence_number=17	rbr_only=yes	original_committed_timestamp=1648293678455738	immediate_commit_timestamp=1648293678455738	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293678455738 (2022-03-26 11:21:18.455738 UTC)
+# immediate_commit_timestamp=1648293678455738 (2022-03-26 11:21:18.455738 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293678455738*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 5391
+#220326 11:21:18 server id 2  end_log_pos 5468 CRC32 0x0a589ce9 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293678/*!*/;
+BEGIN
+/*!*/;
+# at 5468
+#220326 11:21:18 server id 2  end_log_pos 5535 CRC32 0x271e59c9 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 5535
+#220326 11:21:18 server id 2  end_log_pos 5583 CRC32 0xf818db43 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=3
+###   @2=4
+###   @3=2
+# at 5583
+#220326 11:21:18 server id 2  end_log_pos 5614 CRC32 0x9264e7f7 	Xid = 1888
+COMMIT/*!*/;
+# at 5614
+#220326 11:25:45 server id 2  end_log_pos 5693 CRC32 0x6957d296 	Anonymous_GTID	last_committed=17	sequence_number=18	rbr_only=yes	original_committed_timestamp=1648293945821213	immediate_commit_timestamp=1648293945821213	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293945821213 (2022-03-26 11:25:45.821213 UTC)
+# immediate_commit_timestamp=1648293945821213 (2022-03-26 11:25:45.821213 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293945821213*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 5693
+#220326 11:25:45 server id 2  end_log_pos 5770 CRC32 0x9651fd5d 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293945/*!*/;
+BEGIN
+/*!*/;
+# at 5770
+#220326 11:25:45 server id 2  end_log_pos 5837 CRC32 0x4f2b71f0 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 5837
+#220326 11:25:45 server id 2  end_log_pos 5885 CRC32 0xe3180252 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=3
+###   @2=4
+###   @3=2
+# at 5885
+#220326 11:25:45 server id 2  end_log_pos 5916 CRC32 0xd14c9673 	Xid = 1984
+COMMIT/*!*/;
+# at 5916
+#220326 11:25:45 server id 2  end_log_pos 5995 CRC32 0x41f43fb8 	Anonymous_GTID	last_committed=18	sequence_number=19	rbr_only=yes	original_committed_timestamp=1648293945822375	immediate_commit_timestamp=1648293945822375	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293945822375 (2022-03-26 11:25:45.822375 UTC)
+# immediate_commit_timestamp=1648293945822375 (2022-03-26 11:25:45.822375 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293945822375*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 5995
+#220326 11:25:45 server id 2  end_log_pos 6072 CRC32 0x9caf93be 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293945/*!*/;
+BEGIN
+/*!*/;
+# at 6072
+#220326 11:25:45 server id 2  end_log_pos 6139 CRC32 0x1c42d0a0 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 6139
+#220326 11:25:45 server id 2  end_log_pos 6187 CRC32 0x470e6e39 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=4
+###   @2=4
+###   @3=3
+# at 6187
+#220326 11:25:45 server id 2  end_log_pos 6218 CRC32 0xe55fc3f3 	Xid = 1985
+COMMIT/*!*/;
+# at 6218
+#220326 11:25:45 server id 2  end_log_pos 6297 CRC32 0xd477b128 	Anonymous_GTID	last_committed=19	sequence_number=20	rbr_only=yes	original_committed_timestamp=1648293945823287	immediate_commit_timestamp=1648293945823287	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293945823287 (2022-03-26 11:25:45.823287 UTC)
+# immediate_commit_timestamp=1648293945823287 (2022-03-26 11:25:45.823287 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293945823287*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 6297
+#220326 11:25:45 server id 2  end_log_pos 6374 CRC32 0xe1477929 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293945/*!*/;
+BEGIN
+/*!*/;
+# at 6374
+#220326 11:25:45 server id 2  end_log_pos 6441 CRC32 0xc70e8975 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 6441
+#220326 11:25:45 server id 2  end_log_pos 6489 CRC32 0x863981f6 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=5
+###   @2=4
+###   @3=4
+# at 6489
+#220326 11:25:45 server id 2  end_log_pos 6520 CRC32 0xfcfe9d8c 	Xid = 1986
+COMMIT/*!*/;
+# at 6520
+#220326 11:26:13 server id 2  end_log_pos 6599 CRC32 0xce480c0b 	Anonymous_GTID	last_committed=20	sequence_number=21	rbr_only=yes	original_committed_timestamp=1648293973400787	immediate_commit_timestamp=1648293973400787	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293973400787 (2022-03-26 11:26:13.400787 UTC)
+# immediate_commit_timestamp=1648293973400787 (2022-03-26 11:26:13.400787 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293973400787*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 6599
+#220326 11:26:13 server id 2  end_log_pos 6676 CRC32 0x8c726094 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293973/*!*/;
+BEGIN
+/*!*/;
+# at 6676
+#220326 11:26:13 server id 2  end_log_pos 6743 CRC32 0x594b1638 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 6743
+#220326 11:26:13 server id 2  end_log_pos 6791 CRC32 0xa2c54816 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=3
+###   @2=4
+###   @3=2
+# at 6791
+#220326 11:26:13 server id 2  end_log_pos 6822 CRC32 0x40bbdb78 	Xid = 1994
+COMMIT/*!*/;
+# at 6822
+#220326 11:26:13 server id 2  end_log_pos 6901 CRC32 0x59b8bb1c 	Anonymous_GTID	last_committed=21	sequence_number=22	rbr_only=yes	original_committed_timestamp=1648293973403190	immediate_commit_timestamp=1648293973403190	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293973403190 (2022-03-26 11:26:13.403190 UTC)
+# immediate_commit_timestamp=1648293973403190 (2022-03-26 11:26:13.403190 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293973403190*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 6901
+#220326 11:26:13 server id 2  end_log_pos 6978 CRC32 0x41e8d853 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293973/*!*/;
+BEGIN
+/*!*/;
+# at 6978
+#220326 11:26:13 server id 2  end_log_pos 7045 CRC32 0x398ae308 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 7045
+#220326 11:26:13 server id 2  end_log_pos 7093 CRC32 0xa6bc6527 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=4
+###   @2=4
+###   @3=3
+# at 7093
+#220326 11:26:13 server id 2  end_log_pos 7124 CRC32 0x5a86758b 	Xid = 1995
+COMMIT/*!*/;
+# at 7124
+#220326 11:26:13 server id 2  end_log_pos 7203 CRC32 0xfc0cd989 	Anonymous_GTID	last_committed=22	sequence_number=23	rbr_only=yes	original_committed_timestamp=1648293973404527	immediate_commit_timestamp=1648293973404527	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293973404527 (2022-03-26 11:26:13.404527 UTC)
+# immediate_commit_timestamp=1648293973404527 (2022-03-26 11:26:13.404527 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293973404527*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 7203
+#220326 11:26:13 server id 2  end_log_pos 7280 CRC32 0xe7cfacd7 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293973/*!*/;
+BEGIN
+/*!*/;
+# at 7280
+#220326 11:26:13 server id 2  end_log_pos 7347 CRC32 0xffd1acb0 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 7347
+#220326 11:26:13 server id 2  end_log_pos 7395 CRC32 0xd2da7ffd 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=5
+###   @2=4
+###   @3=4
+# at 7395
+#220326 11:26:13 server id 2  end_log_pos 7426 CRC32 0xac1ccc86 	Xid = 1996
+COMMIT/*!*/;
+# at 7426
+#220326 11:26:18 server id 2  end_log_pos 7505 CRC32 0x239affae 	Anonymous_GTID	last_committed=23	sequence_number=24	rbr_only=yes	original_committed_timestamp=1648293978993651	immediate_commit_timestamp=1648293978993651	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293978993651 (2022-03-26 11:26:18.993651 UTC)
+# immediate_commit_timestamp=1648293978993651 (2022-03-26 11:26:18.993651 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293978993651*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 7505
+#220326 11:26:18 server id 2  end_log_pos 7582 CRC32 0x4756e925 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293978/*!*/;
+BEGIN
+/*!*/;
+# at 7582
+#220326 11:26:18 server id 2  end_log_pos 7649 CRC32 0xb565835f 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 7649
+#220326 11:26:18 server id 2  end_log_pos 7697 CRC32 0x30e2c497 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=3
+###   @2=4
+###   @3=2
+# at 7697
+#220326 11:26:18 server id 2  end_log_pos 7728 CRC32 0xeea293da 	Xid = 2003
+COMMIT/*!*/;
+# at 7728
+#220326 11:26:18 server id 2  end_log_pos 7807 CRC32 0x02b3f168 	Anonymous_GTID	last_committed=24	sequence_number=25	rbr_only=yes	original_committed_timestamp=1648293978994698	immediate_commit_timestamp=1648293978994698	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293978994698 (2022-03-26 11:26:18.994698 UTC)
+# immediate_commit_timestamp=1648293978994698 (2022-03-26 11:26:18.994698 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293978994698*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 7807
+#220326 11:26:18 server id 2  end_log_pos 7884 CRC32 0xc5f86cbe 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293978/*!*/;
+BEGIN
+/*!*/;
+# at 7884
+#220326 11:26:18 server id 2  end_log_pos 7951 CRC32 0x6ab160f5 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 7951
+#220326 11:26:18 server id 2  end_log_pos 7999 CRC32 0x9645817a 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=4
+###   @2=4
+###   @3=3
+# at 7999
+#220326 11:26:18 server id 2  end_log_pos 8030 CRC32 0x7eb799ef 	Xid = 2004
+COMMIT/*!*/;
+# at 8030
+#220326 11:26:18 server id 2  end_log_pos 8109 CRC32 0xcff9692a 	Anonymous_GTID	last_committed=25	sequence_number=26	rbr_only=yes	original_committed_timestamp=1648293978995607	immediate_commit_timestamp=1648293978995607	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648293978995607 (2022-03-26 11:26:18.995607 UTC)
+# immediate_commit_timestamp=1648293978995607 (2022-03-26 11:26:18.995607 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648293978995607*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 8109
+#220326 11:26:18 server id 2  end_log_pos 8186 CRC32 0x52aa34e3 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648293978/*!*/;
+BEGIN
+/*!*/;
+# at 8186
+#220326 11:26:18 server id 2  end_log_pos 8253 CRC32 0x02eb4d92 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 8253
+#220326 11:26:18 server id 2  end_log_pos 8301 CRC32 0x70fe62e3 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=5
+###   @2=4
+###   @3=4
+# at 8301
+#220326 11:26:18 server id 2  end_log_pos 8332 CRC32 0xd70241b9 	Xid = 2005
+COMMIT/*!*/;
+# at 8332
+#220326 11:27:45 server id 2  end_log_pos 8411 CRC32 0xa52a1e6d 	Anonymous_GTID	last_committed=26	sequence_number=27	rbr_only=yes	original_committed_timestamp=1648294065557012	immediate_commit_timestamp=1648294065557012	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648294065557012 (2022-03-26 11:27:45.557012 UTC)
+# immediate_commit_timestamp=1648294065557012 (2022-03-26 11:27:45.557012 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648294065557012*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 8411
+#220326 11:27:45 server id 2  end_log_pos 8488 CRC32 0x1077487b 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648294065/*!*/;
+BEGIN
+/*!*/;
+# at 8488
+#220326 11:27:45 server id 2  end_log_pos 8555 CRC32 0xccfcd661 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 8555
+#220326 11:27:45 server id 2  end_log_pos 8603 CRC32 0x4499e689 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=3
+###   @2=4
+###   @3=2
+# at 8603
+#220326 11:27:45 server id 2  end_log_pos 8634 CRC32 0x7b0fda16 	Xid = 2013
+COMMIT/*!*/;
+# at 8634
+#220326 11:27:45 server id 2  end_log_pos 8713 CRC32 0x86b136d1 	Anonymous_GTID	last_committed=27	sequence_number=28	rbr_only=yes	original_committed_timestamp=1648294065559688	immediate_commit_timestamp=1648294065559688	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648294065559688 (2022-03-26 11:27:45.559688 UTC)
+# immediate_commit_timestamp=1648294065559688 (2022-03-26 11:27:45.559688 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648294065559688*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 8713
+#220326 11:27:45 server id 2  end_log_pos 8790 CRC32 0xd91b3015 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648294065/*!*/;
+BEGIN
+/*!*/;
+# at 8790
+#220326 11:27:45 server id 2  end_log_pos 8857 CRC32 0x35a51f8c 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 8857
+#220326 11:27:45 server id 2  end_log_pos 8905 CRC32 0x30b5290b 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=4
+###   @2=4
+###   @3=3
+# at 8905
+#220326 11:27:45 server id 2  end_log_pos 8936 CRC32 0x8e2fbe0b 	Xid = 2014
+COMMIT/*!*/;
+# at 8936
+#220326 11:27:45 server id 2  end_log_pos 9015 CRC32 0xfc262211 	Anonymous_GTID	last_committed=28	sequence_number=29	rbr_only=yes	original_committed_timestamp=1648294065562019	immediate_commit_timestamp=1648294065562019	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648294065562019 (2022-03-26 11:27:45.562019 UTC)
+# immediate_commit_timestamp=1648294065562019 (2022-03-26 11:27:45.562019 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648294065562019*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 9015
+#220326 11:27:45 server id 2  end_log_pos 9092 CRC32 0x50333fb4 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648294065/*!*/;
+BEGIN
+/*!*/;
+# at 9092
+#220326 11:27:45 server id 2  end_log_pos 9159 CRC32 0x7889c91c 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 9159
+#220326 11:27:45 server id 2  end_log_pos 9207 CRC32 0xb23a1bca 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=5
+###   @2=4
+###   @3=4
+# at 9207
+#220326 11:27:45 server id 2  end_log_pos 9238 CRC32 0x40e7686f 	Xid = 2015
+COMMIT/*!*/;
+# at 9238
+#220326 11:27:47 server id 2  end_log_pos 9317 CRC32 0xfaaf7d8a 	Anonymous_GTID	last_committed=29	sequence_number=30	rbr_only=yes	original_committed_timestamp=1648294067120110	immediate_commit_timestamp=1648294067120110	transaction_length=532
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648294067120110 (2022-03-26 11:27:47.120110 UTC)
+# immediate_commit_timestamp=1648294067120110 (2022-03-26 11:27:47.120110 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648294067120110*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 9317
+#220326 11:27:47 server id 2  end_log_pos 9394 CRC32 0x5f51c3d3 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648294067/*!*/;
+BEGIN
+/*!*/;
+# at 9394
+#220326 11:27:47 server id 2  end_log_pos 9461 CRC32 0x62e33e1b 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 9461
+#220326 11:27:47 server id 2  end_log_pos 9509 CRC32 0xaeb52c5a 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=3
+###   @2=4
+###   @3=2
+# at 9509
+#220326 11:27:47 server id 2  end_log_pos 9576 CRC32 0x6a4b9904 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 9576
+#220326 11:27:47 server id 2  end_log_pos 9624 CRC32 0xd7144f58 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=4
+###   @2=4
+###   @3=3
+# at 9624
+#220326 11:27:47 server id 2  end_log_pos 9691 CRC32 0xe508f718 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 9691
+#220326 11:27:47 server id 2  end_log_pos 9739 CRC32 0x76a1db71 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=5
+###   @2=4
+###   @3=4
+# at 9739
+#220326 11:27:47 server id 2  end_log_pos 9770 CRC32 0x62487893 	Xid = 2018
+COMMIT/*!*/;
+# at 9770
+#220326 11:35:11 server id 2  end_log_pos 9849 CRC32 0x69a72bdc 	Anonymous_GTID	last_committed=30	sequence_number=31	rbr_only=yes	original_committed_timestamp=1648294511517204	immediate_commit_timestamp=1648294511517204	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648294511517204 (2022-03-26 11:35:11.517204 UTC)
+# immediate_commit_timestamp=1648294511517204 (2022-03-26 11:35:11.517204 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648294511517204*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 9849
+#220326 11:35:11 server id 2  end_log_pos 9926 CRC32 0x6c27630f 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648294511/*!*/;
+BEGIN
+/*!*/;
+# at 9926
+#220326 11:35:11 server id 2  end_log_pos 9993 CRC32 0x7448f4cc 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 9993
+#220326 11:35:11 server id 2  end_log_pos 10041 CRC32 0xbace62a5 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=3
+###   @2=4
+###   @3=2
+# at 10041
+#220326 11:35:11 server id 2  end_log_pos 10072 CRC32 0x98464fa4 	Xid = 2038
+COMMIT/*!*/;
+# at 10072
+#220326 11:35:11 server id 2  end_log_pos 10151 CRC32 0x8ff9b196 	Anonymous_GTID	last_committed=31	sequence_number=32	rbr_only=yes	original_committed_timestamp=1648294511519978	immediate_commit_timestamp=1648294511519978	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648294511519978 (2022-03-26 11:35:11.519978 UTC)
+# immediate_commit_timestamp=1648294511519978 (2022-03-26 11:35:11.519978 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648294511519978*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 10151
+#220326 11:35:11 server id 2  end_log_pos 10228 CRC32 0x66d90dec 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648294511/*!*/;
+BEGIN
+/*!*/;
+# at 10228
+#220326 11:35:11 server id 2  end_log_pos 10295 CRC32 0xe95a0c64 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 10295
+#220326 11:35:11 server id 2  end_log_pos 10343 CRC32 0x4bb7daca 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=4
+###   @2=4
+###   @3=3
+# at 10343
+#220326 11:35:11 server id 2  end_log_pos 10374 CRC32 0x1c7febf0 	Xid = 2039
+COMMIT/*!*/;
+# at 10374
+#220326 11:35:11 server id 2  end_log_pos 10453 CRC32 0x7d485dd2 	Anonymous_GTID	last_committed=32	sequence_number=33	rbr_only=yes	original_committed_timestamp=1648294511521921	immediate_commit_timestamp=1648294511521921	transaction_length=302
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648294511521921 (2022-03-26 11:35:11.521921 UTC)
+# immediate_commit_timestamp=1648294511521921 (2022-03-26 11:35:11.521921 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648294511521921*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 10453
+#220326 11:35:11 server id 2  end_log_pos 10530 CRC32 0x4b4a086f 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648294511/*!*/;
+BEGIN
+/*!*/;
+# at 10530
+#220326 11:35:11 server id 2  end_log_pos 10597 CRC32 0x238f6dfd 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 10597
+#220326 11:35:11 server id 2  end_log_pos 10645 CRC32 0x94b04481 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=5
+###   @2=4
+###   @3=4
+# at 10645
+#220326 11:35:11 server id 2  end_log_pos 10676 CRC32 0x5271a0c0 	Xid = 2040
+COMMIT/*!*/;
+# at 10676
+#220326 11:40:45 server id 2  end_log_pos 10755 CRC32 0x902427ea 	Anonymous_GTID	last_committed=33	sequence_number=34	rbr_only=yes	original_committed_timestamp=1648294845297188	immediate_commit_timestamp=1648294845297188	transaction_length=532
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648294845297188 (2022-03-26 11:40:45.297188 UTC)
+# immediate_commit_timestamp=1648294845297188 (2022-03-26 11:40:45.297188 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648294845297188*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 10755
+#220326 11:40:45 server id 2  end_log_pos 10832 CRC32 0x65fa49cd 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648294845/*!*/;
+BEGIN
+/*!*/;
+# at 10832
+#220326 11:40:45 server id 2  end_log_pos 10899 CRC32 0xcd164afc 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 10899
+#220326 11:40:45 server id 2  end_log_pos 10947 CRC32 0xace1f3b2 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=3
+###   @2=4
+###   @3=2
+# at 10947
+#220326 11:40:45 server id 2  end_log_pos 11014 CRC32 0x3f1037ed 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 11014
+#220326 11:40:45 server id 2  end_log_pos 11062 CRC32 0x91070df2 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=4
+###   @2=4
+###   @3=3
+# at 11062
+#220326 11:40:45 server id 2  end_log_pos 11129 CRC32 0x250cb325 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 11129
+#220326 11:40:45 server id 2  end_log_pos 11177 CRC32 0x38b3590f 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=5
+###   @2=4
+###   @3=4
+# at 11177
+#220326 11:40:45 server id 2  end_log_pos 11208 CRC32 0xa096fec4 	Xid = 2047
+COMMIT/*!*/;
+# at 11208
+#220326 12:14:40 server id 2  end_log_pos 11287 CRC32 0x080eaac2 	Anonymous_GTID	last_committed=34	sequence_number=35	rbr_only=yes	original_committed_timestamp=1648296880551901	immediate_commit_timestamp=1648296880551901	transaction_length=366
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648296880551901 (2022-03-26 12:14:40.551901 UTC)
+# immediate_commit_timestamp=1648296880551901 (2022-03-26 12:14:40.551901 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648296880551901*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 11287
+#220326 12:14:40 server id 2  end_log_pos 11364 CRC32 0x3de373a7 	Query	thread_id=16	exec_time=0	error_code=0
+SET TIMESTAMP=1648296880/*!*/;
+BEGIN
+/*!*/;
+# at 11364
+#220326 12:14:40 server id 2  end_log_pos 11439 CRC32 0xa80c9c0f 	Table_map: `voidme`.`t_user` mapped to number 109
+# at 11439
+#220326 12:14:40 server id 2  end_log_pos 11543 CRC32 0x70bb08f9 	Delete_rows: table id 109 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_user`
+### WHERE
+###   @1=13
+###   @2='uh'
+###   @3='cfa4e145a550cb21ad63d2a9d416717b'
+###   @4='17632242222'
+###   @5=0
+###   @6='2021-10-25 01:30:14'
+###   @7='uh'
+###   @8=NULL
+# at 11543
+#220326 12:14:40 server id 2  end_log_pos 11574 CRC32 0xec1bdec0 	Xid = 2230
+COMMIT/*!*/;
+# at 11574
+#220326 12:37:00 server id 2  end_log_pos 11653 CRC32 0xdce5808d 	Anonymous_GTID	last_committed=35	sequence_number=36	rbr_only=yes	original_committed_timestamp=1648298220539695	immediate_commit_timestamp=1648298220539695	transaction_length=391
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648298220539695 (2022-03-26 12:37:00.539695 UTC)
+# immediate_commit_timestamp=1648298220539695 (2022-03-26 12:37:00.539695 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648298220539695*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 11653
+#220326 12:37:00 server id 2  end_log_pos 11739 CRC32 0xd2aa41c2 	Query	thread_id=16	exec_time=0	error_code=0
+SET TIMESTAMP=1648298220/*!*/;
+BEGIN
+/*!*/;
+# at 11739
+#220326 12:37:00 server id 2  end_log_pos 11814 CRC32 0x53dcaa9c 	Table_map: `voidme`.`t_user` mapped to number 109
+# at 11814
+#220326 12:37:00 server id 2  end_log_pos 11934 CRC32 0xfb39149b 	Update_rows: table id 109 flags: STMT_END_F
+### UPDATE `voidme`.`t_user`
+### WHERE
+###   @1=55
+###   @2='xxx'
+###   @3='asdadasdasd'
+###   @4='1111'
+###   @5=1
+###   @6='2022-03-26 14:57:58'
+###   @7='1'
+###   @8=NULL
+### SET
+###   @1=55
+###   @2='hu123'
+###   @3='asdadasdasd'
+###   @4='2222'
+###   @5=1
+###   @6='2022-03-26 14:57:58'
+###   @7='0'
+###   @8=NULL
+# at 11934
+#220326 12:37:00 server id 2  end_log_pos 11965 CRC32 0x1cba74ce 	Xid = 2409
+COMMIT/*!*/;
+# at 11965
+#220326 13:37:41 server id 2  end_log_pos 12044 CRC32 0x484d06e1 	Anonymous_GTID	last_committed=36	sequence_number=37	rbr_only=no	original_committed_timestamp=1648301861293095	immediate_commit_timestamp=1648301861293095	transaction_length=256
+# original_commit_timestamp=1648301861293095 (2022-03-26 13:37:41.293095 UTC)
+# immediate_commit_timestamp=1648301861293095 (2022-03-26 13:37:41.293095 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648301861293095*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 12044
+#220326 13:37:41 server id 2  end_log_pos 12221 CRC32 0xaa1cae62 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 2863
+SET TIMESTAMP=1648301861/*!*/;
+/*!80013 SET @@session.sql_require_primary_key=0*//*!*/;
+CREATE TABLE `voidme`.`test`  (
+  `a` varchar(255) NULL,
+  `b` varchar(255) NULL
+)
+/*!*/;
+# at 12221
+#220326 13:37:52 server id 2  end_log_pos 12298 CRC32 0xee52de0b 	Anonymous_GTID	last_committed=37	sequence_number=38	rbr_only=no	original_committed_timestamp=1648301872777994	immediate_commit_timestamp=1648301872777994	transaction_length=213
+# original_commit_timestamp=1648301872777994 (2022-03-26 13:37:52.777994 UTC)
+# immediate_commit_timestamp=1648301872777994 (2022-03-26 13:37:52.777994 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648301872777994*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 12298
+#220326 13:37:52 server id 2  end_log_pos 12434 CRC32 0xa1855a57 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 2879
+SET TIMESTAMP=1648301872/*!*/;
+/*!80013 SET @@session.sql_require_primary_key=0*//*!*/;
+ALTER TABLE `voidme`.`test` 
+ADD INDEX(`a`)
+/*!*/;
+# at 12434
+#220326 13:37:57 server id 2  end_log_pos 12511 CRC32 0x3eff1d26 	Anonymous_GTID	last_committed=38	sequence_number=39	rbr_only=no	original_committed_timestamp=1648301877485559	immediate_commit_timestamp=1648301877485559	transaction_length=210
+# original_commit_timestamp=1648301877485559 (2022-03-26 13:37:57.485559 UTC)
+# immediate_commit_timestamp=1648301877485559 (2022-03-26 13:37:57.485559 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648301877485559*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 12511
+#220326 13:37:57 server id 2  end_log_pos 12644 CRC32 0x3fa54a6f 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 2895
+SET TIMESTAMP=1648301877/*!*/;
+DROP TABLE `test` /* generated by server */
+/*!*/;
+# at 12644
+#220326 14:52:53 server id 2  end_log_pos 12721 CRC32 0x7984fa47 	Anonymous_GTID	last_committed=39	sequence_number=40	rbr_only=no	original_committed_timestamp=1648306373657963	immediate_commit_timestamp=1648306373657963	transaction_length=245
+# original_commit_timestamp=1648306373657963 (2022-03-26 14:52:53.657963 UTC)
+# immediate_commit_timestamp=1648306373657963 (2022-03-26 14:52:53.657963 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648306373657963*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 12721
+#220326 14:52:53 server id 2  end_log_pos 12889 CRC32 0xec5252d4 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 3021
+SET TIMESTAMP=1648306373/*!*/;
+/*!80013 SET @@session.sql_require_primary_key=0*//*!*/;
+CREATE TABLE `test`  (
+  `a` varchar(255) NULL,
+  `b` varchar(255) NULL
+)
+/*!*/;
+# at 12889
+#220326 14:52:53 server id 2  end_log_pos 12966 CRC32 0x2e401ced 	Anonymous_GTID	last_committed=40	sequence_number=41	rbr_only=no	original_committed_timestamp=1648306373663062	immediate_commit_timestamp=1648306373663062	transaction_length=204
+# original_commit_timestamp=1648306373663062 (2022-03-26 14:52:53.663062 UTC)
+# immediate_commit_timestamp=1648306373663062 (2022-03-26 14:52:53.663062 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648306373663062*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 12966
+#220326 14:52:53 server id 2  end_log_pos 13093 CRC32 0x78a76116 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 3022
+SET TIMESTAMP=1648306373/*!*/;
+/*!80013 SET @@session.sql_require_primary_key=0*//*!*/;
+ALTER TABLE `test` 
+ADD INDEX(`a`)
+/*!*/;
+# at 13093
+#220326 14:53:16 server id 2  end_log_pos 13170 CRC32 0x0aa0c33b 	Anonymous_GTID	last_committed=41	sequence_number=42	rbr_only=no	original_committed_timestamp=1648306396798642	immediate_commit_timestamp=1648306396798642	transaction_length=210
+# original_commit_timestamp=1648306396798642 (2022-03-26 14:53:16.798642 UTC)
+# immediate_commit_timestamp=1648306396798642 (2022-03-26 14:53:16.798642 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648306396798642*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 13170
+#220326 14:53:16 server id 2  end_log_pos 13303 CRC32 0x0adb6d6a 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 3032
+SET TIMESTAMP=1648306396/*!*/;
+DROP TABLE `test` /* generated by server */
+/*!*/;
+# at 13303
+#220326 14:53:47 server id 2  end_log_pos 13382 CRC32 0x86636d59 	Anonymous_GTID	last_committed=42	sequence_number=43	rbr_only=no	original_committed_timestamp=1648306427472655	immediate_commit_timestamp=1648306427472655	transaction_length=256
+# original_commit_timestamp=1648306427472655 (2022-03-26 14:53:47.472655 UTC)
+# immediate_commit_timestamp=1648306427472655 (2022-03-26 14:53:47.472655 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648306427472655*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 13382
+#220326 14:53:47 server id 2  end_log_pos 13559 CRC32 0x860f15bf 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 3039
+SET TIMESTAMP=1648306427/*!*/;
+/*!80013 SET @@session.sql_require_primary_key=0*//*!*/;
+CREATE TABLE `voidme`.`test`  (
+  `a` varchar(255) NULL,
+  `b` varchar(255) NULL
+)
+/*!*/;
+# at 13559
+#220326 14:53:47 server id 2  end_log_pos 13636 CRC32 0x2df8d60f 	Anonymous_GTID	last_committed=43	sequence_number=44	rbr_only=no	original_committed_timestamp=1648306427480987	immediate_commit_timestamp=1648306427480987	transaction_length=213
+# original_commit_timestamp=1648306427480987 (2022-03-26 14:53:47.480987 UTC)
+# immediate_commit_timestamp=1648306427480987 (2022-03-26 14:53:47.480987 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648306427480987*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 13636
+#220326 14:53:47 server id 2  end_log_pos 13772 CRC32 0xc280e729 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 3040
+SET TIMESTAMP=1648306427/*!*/;
+/*!80013 SET @@session.sql_require_primary_key=0*//*!*/;
+ALTER TABLE `voidme`.`test` 
+ADD INDEX(`a`)
+/*!*/;
+# at 13772
+#220326 15:30:48 server id 2  end_log_pos 13851 CRC32 0x68699ba3 	Anonymous_GTID	last_committed=44	sequence_number=45	rbr_only=no	original_committed_timestamp=1648308648501938	immediate_commit_timestamp=1648308648501938	transaction_length=313
+# original_commit_timestamp=1648308648501938 (2022-03-26 15:30:48.501938 UTC)
+# immediate_commit_timestamp=1648308648501938 (2022-03-26 15:30:48.501938 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648308648501938*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 13851
+#220326 15:30:48 server id 2  end_log_pos 14085 CRC32 0xbeb8ae9c 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 3505
+SET TIMESTAMP=1648308648/*!*/;
+/*!80013 SET @@session.sql_require_primary_key=0*//*!*/;
+ALTER TABLE `voidme`.`t_user`  MODIFY COLUMN `test` char(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL AFTER `email`
+/*!*/;
+# at 14085
+#220326 15:30:48 server id 2  end_log_pos 14164 CRC32 0xcf4484d3 	Anonymous_GTID	last_committed=45	sequence_number=46	rbr_only=yes	original_committed_timestamp=1648308648513379	immediate_commit_timestamp=1648308648513379	transaction_length=3356
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648308648513379 (2022-03-26 15:30:48.513379 UTC)
+# immediate_commit_timestamp=1648308648513379 (2022-03-26 15:30:48.513379 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648308648513379*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 14164
+#220326 15:30:48 server id 2  end_log_pos 14241 CRC32 0x6ac4bd25 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648308648/*!*/;
+BEGIN
+/*!*/;
+# at 14241
+#220326 15:30:48 server id 2  end_log_pos 14316 CRC32 0x9c0cd33a 	Table_map: `voidme`.`t_user` mapped to number 125
+# at 14316
+#220326 15:30:48 server id 2  end_log_pos 14420 CRC32 0x059e5223 	Write_rows: table id 125 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_user`
+### SET
+###   @1=13
+###   @2='uh'
+###   @3='cfa4e145a550cb21ad63d2a9d416717b'
+###   @4='17632242222'
+###   @5=0
+###   @6='2021-10-25 01:30:14'
+###   @7='uh'
+###   @8=NULL
+# at 14420
+#220326 15:30:48 server id 2  end_log_pos 14487 CRC32 0x021bf592 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 14487
+#220326 15:30:48 server id 2  end_log_pos 14535 CRC32 0xd4e1e92e 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=3
+###   @2=4
+###   @3=2
+# at 14535
+#220326 15:30:48 server id 2  end_log_pos 14602 CRC32 0x0ab3528d 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 14602
+#220326 15:30:48 server id 2  end_log_pos 14650 CRC32 0x9e3851e6 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=4
+###   @2=4
+###   @3=3
+# at 14650
+#220326 15:30:48 server id 2  end_log_pos 14717 CRC32 0xea010c4b 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 14717
+#220326 15:30:48 server id 2  end_log_pos 14765 CRC32 0x40b34393 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=5
+###   @2=4
+###   @3=4
+# at 14765
+#220326 15:30:48 server id 2  end_log_pos 14832 CRC32 0x43dd361a 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 14832
+#220326 15:30:48 server id 2  end_log_pos 14880 CRC32 0x7b610282 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=3
+###   @2=4
+###   @3=2
+# at 14880
+#220326 15:30:48 server id 2  end_log_pos 14947 CRC32 0xda5e4bc8 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 14947
+#220326 15:30:48 server id 2  end_log_pos 14995 CRC32 0x76d939a8 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=3
+###   @2=4
+###   @3=2
+# at 14995
+#220326 15:30:48 server id 2  end_log_pos 15062 CRC32 0xfb597d70 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 15062
+#220326 15:30:48 server id 2  end_log_pos 15110 CRC32 0x66dd8f0d 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=3
+###   @2=4
+###   @3=2
+# at 15110
+#220326 15:30:48 server id 2  end_log_pos 15177 CRC32 0x20e2efcc 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 15177
+#220326 15:30:48 server id 2  end_log_pos 15225 CRC32 0x139b74eb 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=4
+###   @2=4
+###   @3=3
+# at 15225
+#220326 15:30:48 server id 2  end_log_pos 15292 CRC32 0xb9571000 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 15292
+#220326 15:30:48 server id 2  end_log_pos 15340 CRC32 0xd0dfb73c 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=5
+###   @2=4
+###   @3=4
+# at 15340
+#220326 15:30:48 server id 2  end_log_pos 15407 CRC32 0x7027db5d 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 15407
+#220326 15:30:48 server id 2  end_log_pos 15455 CRC32 0xa213df12 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=3
+###   @2=4
+###   @3=2
+# at 15455
+#220326 15:30:48 server id 2  end_log_pos 15522 CRC32 0xd9fbe10c 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 15522
+#220326 15:30:48 server id 2  end_log_pos 15570 CRC32 0x32402d61 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=4
+###   @2=4
+###   @3=3
+# at 15570
+#220326 15:30:48 server id 2  end_log_pos 15637 CRC32 0xa4b7cd04 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 15637
+#220326 15:30:48 server id 2  end_log_pos 15685 CRC32 0xd0abdc1c 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=5
+###   @2=4
+###   @3=4
+# at 15685
+#220326 15:30:48 server id 2  end_log_pos 15752 CRC32 0x23474508 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 15752
+#220326 15:30:48 server id 2  end_log_pos 15800 CRC32 0x493211a6 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=3
+###   @2=4
+###   @3=2
+# at 15800
+#220326 15:30:48 server id 2  end_log_pos 15867 CRC32 0xbea276c9 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 15867
+#220326 15:30:48 server id 2  end_log_pos 15915 CRC32 0x22d17fb3 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=4
+###   @2=4
+###   @3=3
+# at 15915
+#220326 15:30:48 server id 2  end_log_pos 15982 CRC32 0x896553bf 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 15982
+#220326 15:30:48 server id 2  end_log_pos 16030 CRC32 0xe619a005 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=5
+###   @2=4
+###   @3=4
+# at 16030
+#220326 15:30:48 server id 2  end_log_pos 16097 CRC32 0xf3aa5c4d 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 16097
+#220326 15:30:48 server id 2  end_log_pos 16145 CRC32 0xb8c5f6a6 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=3
+###   @2=4
+###   @3=2
+# at 16145
+#220326 15:30:48 server id 2  end_log_pos 16212 CRC32 0x5df545e6 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 16212
+#220326 15:30:48 server id 2  end_log_pos 16260 CRC32 0xb1d7cf4d 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=4
+###   @2=4
+###   @3=3
+# at 16260
+#220326 15:30:48 server id 2  end_log_pos 16327 CRC32 0x8eef4f40 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 16327
+#220326 15:30:48 server id 2  end_log_pos 16375 CRC32 0x42672b5b 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=5
+###   @2=4
+###   @3=4
+# at 16375
+#220326 15:30:48 server id 2  end_log_pos 16442 CRC32 0x2ba4df96 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 16442
+#220326 15:30:48 server id 2  end_log_pos 16490 CRC32 0xd7cbc734 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=3
+###   @2=4
+###   @3=2
+# at 16490
+#220326 15:30:48 server id 2  end_log_pos 16557 CRC32 0x85e9b837 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 16557
+#220326 15:30:48 server id 2  end_log_pos 16605 CRC32 0xc49a331c 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=4
+###   @2=4
+###   @3=3
+# at 16605
+#220326 15:30:48 server id 2  end_log_pos 16672 CRC32 0xa36dad75 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 16672
+#220326 15:30:48 server id 2  end_log_pos 16720 CRC32 0xa2ffd85b 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=5
+###   @2=4
+###   @3=4
+# at 16720
+#220326 15:30:48 server id 2  end_log_pos 16787 CRC32 0x2c2ec369 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 16787
+#220326 15:30:48 server id 2  end_log_pos 16835 CRC32 0x629d052c 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=3
+###   @2=4
+###   @3=2
+# at 16835
+#220326 15:30:48 server id 2  end_log_pos 16902 CRC32 0x1be9e61f 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 16902
+#220326 15:30:48 server id 2  end_log_pos 16950 CRC32 0x27ba3d7c 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=4
+###   @2=4
+###   @3=3
+# at 16950
+#220326 15:30:48 server id 2  end_log_pos 17017 CRC32 0x01f562d7 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 17017
+#220326 15:30:48 server id 2  end_log_pos 17065 CRC32 0x8e0e6981 	Delete_rows: table id 110 flags: STMT_END_F
+### DELETE FROM `voidme`.`t_role_permission`
+### WHERE
+###   @1=5
+###   @2=4
+###   @3=4
+# at 17065
+#220326 15:30:48 server id 2  end_log_pos 17132 CRC32 0x7cab30d5 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 17132
+#220326 15:30:48 server id 2  end_log_pos 17180 CRC32 0x53d03979 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=3
+###   @2=4
+###   @3=2
+# at 17180
+#220326 15:30:48 server id 2  end_log_pos 17247 CRC32 0x7cb071da 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 17247
+#220326 15:30:48 server id 2  end_log_pos 17295 CRC32 0x7c927274 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=4
+###   @2=4
+###   @3=3
+# at 17295
+#220326 15:30:48 server id 2  end_log_pos 17362 CRC32 0xd56c4b8b 	Table_map: `voidme`.`t_role_permission` mapped to number 110
+# at 17362
+#220326 15:30:48 server id 2  end_log_pos 17410 CRC32 0x93b5d303 	Write_rows: table id 110 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission`
+### SET
+###   @1=5
+###   @2=4
+###   @3=4
+# at 17410
+#220326 15:30:48 server id 2  end_log_pos 17441 CRC32 0x1c4b64fe 	Xid = 3506
+COMMIT/*!*/;
+# at 17441
+#220326 15:30:48 server id 2  end_log_pos 17518 CRC32 0x163956ed 	Anonymous_GTID	last_committed=46	sequence_number=47	rbr_only=no	original_committed_timestamp=1648308648520813	immediate_commit_timestamp=1648308648520813	transaction_length=212
+# original_commit_timestamp=1648308648520813 (2022-03-26 15:30:48.520813 UTC)
+# immediate_commit_timestamp=1648308648520813 (2022-03-26 15:30:48.520813 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648308648520813*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 17518
+#220326 15:30:48 server id 2  end_log_pos 17653 CRC32 0x66524b33 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 3540
+SET TIMESTAMP=1648308648/*!*/;
+/*!80013 SET @@session.sql_require_primary_key=0*//*!*/;
+ALTER TABLE `voidme`.`test`  ADD INDEX(`a`)
+/*!*/;
+# at 17653
+#220326 15:32:07 server id 2  end_log_pos 17732 CRC32 0x1720929c 	Anonymous_GTID	last_committed=47	sequence_number=48	rbr_only=no	original_committed_timestamp=1648308727691345	immediate_commit_timestamp=1648308727691345	transaction_length=548
+# original_commit_timestamp=1648308727691345 (2022-03-26 15:32:07.691345 UTC)
+# immediate_commit_timestamp=1648308727691345 (2022-03-26 15:32:07.691345 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648308727691345*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 17732
+#220326 15:32:07 server id 2  end_log_pos 18201 CRC32 0x35ce13cf 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 3651
+SET TIMESTAMP=1648308727/*!*/;
+SET @@session.foreign_key_checks=0/*!*/;
+/*!80013 SET @@session.sql_require_primary_key=0*//*!*/;
+CREATE TABLE `t_role_permission_copy1` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_id` int(11) DEFAULT NULL COMMENT '角色id',
+  `permission_id` int(11) DEFAULT NULL COMMENT '资源id',
+  PRIMARY KEY (`id`),
+  KEY `role_id` (`role_id`,`permission_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='角色和权限关联表'
+/*!*/;
+# at 18201
+#220326 15:32:07 server id 2  end_log_pos 18280 CRC32 0xded80232 	Anonymous_GTID	last_committed=48	sequence_number=49	rbr_only=yes	original_committed_timestamp=1648308727693232	immediate_commit_timestamp=1648308727693232	transaction_length=373
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=1648308727693232 (2022-03-26 15:32:07.693232 UTC)
+# immediate_commit_timestamp=1648308727693232 (2022-03-26 15:32:07.693232 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648308727693232*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 18280
+#220326 15:32:07 server id 2  end_log_pos 18357 CRC32 0x43bc8b65 	Query	thread_id=18	exec_time=0	error_code=0
+SET TIMESTAMP=1648308727/*!*/;
+BEGIN
+/*!*/;
+# at 18357
+#220326 15:32:07 server id 2  end_log_pos 18430 CRC32 0x91ad60b2 	Table_map: `voidme`.`t_role_permission_copy1` mapped to number 128
+# at 18430
+#220326 15:32:07 server id 2  end_log_pos 18543 CRC32 0xfbf042f7 	Write_rows: table id 128 flags: STMT_END_F
+### INSERT INTO `voidme`.`t_role_permission_copy1`
+### SET
+###   @1=2
+###   @2=1
+###   @3=1
+### INSERT INTO `voidme`.`t_role_permission_copy1`
+### SET
+###   @1=6
+###   @2=1
+###   @3=5
+### INSERT INTO `voidme`.`t_role_permission_copy1`
+### SET
+###   @1=1
+###   @2=4
+###   @3=1
+### INSERT INTO `voidme`.`t_role_permission_copy1`
+### SET
+###   @1=3
+###   @2=4
+###   @3=2
+### INSERT INTO `voidme`.`t_role_permission_copy1`
+### SET
+###   @1=4
+###   @2=4
+###   @3=3
+### INSERT INTO `voidme`.`t_role_permission_copy1`
+### SET
+###   @1=5
+###   @2=4
+###   @3=4
+# at 18543
+#220326 15:32:07 server id 2  end_log_pos 18574 CRC32 0x7a1e69d5 	Xid = 3652
+COMMIT/*!*/;
+# at 18574
+#220326 15:32:22 server id 2  end_log_pos 18651 CRC32 0xcec38932 	Anonymous_GTID	last_committed=49	sequence_number=50	rbr_only=no	original_committed_timestamp=1648308742333119	immediate_commit_timestamp=1648308742333119	transaction_length=223
+# original_commit_timestamp=1648308742333119 (2022-03-26 15:32:22.333119 UTC)
+# immediate_commit_timestamp=1648308742333119 (2022-03-26 15:32:22.333119 UTC)
+/*!80001 SET @@session.original_commit_timestamp=1648308742333119*//*!*/;
+/*!80014 SET @@session.original_server_version=80016*//*!*/;
+/*!80014 SET @@session.immediate_server_version=80016*//*!*/;
+SET @@SESSION.GTID_NEXT= 'ANONYMOUS'/*!*/;
+# at 18651
+#220326 15:32:22 server id 2  end_log_pos 18797 CRC32 0x911eaf92 	Query	thread_id=18	exec_time=0	error_code=0	Xid = 3657
+SET TIMESTAMP=1648308742/*!*/;
+SET @@session.foreign_key_checks=1/*!*/;
+DROP TABLE `t_role_permission` /* generated by server */
+/*!*/;
+SET @@SESSION.GTID_NEXT= 'AUTOMATIC' /* added by mysqlbinlog */ /*!*/;
+DELIMITER ;
+# End of log file
+/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/;

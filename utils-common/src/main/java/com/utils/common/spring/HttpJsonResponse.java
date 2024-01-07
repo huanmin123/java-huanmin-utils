@@ -56,6 +56,9 @@ public class HttpJsonResponse<T> implements Serializable {
     public static <T> HttpJsonResponse<T> failed(String message) {
         return failed(FAILED_DEFAULT_CODE, message);
     }
+    public static <T> HttpJsonResponse<T> failed() {
+        return failed(FAILED_DEFAULT_CODE, "失败");
+    }
 
     @Deprecated
     public <R> HttpJsonResponse<R> add(R bean) {

@@ -35,7 +35,11 @@
             <artifactId>dynamic-datasource</artifactId>
         </dependency>
 
-
+        <!-- 多数据源加载-->
+        <dependency>
+            <groupId>org.huanmin</groupId>
+            <artifactId>file-tool</artifactId>
+        </dependency>
 
 
 

@@ -60,7 +60,10 @@
             <artifactId>xss</artifactId>
         </dependency>
 
-
+        <dependency>
+            <groupId>org.huanmin</groupId>
+            <artifactId>arithmetic</artifactId>
+        </dependency>
 
 
 
