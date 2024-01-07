@@ -67,7 +67,7 @@ public  class ConnectionPond {
     }
     public void connectionPond(String key) {
         try {
-            Properties properties = JdbcUtils.getProperties();
+            Properties properties = JdbcUtil.getProperties();
             this.connection= DriverManager.getConnection(properties.getProperty("url"),properties.getProperty("username"),properties.getProperty("password"));
         } catch (SQLException e) {
              UniversalException.logError(e);

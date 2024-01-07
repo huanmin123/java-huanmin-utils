@@ -1,6 +1,6 @@
 package com.huanmin.test.utils_common.requestclient;
 
-import com.utils.common.base.ResourceFileUtil;
+import com.utils.common.file.ResourceFileUtil;
 import com.utils.common.requestclient.httpclient.HttpClientUtil;
 import org.junit.Test;
 import org.slf4j.Logger;

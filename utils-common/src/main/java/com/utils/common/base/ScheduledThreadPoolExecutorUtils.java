@@ -6,7 +6,9 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
-//java内置定时器
+/**
+ * java内置定时器
+ */
 public class ScheduledThreadPoolExecutorUtils {
 
     private  ScheduledThreadPoolExecutor scheduledThreadPoolExecutor;

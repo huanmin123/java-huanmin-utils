@@ -23,20 +23,21 @@
         <dependency>
             <groupId>org.huanmin</groupId>
             <artifactId>utils-client</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <!-- 工具箱-->
         <dependency>
             <groupId>org.huanmin</groupId>
             <artifactId>utils-common</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <!-- 多数据源加载-->
         <dependency>
             <groupId>org.huanmin</groupId>
             <artifactId>dynamic-datasource</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
+
+
+
+
 
 
 

@@ -2,6 +2,7 @@ package com.utils.common.string;
 
 
 import com.utils.common.base.UniversalException;
+
 import com.utils.common.file.TransitionFileStreamUtil;
 import info.monitorenter.cpdetector.io.*;
 import lombok.SneakyThrows;

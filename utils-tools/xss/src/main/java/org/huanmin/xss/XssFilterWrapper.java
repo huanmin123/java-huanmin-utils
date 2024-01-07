@@ -25,7 +25,7 @@ public class XssFilterWrapper extends HttpServletRequestWrapper {
     @Override
     public String getParameter(String name) {
         String value = super.getParameter(name);
-        return XSSUtils.cleanXSS(value, String.class);
+        return XSSUtil.cleanXSS(value, String.class);
     }
 
     /**
@@ -41,7 +41,7 @@ public class XssFilterWrapper extends HttpServletRequestWrapper {
             int length = values.length;
             String[] escapseValues = new String[length];
             for (int i = 0; i < length; i++) {
-                escapseValues[i] = XSSUtils.cleanXSS(values[i], String.class);
+                escapseValues[i] = XSSUtil.cleanXSS(values[i], String.class);
             }
             return escapseValues;
         }
@@ -53,7 +53,7 @@ public class XssFilterWrapper extends HttpServletRequestWrapper {
     @Override
     public String getHeader(String name) {
         String value = super.getHeader(name);
-        return XSSUtils.cleanXSS(value, String.class);
+        return XSSUtil.cleanXSS(value, String.class);
     }
 
 
@@ -71,7 +71,7 @@ public class XssFilterWrapper extends HttpServletRequestWrapper {
             Map newMap = new LinkedHashMap<>();
             uriTemplateVars.forEach((key, value) -> {
                 if (value instanceof String) {
-                    newMap.put(key, XSSUtils.cleanXSS((String) value, String.class));
+                    newMap.put(key, XSSUtil.cleanXSS((String) value, String.class));
                 } else {
                     newMap.put(key, value);
 

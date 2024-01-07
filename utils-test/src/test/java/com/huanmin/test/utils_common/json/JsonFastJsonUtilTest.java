@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
-import com.utils.common.base.ResourceFileUtil;
+import com.utils.common.file.ResourceFileUtil;
 import com.utils.common.base.UserData;
 import com.utils.common.json.JsonFastJsonUtil;
 import com.utils.common.json.JsonJacksonUtil;

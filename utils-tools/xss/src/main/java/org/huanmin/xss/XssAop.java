@@ -19,7 +19,7 @@ import java.util.Enumeration;
 @Aspect
 public class XssAop {
     //这里需要注意了，这个是将自己自定义注解作为切点的根据，路径一定要写正确了
-    @Pointcut(value = "@annotation(com.mvc.hole.xss.Xss) || @within(com.mvc.hole.xss.Xss)") //拦截类和方法
+    @Pointcut(value = "@annotation(org.huanmin.xss.Xss) || @within(org.huanmin.xss.Xss)") //拦截类和方法
     public void xss() {
     }
 
@@ -39,17 +39,17 @@ public class XssAop {
             String value = request.getHeader(name);
             headers.append(name + ":" + value).append(",");
         }
-        XSSUtils.cleanXSS(headers.toString(), String.class);
+        XSSUtil.cleanXSS(headers.toString(), String.class);
         //获取url 的参数
         StringBuffer params = new StringBuffer();
         String queryString = request.getQueryString();
         if (StringUtils.isNotBlank(queryString)) {
             params.append(URLEncoder.encode(queryString, "UTF-8")).append(",");
         }
-        XSSUtils.cleanXSS(params.toString(), String.class);
+        XSSUtil.cleanXSS(params.toString(), String.class);
         //获取post Body 数据
         String body = getRequestBodyData(request);
-        XSSUtils.cleanXSS(body, String.class);
+        XSSUtil.cleanXSS(body, String.class);
 
     }
     //获取请求体body的内容

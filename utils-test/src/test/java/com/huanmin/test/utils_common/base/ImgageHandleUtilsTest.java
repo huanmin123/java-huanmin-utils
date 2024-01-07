@@ -2,7 +2,7 @@ package com.huanmin.test.utils_common.base;
 
 import com.jhlabs.image.GaussianFilter;
 
-import com.utils.common.base.ResourceFileUtil;
+import com.utils.common.file.ResourceFileUtil;
 import com.utils.common.base.UniversalException;
 import com.utils.common.media.img.ImgageHandleUtil;
 import org.junit.Test;

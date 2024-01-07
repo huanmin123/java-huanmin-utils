@@ -3,7 +3,7 @@ package com.huanmin.test.utils_common.db;
 import com.utils.common.base.UniversalException;
 import org.huanmin.jdbc.JdbcTemplateUtil;
 import org.huanmin.jdbc.ConnectionPond;
-import org.huanmin.jdbc.JdbcUtils;
+import org.huanmin.jdbc.JdbcUtil;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,7 +33,7 @@ public class JdbcTemplateUtilsTest {
     }
     @Test
     public  void select2() throws Exception {
-        ConnectionPond connection = JdbcUtils.getConnectionPond();
+        ConnectionPond connection = JdbcUtil.getConnectionPond();
         connection.setAutoCommitStart();
         String sql="SELECT lock_key,lock_until FROM t_lock    WHERE   lock_key='show3' FOR update";
         PreparedStatement  preparedStatement=connection.getConnection().prepareStatement(sql);
@@ -49,7 +49,7 @@ public class JdbcTemplateUtilsTest {
 
     @Test
     public  void select23() throws Exception {
-        ConnectionPond connection = JdbcUtils.getConnectionPond();
+        ConnectionPond connection = JdbcUtil.getConnectionPond();
         connection.setAutoCommitStart();
         String sql="SELECT lock_key,lock_until FROM t_lock    WHERE   lock_key='show3' FOR update";
         PreparedStatement  preparedStatement=connection.getConnection().prepareStatement(sql);

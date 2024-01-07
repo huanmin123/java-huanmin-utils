@@ -3,7 +3,7 @@ package com.huanmin.test.utils_common.db;
 import org.huanmin.jdbc.JdbTransactionBusTest;
 import org.huanmin.jdbc.JdbcEnum;
 import org.huanmin.jdbc.JdbcObj;
-import org.huanmin.jdbc.JdbcUtils;
+import org.huanmin.jdbc.JdbcUtil;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,14 +17,14 @@ public class JdbcUtilsTest {
     private static final Logger logger = LoggerFactory.getLogger(JdbcUtilsTest.class);
     @Test
     public  void select() {
-        List<Map<String, Object>> querys = JdbcUtils.querys("select * from t4");
+        List<Map<String, Object>> querys = JdbcUtil.querys("select * from t4");
 
         System.out.println(String.valueOf(querys));
     }
 
     @Test
     public  void execute() {
-        int xxxxxx = JdbcUtils.execute("update t_user set username=?  where id=11", "xxxxxx");
+        int xxxxxx = JdbcUtil.execute("update t_user set username=?  where id=11", "xxxxxx");
         System.out.println(String.valueOf(xxxxxx));
     }
 
@@ -33,7 +33,7 @@ public class JdbcUtilsTest {
 
         for (int i = 0; i < 100000; i++) {
             Random random = new Random();
-            int xxxxxx = JdbcUtils.execute("INSERT delayed INTO `t3` ( `person_id`, `person_name`, `gmt_create`, `gmt_modified`) VALUES ( "+random.nextInt(10)+",'user_1000000"+i+"', '2033-07-24 16:16:18', '2039-04-20 19:56:12')");
+            int xxxxxx = JdbcUtil.execute("INSERT delayed INTO `t3` ( `person_id`, `person_name`, `gmt_create`, `gmt_modified`) VALUES ( "+random.nextInt(10)+",'user_1000000"+i+"', '2033-07-24 16:16:18', '2039-04-20 19:56:12')");
         }
 
 
@@ -50,7 +50,7 @@ public class JdbcUtilsTest {
         sqls.add(jdbcObj1);
 
         JdbTransactionBusTest jdbTransactionBus = new JdbTransactionBusTest(sqls);
-        boolean transaction1 = JdbcUtils.transaction(jdbTransactionBus);
+        boolean transaction1 = JdbcUtil.transaction(jdbTransactionBus);
         System.out.println(transaction1);
     }
 }

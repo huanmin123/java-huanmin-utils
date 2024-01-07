@@ -2,9 +2,9 @@ package com.utils.dynamic_datasource.bean;
 
 
 import com.utils.common.base.UniversalException;
-import com.utils.common.db.SqlSessionTemplateUtil;
+
 import com.utils.dynamic_datasource.base.DynamicDataSourceService;
-import com.utils.dynamic_datasource.dal.mapper.DatasourceDao;
+import com.utils.dynamic_datasource.dal.mapper.DatasourceMapper;
 import com.utils.dynamic_datasource.entity.DataSourceEneity;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
@@ -37,7 +37,7 @@ import java.util.List;
 public class DataSourceInitialize implements ApplicationRunner  {
 
     @Autowired
-    private DatasourceDao datasourceDao;
+    private DatasourceMapper datasourceMapper;
 
     @Value("${spring.datasource.database-load-activate}")
     private Boolean databaseLoadActivate;
@@ -48,7 +48,7 @@ public class DataSourceInitialize implements ApplicationRunner  {
         if (databaseLoadActivate){
             log.info("-----------------DataSourceInitialize------------------");
             try {
-                List<DataSourceEneity> dataSources = datasourceDao.getDataSources();
+                List<DataSourceEneity> dataSources = datasourceMapper.getDataSources();
                 for (DataSourceEneity dataSource : dataSources) {
                     DynamicDataSourceService.addDataSource(dataSource.getKey(),dataSource.getDataSource());
                 }

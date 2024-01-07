@@ -1,0 +1,20 @@
+
+spring:
+  redis:
+    host: 192.168.47.130
+    port: 6379
+    password: 123456            #没有密码,为空就行
+    timeout: 5000  # 连接超时时间
+    jedis:
+      pool:
+        max-active: 1000 # 池在给定时间可以分配的最大连接数。使用负值表示无限制。
+        max-idle: 50  #池中“空闲”连接的最大数量。使用负值表示空闲连接的数量不受限制
+        min-idle: 10  # 目标是池中要维护的最小空闲连接数。。
+        max-wait: -1  # 在池耗尽时引发异常之前，连接分配应阻止的最长时间。使用负值无限期阻塞。
+    redisson:
+      pool:
+        max-active: 1000   # 池在给定时间可以分配的最大连接数。使用负值表示无限制。
+        min-idle: 10   # 目标是池中要维护的最小空闲连接数。
+      tokenName: Authorization    # 用于分布式锁的唯一标识,一般使用token如果没有找到,就找sessionId
+  session:
+    store-type: redis   #设置session保存为默认redis的方式 ,可以解决分布式session不一致问题

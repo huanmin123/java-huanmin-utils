@@ -2,7 +2,6 @@
 spring:
   aop:
     proxy-target-class: true   # 开启动态代理
-
 session:
   time: 1800  #单位秒
 cookie:
@@ -26,3 +25,11 @@ logging:
 
 # 打印加载的配置文件位置
 logging.level.org.springframework.boot.context.config.ConfigFileApplicationListener: trace
+
+
+
+
+
+
+
+

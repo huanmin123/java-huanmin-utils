@@ -98,11 +98,6 @@ public class JdbcTemplateUtil {
         return jdbcTemplate.batchUpdate(sql);
     }
 
-    public static void main(String[] args) {
-        JdbcTemplateUtil.query("select * from t_user",(data)->{
-            System.out.println(data.getString("username"));
-        });
-    }
 
 }
 

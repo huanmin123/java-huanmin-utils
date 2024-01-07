@@ -1,5 +1,6 @@
 package com.utils.common.base;
 
+import com.utils.common.file.ResourceFileUtil;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;

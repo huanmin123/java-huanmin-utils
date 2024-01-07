@@ -1,10 +1,8 @@
 package com.utils.common.obj.dynamicbean;
 
-import com.utils.common.file.FileSortUtil;
+
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;

@@ -1,6 +1,6 @@
 package com.huanmin.test.utils_common.base;
 
-import com.utils.common.base.ResourceFileUtil;
+import com.utils.common.file.ResourceFileUtil;
 import org.junit.Test;
 
 import java.io.File;

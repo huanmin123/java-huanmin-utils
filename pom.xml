@@ -32,6 +32,81 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- 对外提供接口-->
+            <dependency>
+                <groupId>org.huanmin</groupId>
+                <artifactId>utils-client</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <!-- 工具箱-->
+            <dependency>
+                <groupId>org.huanmin</groupId>
+                <artifactId>utils-common</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <!-- 多数据源加载-->
+            <dependency>
+                <groupId>org.huanmin</groupId>
+                <artifactId>dynamic-datasource</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <!-- 对外提供接口-->
+            <dependency>
+                <groupId>org.huanmin</groupId>
+                <artifactId>utils-server</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <!-- es-->
+            <dependency>
+                <groupId>org.huanmin</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <!--时间伦定时器-->
+            <dependency>
+                <groupId>org.huanmin</groupId>
+                <artifactId>timerwheel</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.huanmin</groupId>
+                <artifactId>jdbc-extend</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.huanmin</groupId>
+                <artifactId>redis</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+
+
+            <dependency>
+                <groupId>org.huanmin</groupId>
+                <artifactId>file-tool</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.huanmin</groupId>
+                <artifactId>xss</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+
+
+
+
+
+
+
+
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
@@ -264,7 +339,116 @@
             </dependency>
 
 
+
+
+            <dependency>
+                <groupId>com.jcraft</groupId>
+                <artifactId>jsch</artifactId>
+                <version>0.1.49</version>
+            </dependency>
+
+            <!--ssh-->
+            <dependency>
+                <groupId>org.apache.sshd</groupId>
+                <artifactId>sshd-scp</artifactId>
+                <version>2.7.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sshd</groupId>
+                <artifactId>sshd-sftp</artifactId>
+                <version>2.7.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sshd</groupId>
+                <artifactId>sshd-core</artifactId>
+                <version>2.9.0</version>
+            </dependency>
+            <dependency>
+                <groupId>net.i2p.crypto</groupId>
+                <artifactId>eddsa</artifactId>
+                <version>0.3.0</version>
+            </dependency>
+
+            <!--         控制台补全-->
+            <dependency>
+                <groupId>jline</groupId>
+                <artifactId>jline</artifactId>
+                <version>2.14.6</version>
+            </dependency>
+
+
+
+            <!--        爬虫-解析html页面-->
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>1.11.3</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <!--            目前来说就3.141.59这个版本好使高版本会有问题-->
+                <version>3.141.59</version>
+            </dependency>
+
+
+            <!--redis-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>2.3.3.RELEASE</version>
+                <!--            排除redis和lettuce,使用我们自己的jedis,防止出现连接动不动断开的问题-->
+                <exclusions>
+                    <exclusion>
+                        <groupId>redis.clients</groupId>
+                        <artifactId>jedis</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>lettuce-core</artifactId>
+                        <groupId>io.lettuce</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>3.3.0</version>
+            </dependency>
+            <!--       使用jedis必须使用commons-pool2 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>2.8.1</version>
+            </dependency>
+
+            <!--     多台相同应用(负载均),Session共享  -->
+            <dependency>
+                <groupId>org.springframework.session</groupId>
+                <artifactId>spring-session-data-redis</artifactId>
+                <version>2.3.3.RELEASE</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>3.17.5</version>
+            </dependency>
+
+
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+            </dependency>
+
+
         </dependencies>
+
     </dependencyManagement>
 
 
@@ -279,6 +463,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+
             </plugin>
 
             <!--            打包时候跳过单元测试-->

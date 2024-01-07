@@ -1,7 +1,7 @@
 package com.huanmin.test.utils_common.encryption;
 
 
-import com.utils.common.base.ResourceFileUtil;
+import com.utils.common.file.ResourceFileUtil;
 import com.utils.common.encryption.aes.AESFileUtil;
 import org.junit.Test;
 

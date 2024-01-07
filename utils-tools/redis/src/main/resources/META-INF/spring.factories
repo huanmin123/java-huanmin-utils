@@ -1,0 +1,8 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.huanmin.redis.session.SessionConfig \
+org.huanmin.redis.redisTemplate.config.RedisTemplateConfig \
+org.huanmin.redis.redisson.config.RedissonConfig \
+org.huanmin.redis.jedis.config.JedisConfig \
+  org.huanmin.redis.config.RedisConfig
+
+
