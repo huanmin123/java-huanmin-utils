@@ -3,7 +3,7 @@ package com.huanmin.test.utils_tools.arithmetic;
 
 import com.utils.common.base.FakerData;
 import com.utils.common.container.ArrayUtil;
-import org.huanmin.arithmetic.sort.MergeSortUtil;
+import com.utils.arithmetic.sort.MergeSortUtil;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

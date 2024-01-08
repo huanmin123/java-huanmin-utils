@@ -1,9 +1,9 @@
 package com.huanmin.test.utils_common.db;
 
 import com.utils.common.base.UniversalException;
-import org.huanmin.jdbc.JdbcTemplateUtil;
-import org.huanmin.jdbc.ConnectionPond;
-import org.huanmin.jdbc.JdbcUtil;
+import com.utils.jdbc_extend.jdbc.JdbcTemplateUtil;
+import com.utils.jdbc_extend.jdbc.ConnectionPond;
+import com.utils.jdbc_extend.jdbc.JdbcUtil;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

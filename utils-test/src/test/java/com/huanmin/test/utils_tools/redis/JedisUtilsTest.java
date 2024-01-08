@@ -3,8 +3,8 @@ package com.huanmin.test.utils_tools.redis;
 import com.huanmin.test.TestApplication;
 
 import com.utils.common.multithreading.utils.SleepTools;
-import org.huanmin.redis.jedis.aspect.JedisConfig;
-import org.huanmin.redis.jedis.utils.JedisUtil;
+import com.utils.redis.jedis.aspect.JedisConfig;
+import com.utils.redis.jedis.utils.JedisUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

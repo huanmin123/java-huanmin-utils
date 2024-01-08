@@ -1,7 +1,7 @@
 package com.huanmin.test.utils_tools.file_tool.word;
 
-import org.huanmin.file_tool.word.TextStyle;
-import org.huanmin.file_tool.word.WordCreate;
+import com.utils.file_tool.word.TextStyle;
+import com.utils.file_tool.word.WordCreate;
 import org.junit.Test;
 
 public class WordCreateTest {

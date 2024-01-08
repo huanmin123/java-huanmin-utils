@@ -1,6 +1,6 @@
 package com.huanmin.test.utils_tools.arithmetic;
 
-import org.huanmin.arithmetic.tree.avltree.AVLTree;
+import com.utils.arithmetic.tree.avltree.AVLTree;
 import org.junit.Test;
 
 /**

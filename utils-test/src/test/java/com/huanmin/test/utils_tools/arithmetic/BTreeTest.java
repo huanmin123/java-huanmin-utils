@@ -3,7 +3,7 @@ package com.huanmin.test.utils_tools.arithmetic;
 
 import com.utils.common.base.FakerData;
 import com.utils.common.base.UserData;
-import org.huanmin.arithmetic.tree.btree.BTree;
+import com.utils.arithmetic.tree.btree.BTree;
 import org.junit.Test;
 
 import java.util.List;

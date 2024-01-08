@@ -3,8 +3,8 @@ package com.huanmin.test.utils_tools.arithmetic;
 
 import com.utils.common.base.CodeTimeUtil;
 import com.utils.common.base.FakerData;
-import org.huanmin.arithmetic.query.InsertionSearchUtil;
-import org.huanmin.arithmetic.sort.QksortUtil;
+import com.utils.arithmetic.query.InsertionSearchUtil;
+import com.utils.arithmetic.sort.QksortUtil;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

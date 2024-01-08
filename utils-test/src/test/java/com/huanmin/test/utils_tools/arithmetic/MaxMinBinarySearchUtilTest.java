@@ -1,8 +1,7 @@
 package com.huanmin.test.utils_tools.arithmetic;
 
 
-import com.utils.common.base.NumberUtil;
-import org.huanmin.arithmetic.query.MaxMinBinarySearchUtil;
+import com.utils.arithmetic.query.MaxMinBinarySearchUtil;
 import org.junit.Test;
 
 public class MaxMinBinarySearchUtilTest  {

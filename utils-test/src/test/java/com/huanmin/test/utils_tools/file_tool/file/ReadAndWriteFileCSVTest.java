@@ -6,8 +6,8 @@ import com.utils.common.base.FakerData;
 import com.utils.common.file.ResourceFileUtil;
 import com.utils.common.base.UserData;
 
-import org.huanmin.file_tool.csv.ObjToCSV;
-import org.huanmin.file_tool.csv.ReadAndWriteFileCSV;
+import com.utils.file_tool.csv.ObjToCSV;
+import com.utils.file_tool.csv.ReadAndWriteFileCSV;
 import org.junit.Test;
 
 import java.io.File;

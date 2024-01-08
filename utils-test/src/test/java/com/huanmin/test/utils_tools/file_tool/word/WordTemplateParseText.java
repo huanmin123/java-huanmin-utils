@@ -2,7 +2,7 @@ package com.huanmin.test.utils_tools.file_tool.word;
 
 
 import com.utils.common.file.ResourceFileUtil;
-import org.huanmin.file_tool.word.WordTemplateParse;
+import com.utils.file_tool.word.WordTemplateParse;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

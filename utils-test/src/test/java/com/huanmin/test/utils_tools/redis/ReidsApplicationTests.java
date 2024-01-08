@@ -2,7 +2,7 @@ package com.huanmin.test.utils_tools.redis;
 
 
 import com.huanmin.test.TestApplication;
-import org.huanmin.redis.redisTemplate.utils.RedisTemplateUtil;
+import com.utils.redis.redisTemplate.utils.RedisTemplateUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

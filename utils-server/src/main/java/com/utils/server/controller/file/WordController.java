@@ -1,7 +1,7 @@
 package com.utils.server.controller.file;
 
 import com.utils.common.file.ResourceFileUtil;
-import org.huanmin.file_tool.word.WordTemplateParse;
+import com.utils.file_tool.word.WordTemplateParse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

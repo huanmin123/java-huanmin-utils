@@ -1,7 +1,7 @@
 package com.utils.server.controller.file;
 
-import org.huanmin.file_tool.pdf.HtmlPdf;
-import org.huanmin.file_tool.pdf.PdfDownLoadUtils;
+import com.utils.file_tool.pdf.HtmlPdf;
+import com.utils.file_tool.pdf.PdfDownLoadUtils;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

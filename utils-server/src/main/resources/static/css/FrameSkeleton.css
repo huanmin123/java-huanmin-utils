@@ -1,0 +1,44 @@
+
+#Frame{
+    position: relative;
+    min-width: 1000px;
+}
+#FrameHeader {
+    height: 64px;
+}
+
+#FrameCentre{
+    position: relative;
+    background-color: rgba(240, 242, 245, 0.73);
+    padding-top: 10px;
+}
+
+
+#FrameLeft {
+    position: relative;
+    display: inline-block;
+    height: 800px;
+    background: #eeeeee;
+    width: 20%;
+    margin-right: 20px;
+
+}
+
+#FrameBody {
+    position: relative;
+    display: inline-block;
+    height: 800px;
+    background: #ffffff;
+    width: 77.5%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#FrameFooter {
+    height: 100px;
+    padding-top: 10px;
+    background: #f4f6f8;
+}
+
+
+
+

@@ -1,9 +1,9 @@
 package com.huanmin.test.utils_common.db;
 
-import org.huanmin.jdbc.JdbTransactionBusTest;
-import org.huanmin.jdbc.JdbcEnum;
-import org.huanmin.jdbc.JdbcObj;
-import org.huanmin.jdbc.JdbcUtil;
+import com.utils.jdbc_extend.jdbc.JdbTransactionBusTest;
+import com.utils.jdbc_extend.jdbc.JdbcEnum;
+import com.utils.jdbc_extend.jdbc.JdbcObj;
+import com.utils.jdbc_extend.jdbc.JdbcUtil;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

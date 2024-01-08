@@ -2,7 +2,7 @@ package com.huanmin.test.utils_tools.arithmetic;
 
 import com.utils.common.base.CodeTimeUtil;
 import com.utils.common.base.UserData;
-import org.huanmin.arithmetic.tree.binarytree.BinaryTree;
+import com.utils.arithmetic.tree.binarytree.BinaryTree;
 import org.junit.Test;
 
 import java.util.ArrayList;

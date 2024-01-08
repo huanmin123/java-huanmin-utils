@@ -2,7 +2,7 @@ package com.huanmin.test.utils_tools.arithmetic;
 
 
 import com.utils.common.base.FakerData;
-import org.huanmin.arithmetic.sort.ShellSortUtil;
+import com.utils.arithmetic.sort.ShellSortUtil;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

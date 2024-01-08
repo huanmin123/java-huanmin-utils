@@ -19,7 +19,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 // DataSourceAutoConfiguration取消自动装配数据源, 我们自己配置数据源
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@MapperScan({"com.utils.**.mapper"})
+@MapperScan({"com.utils.**.mapper", "com.utils.**.dao"})
 public class WebApplication {
 
     public static void main(String[] args) {

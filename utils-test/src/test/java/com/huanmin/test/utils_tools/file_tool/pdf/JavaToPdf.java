@@ -3,8 +3,8 @@ package com.huanmin.test.utils_tools.file_tool.pdf;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
-import org.huanmin.file_tool.pdf.PdfUtils;
-import org.huanmin.file_tool.pdf.PdfWatermark;
+import com.utils.file_tool.pdf.PdfUtils;
+import com.utils.file_tool.pdf.PdfWatermark;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

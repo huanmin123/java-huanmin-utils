@@ -3,8 +3,8 @@ package com.huanmin.test.utils_tools.arithmetic;
 
 import com.utils.common.base.CodeTimeUtil;
 import com.utils.common.base.UserData;
-import org.huanmin.arithmetic.blocksearch.BlockList;
-import org.huanmin.arithmetic.blocksearch.BlockObject;
+import com.utils.arithmetic.blocksearch.BlockList;
+import com.utils.arithmetic.blocksearch.BlockObject;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

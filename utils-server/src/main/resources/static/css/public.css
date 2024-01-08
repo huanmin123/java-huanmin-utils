@@ -1,0 +1,28 @@
+body {
+    /*min-width: 980px;*/
+}
+
+#HeaderNav li i{
+    color: #ffffff;
+}
+
+#FrameLeft i{
+    color: #cd5765;
+}
+
+#FrameSkeletonHeader{
+    /*   背景颜色渐变*/
+    background: linear-gradient(to right, #B4022AFF , #c5022e, #d20231, #e40235);
+
+}
+
+#HeaderNav li:hover {
+    background-color: #b6022b;
+}
+
+#HeaderNav li a{
+    color: #fcf6f7;
+}
+#FrameSkeletonHeaderItem{
+    font-size: 15px;
+}

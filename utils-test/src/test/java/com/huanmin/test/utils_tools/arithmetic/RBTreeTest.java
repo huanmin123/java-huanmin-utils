@@ -1,6 +1,6 @@
 package com.huanmin.test.utils_tools.arithmetic;
 
-import org.huanmin.arithmetic.tree.rbtree.RBTree;
+import com.utils.arithmetic.tree.rbtree.RBTree;
 
 /**
  * Java 语言: 二叉查找树

@@ -2,7 +2,7 @@ package com.huanmin.test.utils_tools.file_tool.email;
 
 
 import com.utils.common.file.ResourceFileUtil;
-import org.huanmin.file_tool.email.MailServiceUtil;
+import com.utils.file_tool.email.MailServiceUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

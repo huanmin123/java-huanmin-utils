@@ -1,7 +1,8 @@
 package com.huanmin.test.utils_tools.arithmetic;
 
 import com.utils.common.base.FakerData;
-import org.huanmin.arithmetic.sort.RadixSortUtil;
+import com.utils.arithmetic.sort.RadixSortUtil;
+import com.utils.arithmetic.sort.ShellSortUtil;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import java.util.Arrays;
 
 public class RadixSortUtilTest {
-    private  final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Test
     public void testTime() {
@@ -42,7 +42,7 @@ public class RadixSortUtilTest {
         private  final Logger logger = LoggerFactory.getLogger(getClass());
         @Test
         public void testTime() {
-            int[] arr = RandomIntData.getDataInt(100000);
+            int[] arr = FakerData.getDataInt(100000);
 
             long startTime = System.currentTimeMillis();
             //希尔排序
