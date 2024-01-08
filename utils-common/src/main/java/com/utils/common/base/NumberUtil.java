@@ -51,6 +51,26 @@ public class NumberUtil {
         }
     }
 
+    public static <T extends Comparable<T>> T max(T a, T b) {
+        if (a == null||b==null) {
+            return null;
+        }
+        if (a.compareTo(b) > 0) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+    public static <T extends Comparable<T>> T min(T a, T b) {
+        if (a == null||b==null) {
+            return null;
+        }
+        if (a.compareTo(b) < 0) {
+            return a;
+        } else {
+            return b;
+        }
+    }
 
 
 }
