@@ -3,7 +3,7 @@ package org.huanmin.arithmetic.blocksearch;
 
 import com.utils.common.multithreading.executor.ExecutorUtil;
 import com.utils.common.multithreading.executor.ThreadFactoryUtil;
-import org.huanmin.arithmetic.query.MaxMinBinarySearchListUtil;
+import org.huanmin.arithmetic.query.MaxMinBinarySearchUtil;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -59,7 +59,7 @@ public class BlockUtil {
             futures.add(submit);
         }
         ExecutorUtil.waitComplete(futures);
-        return  MaxMinBinarySearchListUtil.getMax(list, 0, list.size() - 1);
+        return  MaxMinBinarySearchUtil.getMax(list, 0, list.size() - 1);
     }
 
 

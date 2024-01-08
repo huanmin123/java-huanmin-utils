@@ -157,4 +157,124 @@ public class BinarySearchUtil {
 
 
 
+
+//=================================================下面是集合处理,和上面的逻辑一样==================================================================
+
+
+
+
+
+
+
+    public static <T extends Comparable <T>> int binarySearchFirst(List<T> arr, T value) {
+        int low = 0;
+        int high = arr.size() - 1;
+        if(value.compareTo(arr.get(low)) <0  || value.compareTo(arr.get(high)) >0 ){
+            return  -1;
+        }
+        while(low <= high) {
+            int mid = (low + high) >> 1; //每次折半比较
+            if (value .compareTo(arr.get(mid))==0 ) {
+                return mid;
+            }else  if (value.compareTo(arr.get(mid)) > 0) {
+                low=mid + 1;
+            } else if (value.compareTo(arr.get(mid)) < 0 ) {
+                high=mid - 1;
+            }
+        }
+        return -1;
+    }
+
+
+
+    public static <T extends Comparable <T>> int binarySearchLast(List<T> arr, T value) {
+        int low = 0;
+        int high = arr.size() - 1;
+        if(value.compareTo(arr.get(low)) <0  || value.compareTo(arr.get(high)) >0 ){
+            return -1;
+        }
+        Map<String, Integer> m = new HashMap<String, Integer>(2);
+        m.put("index", -1);
+        while (low <= high) {
+            int mid = (low + high) >> 1; //每次折半比较
+            if (value.compareTo(arr.get(mid)) >0 ) {
+                low=mid + 1;
+            } else if (value.compareTo(arr.get(mid)) <0 ) {
+                high=mid - 1;
+            } else {
+                m.put("index", mid);
+                low=mid + 1;
+            }
+        }
+        return m.get("index");
+    }
+
+    public static   <T extends Comparable <T>>  List<Integer>  binarySearchFirstAndLast(List<T> arr, T value) {
+        int low = 0;
+        int high = arr.size() - 1;
+        List<Integer> list = new ArrayList<>();
+        if(value.compareTo(arr.get(low)) < 0 || value.compareTo(arr.get(high)) > 0){
+            list.add(-1);
+            return list;
+        }
+
+        while (low <= high) {
+            int mid = (low + high) >> 1; //每次折半比较
+            if (value.compareTo(arr.get(mid)) > 0) {
+                low=mid + 1;
+            } else if (value.compareTo(arr.get(mid)) < 0 ) {
+                high=mid - 1;
+            } else {
+                list.add(mid);
+                low=mid + 1;
+            }
+        }
+        if (list.isEmpty()) {
+            list.add(-1);
+        }
+        return list;
+    }
+
+
+
+
+    //(查询全部的值)
+    public static <T extends Comparable <T>>  List<Integer> binarySearchAll(List<T> arr, T value) {
+        int low = 0;
+        int high = arr.size() - 1;
+        List<Integer> list = new ArrayList<>(10);
+        if(value.compareTo(arr.get(low)) < 0  || value.compareTo(arr.get(high)) > 0 ){
+            list.add(-1);
+            return list;
+        }
+        while (low <= high) {
+            int mid = (low + high) >> 1; //每次折半比较
+            if (value.compareTo(arr.get(mid)) > 0 ) {
+                low=mid + 1;
+            } else if (value.compareTo(arr.get(mid)) < 0) {
+                high=mid - 1;
+            } else {
+                int temp=mid-1;
+                //向左查询
+                while (temp >= 0 && arr.get(temp).compareTo(value)==0) {
+                    list.add(temp);
+                    temp--;
+                }
+                //加入序列
+                list.add(mid);
+                temp=mid+1;
+                //向右查询
+                while (temp <= arr.size() - 1 && arr.get(temp).compareTo(value)==0 ) {
+                    list.add(temp);
+                    temp++;
+                }
+                return list;
+            }
+        }
+        list.add(-1);
+        return list;
+    }
+
+
+
 }

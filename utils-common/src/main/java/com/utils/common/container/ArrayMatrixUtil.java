@@ -24,7 +24,7 @@ public class ArrayMatrixUtil {
         int length = arrays.length;
         Integer[][] integers = new Integer[length][length];
         for (int i = 0; i < integers.length; i++) {
-            integers[i] = ArrayListTransformUtils.intToInteger(arrays[i]);
+            integers[i] = ContainerTransformUtil.intToInteger(arrays[i]);
         }
         return integers;
     }
@@ -33,7 +33,7 @@ public class ArrayMatrixUtil {
         int length = doubles.length;
         Double[][] doubles1 = new Double[length][length];
         for (int i = 0; i < doubles1.length; i++) {
-            doubles1[i] = ArrayListTransformUtils.doubleToDouble(doubles[i]);
+            doubles1[i] = ContainerTransformUtil.doubleToDouble(doubles[i]);
         }
         return doubles1;
     }

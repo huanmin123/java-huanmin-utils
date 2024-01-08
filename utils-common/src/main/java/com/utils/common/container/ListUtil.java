@@ -59,32 +59,6 @@ public class ListUtil {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //随机判断几个范围内的数是否是有序的
     private static <T extends Comparable<T>> boolean isOrder(List<T> data, int start, int end) {
         int length = data.size();
@@ -98,6 +72,10 @@ public class ListUtil {
         }
         return true;
     }
+
+
+
+
 
 
 }

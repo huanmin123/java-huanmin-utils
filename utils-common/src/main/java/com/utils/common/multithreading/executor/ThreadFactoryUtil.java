@@ -41,7 +41,7 @@ public class ThreadFactoryUtil {
         CustomTimerUtils("CustomTimerUtils",20,1000,"CustomTimerUtils"),
         FIleSliceUploadController("FIleSliceUploadController",20,1000,"FIleSliceUploadController"),
         SynchronousQueueUtil("SynchronousQueueUtils",20,1000,"SynchronousQueueUtils"),
-        BucketSortUtil("BucketSortUtil",20,1000,"BucketSortUtil"),
+        BucketSortUtil("BucketSortUtil",200,10000,"BucketSortUtil"),
         Netty("Netty",20,1000,"Netty");
 
         private String threadNamePrefix; //线程名称,前缀
