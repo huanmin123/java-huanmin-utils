@@ -1,6 +1,4 @@
-// 创建一个新的 store 实例
-import {createStore} from "/static/js/vuex.esm-browser.js";
-import moduleFrame from "/static/store/frame/index.js";
+
 
 
 
@@ -11,4 +9,3 @@ const store = createStore({
         frame: moduleFrame,
     }
 })
-export default store;

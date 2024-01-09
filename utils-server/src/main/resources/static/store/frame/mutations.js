@@ -7,6 +7,8 @@ const mutations= {
     },
     setFrameSkeletonBodyElement (state, element) {
         state.FrameSkeletonBodyElement=element;
+    },
+    increment (state) {
+        state.count++
     }
  }
- export default mutations

@@ -16,4 +16,3 @@ const actions= {
         state.commit('setFrameSkeletonBodyElement', element);
     }
 }
-export default actions

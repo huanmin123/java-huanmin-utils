@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="ch">
-<html lang="en" >
+<html xmlns:th="http://www.thymeleaf.org" xmlns="" lang="ch">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="/static/css/zui.min.css">
-    <link rel="stylesheet" href="/static/css/zui.datagrid.min.css">
+    <link rel="stylesheet" href="/static/css/zui.css">
     <script src="/static/js/jquery.js"></script>
-    <script src="/static/js/zui.min.js"></script>
-    <script src="/static/js/zui.datagrid.min.js"></script>
+    <script src="/static/js/zui.js"></script>
 
 
     <link rel="stylesheet" href="/static/css/FrameSkeleton.css">
@@ -23,70 +21,23 @@
 </head>
 <body>
 <div id="app">
-    <frames-keleton >
-        <template #left>
-            <frame-skeleton-left></frame-skeleton-left>
-        </template>
-
-        <template #header>
-            <!--    插槽的内容放这里 -->
-            <frame-skeleton-header></frame-skeleton-header>
-        </template>
-
-        <template #body>
-            <!-- 插槽的内容放这里 -->
-            <frame-skeleton-body></frame-skeleton-body>
-        </template>
-
-        <template #footer>
-            <!--  插槽的内容放这里 -->
-            <frames-keleton-footer></frames-keleton-footer>
-        </template>
-    </frames-keleton>
+    {{ message }}
+    <button @click="increment">
+        {{ count }}
+    </button>
+    <p>
+        <!--使用 router-link 组件进行导航 -->
+        <!--通过传递 `to` 来指定链接 -->
+        <!--`<router-link>` 将呈现一个带有正确 `href` 属性的 `<a>` 标签-->
+        <router-link to="/">Go to Home</router-link>  <br/>
+        <router-link to="/about">Go to About</router-link>
+    </p>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
 </div>
 
-<!-- vue 内的所有变量都要小写,否则就会无效-->
-<script type="module" >
-    import { createApp} from '/static/js/vue.esm-browser.js'
-    import store from '/static/store/index.js'
-    import router from '/static/routes/index.js'
-    import FrameSkeleton from '/static/frame/FrameSkeleton.js'
-    import FrameSkeletonHeader from '/static/frame/FrameSkeletonHeader.js'
-    import FrameSkeletonLeft from '/static/frame/FrameSkeletonLeft.js'
-    import FrameSkeletonBody from '/static/frame/FrameSkeletonBody.js'
-    import FrameSkeletonFooter from '/static/frame/FrameSkeletonFooter.js'
-
-    const App = {
-        data() {
-            return {
-                message: "Hello, world!",
-            };
-        },
-        //注册的名称必须全部小写,如果是多个单词,使用连字符-分隔
-        //否则组件无法注册
-        components: {
-            "frames-keleton": FrameSkeleton,
-            "frame-skeleton-header": FrameSkeletonHeader,
-            "frame-skeleton-left": FrameSkeletonLeft,
-            "frame-skeleton-body": FrameSkeletonBody,
-            "frames-keleton-footer": FrameSkeletonFooter,
-        },
-        mounted: function () {
-
-        },
-        methods: {
-
-        },
-
-    };
-
-    const app = createApp(App);
-    app.use(store)
-    app.use(router)
-    app.mount("#app");
-
-
-
-</script>
+<script src="/js/core/utils.js"></script>
+<script src="/js/core/js-plug-import.js"></script>
 </body>
 </html>

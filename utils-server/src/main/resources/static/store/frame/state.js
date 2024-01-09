@@ -4,5 +4,5 @@
 const state= {
     FrameSkeletonBodyWidth: 0,
     FrameSkeletonBodyElement: null,
+    count: 0
 }
-export  default state

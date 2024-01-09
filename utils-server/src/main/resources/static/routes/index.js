@@ -1,57 +1,21 @@
-import {createRouter, createWebHashHistory} from '/static/js/vue-router-esm-browser.js';
-import timerLeft from '/static/view/timer/TimerLeft.js'
-import timerBody from '/static/view/timer/TimerBody.js'
-import homeLeft from '/static/view/home/HomeLeft.js'
-import homeBody from '/static/view/home/HomeBody.js'
+// 1. 定义路由组件.
+// 也可以从其他文件导入
+const Home = { template: '<div>Home</div>' }
+const About = { template: '<div>About</div>' }
 
-import fileToolBody from '/static/view/filetool/FileToolBody.js'
-import fileToolLeft from '/static/view/filetool/FileToolLeft.js'
-import pdfToWorldBody from '/static/view/filetool/pdftoworld/PdfToWorldBody.js'
-
+// 2. 定义一些路由
+// 每个路由都需要映射到一个组件。
+// 我们后面再讨论嵌套路由。
 const routes = [
-    {
-        path: '/',
-        components:{
-            FrameLeft: homeLeft ,
-            FrameBody: homeBody
-        }
-
-    },
-    {
-        path: '/fileTool',
-        components:{
-            FrameLeft:()=>import('/static/view/filetool/FileToolLeft.js'),
-            FrameBody:()=>import('/static/view/filetool/FileToolBody.js')
-        },
-        children:[
-            {
-              path:'pdfToWord',
-              components: {
-                  FileTool:()=>import('/static/view/filetool/pdftoworld/PdfToWorldBody.js')
-              }
-            },
-            {
-                path:'pdfToWordByImage',
-                components: {
-                    FileTool:()=>import('/static/view/filetool/pdftoworld/PdfToWorldByImageBody.js')
-                }
-            }
-
-        ]
-    },
-    {
-        path: '/timer',
-        components:{
-            FrameLeft: timerLeft ,
-            FrameBody: timerBody
-        }
-
-    },
+    { path: '/', component: Home },
+    { path: '/about', component: About },
 ]
 
+// 3. 创建路由实例并传递 `routes` 配置
+// 你可以在这里输入更多的配置，但我们在这里
+// 暂时保持简单
 const router = createRouter({
     // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
-    history: createWebHashHistory(),
+    history: VueRouter.createWebHashHistory(),
     routes, // `routes: routes` 的缩写
 })
-export default router
