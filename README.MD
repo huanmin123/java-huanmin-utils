@@ -2,9 +2,9 @@
 
 ## 技术架构
 
-前端使用技术vue3+vuex4+router4+zui3
+前端使用技术vue3+vuex4+router4+zui1
 
-- https://easysoft.github.io/zui/3/
+- https://openzui.com/
 - https://cn.vuejs.org/guide/quick-start.html
 - https://router.vuejs.org/zh/installation.html
 - https://vuex.vuejs.org/zh/guide/

@@ -32,14 +32,20 @@ async function load() {
     await addJsScripts([
         requestPrefix + '/view/home/HomeLeft.js',
         requestPrefix + '/view/home/HomeBody.js',
+
         requestPrefix + '/view/timer/TimerLeft.js',
+
         requestPrefix + '/view/timer/TimerBody.js',
         requestPrefix + '/view/filetool/FileToolLeft.js',
         requestPrefix + '/view/filetool/FileToolBody.js',
         requestPrefix + '/view/filetool/pdftoworld/PdfToWorldBody.js',
         requestPrefix + '/view/filetool/pdftoworld/PdfToWorldByImageBody.js',
+
         requestPrefix + '/view/mysql/MySqlLeft.js',
         requestPrefix + '/view/mysql/MySqlBody.js',
+        requestPrefix + '/view/mysql/body/MysqlBinLogHandleBody.js',
+        requestPrefix + '/view/mysql/body/MysqlSqlAnalyseBody.js',
+        requestPrefix + '/view/mysql/body/MysqlSqlBuilderBody.js',
 
         //路由绑定
         requestPrefix + '/routes/index.js',

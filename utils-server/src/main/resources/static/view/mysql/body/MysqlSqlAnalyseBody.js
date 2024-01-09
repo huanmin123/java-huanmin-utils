@@ -1,12 +1,12 @@
 
-const MysqlBody={
+const MysqlSqlAnalyseBody={
     data: function () {
         return {
             count: 0
         }
     },
     template: `
-            <router-view  name="MysqlTool"/>
+      <h1>MysqlSqlAnalyseBody.js</h1>
     `,
     mounted: function () {
 

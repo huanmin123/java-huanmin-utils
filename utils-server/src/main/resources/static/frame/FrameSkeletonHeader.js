@@ -19,6 +19,11 @@ const FrameSkeletonHeader={
                      <i class="icon icon-file-o"></i>
                       <a href="#/fileTool" >文档工具
                       </a>
+                    </li>                    
+                    <li class="pull-left  text-center "  >
+                     <i class="icon icon-bars"></i>
+                      <a href="#/mysqlTool" >MYSQL工具
+                      </a>
                     </li>
                     <li class="pull-left  text-center "  >
                       <i class="icon icon-time"></i> 

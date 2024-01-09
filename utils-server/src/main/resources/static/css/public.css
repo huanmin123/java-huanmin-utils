@@ -4,6 +4,8 @@ body {
 
 #HeaderNav li i{
     color: #ffffff;
+    margin-right: 5px;
+    font-size: 16px;
 }
 
 #FrameLeft i{

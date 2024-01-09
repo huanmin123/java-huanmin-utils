@@ -3,6 +3,7 @@
     border: none;
     position: absolute;
     width: 100%;
+    font-size: 15px;
 }
 
 #ListMenu  li.active>a {

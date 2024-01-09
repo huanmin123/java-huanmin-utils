@@ -31,6 +31,34 @@ const routes = [
         ]
     },
     {
+        path: '/mysqlTool',
+        components:{
+            FrameLeft:MysqlLeft,
+            FrameBody:MysqlBody
+        },
+        children:[
+            {
+                path:'sql-analyse',
+                components: {
+                    MysqlTool:MysqlSqlAnalyseBody
+                }
+            },
+            {
+                path:'binlog-handle',
+                components: {
+                    MysqlTool:MysqlBinLogHandleBody
+                }
+            },
+            {
+                path:'sql-builder',
+                components: {
+                    MysqlTool:MysqlSqlBuilderBody
+                }
+            }
+
+        ]
+    },
+    {
         path: '/timer',
         components:{
             FrameLeft: TimerLeft ,
