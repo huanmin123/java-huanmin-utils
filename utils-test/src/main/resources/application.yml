@@ -10,14 +10,12 @@ spring:
     # 配置文件是可以通过外部文件覆盖的
     # active的覆盖顺序是从左到右,后面的会覆盖前面的
     active: dev, cloud,db,redis,es,common,email
-
   application:
     name: java-huanmin-utils
   main:
-    allow-bean-definition-overriding: true #
-  servlet:
-    multipart:
-      max-file-size: 100MB
-      max-request-size: 100MB
-
+    allow-bean-definition-overriding: true # 允许bean的覆盖
+  # 开发阶段关闭thymeleaf的模板缓存  否则每次修改都需要重启引导
+  # 在IDEA中按住shift+ctrl +F9  开始更新  不需要在重启引导了
+  thymeleaf:
+    cache: false
 
