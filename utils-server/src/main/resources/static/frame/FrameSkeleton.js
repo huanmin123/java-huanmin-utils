@@ -1,5 +1,4 @@
-export default {
-    name: 'FrameSkeleton',
+const FrameSkeleton= {
     data: function () {
         return {}
     },

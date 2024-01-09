@@ -1,6 +1,5 @@
 
-export default {
-    name: 'MysqlBody',
+const MysqlBody={
     data: function () {
         return {
             count: 0

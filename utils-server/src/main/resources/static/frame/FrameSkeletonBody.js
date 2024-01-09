@@ -1,6 +1,5 @@
 
-export default {
-    name: 'FrameSkeletonBody',
+const FrameSkeletonBody={
     data: function () {
         return {
             count: 0

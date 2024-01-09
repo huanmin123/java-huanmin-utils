@@ -1,7 +1,5 @@
-import listMenu  from "/static/components/ListMenu.js"
 
-export default {
-    name: 'TimerLeft',
+const TimerLeft={
     data: function () {
         return {
             list: [
@@ -36,7 +34,7 @@ export default {
 
     },
     components: {
-        "list-menu": listMenu
+        "list-menu": ListMenu
     }
 
 }

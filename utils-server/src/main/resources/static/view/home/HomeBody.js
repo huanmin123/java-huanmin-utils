@@ -1,6 +1,5 @@
 
-export default {
-    name: 'HomeBody',
+const  HomeBody={
     data: function () {
         return {
             count: 0

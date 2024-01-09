@@ -29,3 +29,11 @@ function sleep(time) {
     }
 }
 
+
+
+
+//滚动条还有多少距离到底部
+function getScrollBottomHeight() {
+    return $(document).height() - $(window).height() - $(window).scrollTop();
+}
+

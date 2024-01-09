@@ -1,6 +1,5 @@
-import listMenu  from "/static/components/ListMenu.js"
-export default {
-    name: 'HomeLeft',
+
+const HomeLeft={
     data: function () {
         return {
             list: [
@@ -71,7 +70,7 @@ export default {
 
     },
     components: {
-        "list-menu": listMenu
+        "list-menu": ListMenu
     }
 
 }

@@ -1,6 +1,5 @@
 
-export default {
-    name: 'PdfToWorldByImageBody',
+const  PdfToWorldByImageBody={
     data: function () {
         return {
             count: 0

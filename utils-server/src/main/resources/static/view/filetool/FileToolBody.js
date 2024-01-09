@@ -1,6 +1,5 @@
 
-export default {
-    name: 'FileToolBody',
+const FileToolBody={
     data: function () {
         return {
             count: 0

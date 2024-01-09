@@ -1,5 +1,5 @@
 
-export default {
+const  FrameSkeletonLeft={
     name: 'FrameSkeleton',
     props: {//接收父组件传递的参数
 

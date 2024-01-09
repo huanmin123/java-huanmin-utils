@@ -1,5 +1,5 @@
 
-export default {
+const FrameSkeletonFooter = {
     data: function () {
         return {
             count: 0

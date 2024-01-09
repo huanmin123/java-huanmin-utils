@@ -1,7 +1,6 @@
-import listMenu  from "/static/components/ListMenu.js"
 
-export default {
-    name: 'FileToolLeft',
+
+const FileToolLeft={
     data: function () {
         return {
             list: [
@@ -30,7 +29,7 @@ export default {
 
     },
     components: {
-        "list-menu": listMenu
+        "list-menu": ListMenu
     }
 
 }

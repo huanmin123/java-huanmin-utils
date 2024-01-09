@@ -1,6 +1,5 @@
 
-export default {
-    name: 'TimerBody',
+const TimerBody={
     data: function () {
         return {
             count: 0
