@@ -24,7 +24,7 @@ public class BlockTest {
         for (int i = 0; i < 1000001; i++) {
             Random random=new Random();
             int i1 = random.nextInt(1000001);
-            UserData build = UserData.builder().id(i1).age(i1).name("").build();
+            UserData build = UserData.builder().id( i1).age(i1).name("").build();
             list22.add(build);
         }
 

@@ -14,10 +14,10 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class UserEntity implements Serializable {
 //    private static final long serialVersionUID = 1L;
-    private  long id;
+    private  Integer id;
     private  String name; //名称
     private  String pass; //密码
-    private  int age; //年龄
+    private  Integer age; //年龄
     private  String sex;//性别
     private  String site; //地址
     private  Boolean isDel; //是否删除

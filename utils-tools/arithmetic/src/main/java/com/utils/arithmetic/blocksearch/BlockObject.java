@@ -1,5 +1,6 @@
 package com.utils.arithmetic.blocksearch;
 
+import com.utils.common.base.UserData;
 import lombok.Builder;
 import lombok.Data;
 
@@ -20,6 +21,8 @@ public class BlockObject<T> {
     }
 
 
-
-
+    public BlockObject(Integer id, T obj) {
+        this.id = Long.valueOf(id);
+        this.obj=obj;
+    }
 }
