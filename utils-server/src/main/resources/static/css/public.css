@@ -8,6 +8,12 @@ body {
     font-size: 16px;
 }
 
+/*给js内部动态切换的*/
+.FrameSkeletonHeaderItemCss{
+    /*  鼠标悬浮时候出现白色下划线*/
+    border-bottom: 2px solid #ffffff  !important;
+}
+
 #FrameLeft i{
     color: #cd5765;
 }

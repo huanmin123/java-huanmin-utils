@@ -1,7 +1,7 @@
 package com.utils.file_tool.mysql_log.binlog;
 
 import com.utils.common.string.PatternCommon;
-import com.utils.file_tool.dal.mapper.StructureMapper;
+import com.utils.file_tool.mysql_log.dal.mapper.StructureMapper;
 import com.utils.file_tool.mysql_log.entity.TableStructureEntity;
 import org.apache.commons.lang.StringUtils;
 import com.utils.common.file.FileUtil;

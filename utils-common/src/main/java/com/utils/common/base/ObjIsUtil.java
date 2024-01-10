@@ -1,7 +1,7 @@
 package com.utils.common.base;
 
 /**
- * Object简单的基础工具类
+ * Obj 相关判断工具
  *
  * @Author: huanmin
  * @Date: 2022/6/19 21:58
@@ -16,19 +16,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Map;
 
-public class ObjUtil {
-
-    /**
-     * 如果obj为null，则返回默认值，不为null，则返回obj
-     *
-     * @param obj          obj
-     * @param defaultValue 默认值
-     * @param <T>          值泛型
-     * @return obj不为null 返回obj，否则返回默认值
-     */
-    public static <T> T defaultIfNull(T obj, T defaultValue) {
-        return obj != null ? obj : defaultValue;
-    }
+public class ObjIsUtil {
 
     //---------------------------------------------------------------------
     // 对象类型判断

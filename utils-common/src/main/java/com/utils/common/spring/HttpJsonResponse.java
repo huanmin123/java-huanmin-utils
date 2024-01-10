@@ -4,6 +4,7 @@ import com.alibaba.fastjson.PropertyNamingStrategy;
 import com.alibaba.fastjson.serializer.SerializeConfig;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.slf4j.MDC;
 
 import java.io.Serializable;
 
@@ -20,10 +21,12 @@ public class HttpJsonResponse<T> implements Serializable {
     private static final Object EMPTY = null;
     public static final Integer SUCCESS_DEFAULT_CODE = 0;
     public static final Integer FAILED_DEFAULT_CODE = -1;
+
+    private String traceId=com.lwq.logtrace.tookit.LogTraceContextHolder.get();//日志追踪id
     private T data;
     private Integer code;
     private String message;
-    private String traceId;
+
 
     static {
         //序列化的时候,将返回值转换为a_b_c的形式

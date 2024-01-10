@@ -18,7 +18,14 @@
     </properties>
 
     <dependencies>
+        <!-- 多数据源加载-->
+        <dependency>
+            <groupId>org.huanmin</groupId>
+            <artifactId>dynamic-datasource</artifactId>
+        </dependency>
 
+
+        <!-- 工具箱-->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
@@ -31,13 +38,6 @@
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
             <version>3.26.0-GA</version>
-        </dependency>
-
-
-        <!--        模板引擎  -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
 
@@ -186,9 +186,6 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
-
-
-
 
     </dependencies>
 

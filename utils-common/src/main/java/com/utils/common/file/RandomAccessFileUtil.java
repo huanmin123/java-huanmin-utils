@@ -1,6 +1,6 @@
 package com.utils.common.file;
 
-import com.utils.common.base.NullUtils;
+import com.utils.common.base.NullUtil;
 import com.utils.common.base.UniversalException;
 import com.utils.common.container.ArrayByteUtil;
 
@@ -74,8 +74,8 @@ public class RandomAccessFileUtil {
         
         //判断文件是否是UTF-8编码,否则抛出异常
         readFileIsUTF_8(rfile);
-        fr = NullUtils.notEmptyElse(fr, (str, r1) -> str);
-        fw = NullUtils.notEmptyElse(fw, (str1, w1) -> str1);//如果写取规则是null,那么默认写的时候不做任何处理,并且直接跳过写入
+        fr = NullUtil.notEmptyElse(fr, (str, r1) -> str);
+        fw = NullUtil.notEmptyElse(fw, (str1, w1) -> str1);//如果写取规则是null,那么默认写的时候不做任何处理,并且直接跳过写入
         try (RandomAccessFile r = new RandomAccessFile(rfile, "r");
              RandomAccessFile w = new RandomAccessFile(wfile, "rw");
         ) {
@@ -128,8 +128,8 @@ public class RandomAccessFileUtil {
     ) {
         //判断文件是否是UTF-8编码,否则抛出异常
         readFileIsUTF_8(rfile);
-        fr = NullUtils.notEmptyElse(fr, (bytes, r1) -> bytes);//如果读取规则是null,那么默认读取的时候不做任何处理
-        fw = NullUtils.notEmptyElse(fw, (bytes, w1) -> bytes);//如果写取规则是null,那么默认写的时候不做任何处理,并且直接跳过写入
+        fr = NullUtil.notEmptyElse(fr, (bytes, r1) -> bytes);//如果读取规则是null,那么默认读取的时候不做任何处理
+        fw = NullUtil.notEmptyElse(fw, (bytes, w1) -> bytes);//如果写取规则是null,那么默认写的时候不做任何处理,并且直接跳过写入
         try (RandomAccessFile r = new RandomAccessFile(rfile, "r");
              RandomAccessFile w = new RandomAccessFile(wfile, "rw");
         ) {

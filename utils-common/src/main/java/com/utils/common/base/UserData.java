@@ -13,11 +13,11 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserData implements Serializable {
-//    private static final long serialVersionUID = 1L;
-    private  long id;
+    private static final long serialVersionUID = 1123L;
+    private  Integer id;
     private  String name; //名称
     private  String pass; //密码
-    private  int age; //年龄
+    private  Integer age; //年龄
     private  String sex;//性别
     private  String site; //地址
 

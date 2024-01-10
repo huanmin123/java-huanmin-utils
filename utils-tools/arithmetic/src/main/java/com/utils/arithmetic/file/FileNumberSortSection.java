@@ -2,7 +2,7 @@ package com.utils.arithmetic.file;
 
 
 import com.utils.common.base.DataGroup;
-import com.utils.common.base.NullUtils;
+import com.utils.common.base.NullUtil;
 import com.utils.common.file.FileTool;
 import com.utils.common.file.FileUtil;
 import com.utils.common.file.ReadFileLineUtil;
@@ -128,7 +128,7 @@ public class FileNumberSortSection {
 
                 List<Integer> nums=new ArrayList<>();
                 Arrays.stream(strAll.split(numSplit)).forEach(v->{
-                    if(NullUtils.notEmpty(v)){
+                    if(NullUtil.notEmpty(v)){
                         nums.add(Integer.parseInt(v));
                     }
                 });
@@ -145,7 +145,7 @@ public class FileNumberSortSection {
                     }
                 }
             }
-            if (NullUtils.notEmpty(sj.toString())){
+            if (NullUtil.notEmpty(sj.toString())){
                 bw.write(sj.toString());
                 bw.newLine();
             }

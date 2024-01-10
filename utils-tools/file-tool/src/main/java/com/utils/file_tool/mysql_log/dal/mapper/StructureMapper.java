@@ -1,4 +1,4 @@
-package com.utils.file_tool.dal.mapper;
+package com.utils.file_tool.mysql_log.dal.mapper;
 
 import com.utils.file_tool.mysql_log.entity.TableStructureEntity;
 import org.apache.ibatis.annotations.Mapper;

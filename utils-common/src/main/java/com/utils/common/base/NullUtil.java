@@ -11,7 +11,7 @@ import java.util.Map;
  * @Description:  判断是否为空的工具栏，如果不使用StringUtils的jdk的工具类，可以自行封装
  *
  */
-public class NullUtils {
+public class NullUtil {
 
 
     /**

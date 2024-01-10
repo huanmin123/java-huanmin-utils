@@ -8,7 +8,10 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint;
 import org.springframework.stereotype.Component;
+
+import java.lang.annotation.Annotation;
 
 
 /**
@@ -21,18 +24,21 @@ import org.springframework.stereotype.Component;
 public class DynamicDataSourceAspect {
 
 
-    @Pointcut("@annotation(com.utils.dynamic_datasource.aop.DynamicDataSourceAnno)")
+    @Pointcut("@annotation(com.utils.dynamic_datasource.aop.DBSwitch)|| @within(com.utils.dynamic_datasource.aop.DBSwitch)")
     public void dynamicDataSourceAnno() {
-
+//        ((MethodInvocationProceedingJoinPoint) joinPoint).signature.getDeclaringType().getAnnotation(DBSwitch.class)
     }
 
     @Around("dynamicDataSourceAnno()")
-    public Object DynamicDataSourceAspectAroundAnno(ProceedingJoinPoint joinPoint) {
+    public Object dynamicDataSourceAspectAroundAnno(ProceedingJoinPoint joinPoint) {
         Object object = null;
         try {
             MethodSignature signature = (MethodSignature)joinPoint.getSignature();
-            DynamicDataSourceAnno dynamicDataSourceAnno  = signature.getMethod().getAnnotation(DynamicDataSourceAnno.class);
-            String key = dynamicDataSourceAnno.key();
+            DBSwitch dbSwitch  = signature.getMethod().getAnnotation(DBSwitch.class);
+            if (dbSwitch==null){
+                dbSwitch= (DBSwitch) signature.getDeclaringType().getAnnotation(DBSwitch.class);
+            }
+            String key = dbSwitch.value();
             if (StringUtils.isNotBlank(key)) {
                 //切换为指定数据库
                 DynamicDataSourceService.switchDb(key);
@@ -48,12 +54,12 @@ public class DynamicDataSourceAspect {
     }
 
     // 还可以扩展包路径切换
-    @Pointcut("execution(* com.*.service.user.*.*(..))")
+//    @Pointcut("execution(* com.*.*(..))")
     public void dynamicDataSourceMethodService() {}
 
-    @Around("dynamicDataSourceMethodService()")
+//    @Around("dynamicDataSourceMethodService()")
     public Object dynamicDataSourceMethodService(ProceedingJoinPoint joinPoint) {
-       return DynamicDataSourceAspectAroundAnno(joinPoint);
+       return dynamicDataSourceAspectAroundAnno(joinPoint);
     }
 
 }

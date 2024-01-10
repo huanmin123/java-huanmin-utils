@@ -1,8 +1,8 @@
 # 一下配置可以在子配置文件中被覆盖
 spring:
   datasource:
-    default-db-key: self
-    database-load-activate: true # 是否启用数据库加载
+    default-db-key: master # 默认数据源key
+    database-load-activate: false # 是否启用数据库加载
     multi-db:
       - master: # 数据源的key
           driver-class-name: com.mysql.cj.jdbc.Driver

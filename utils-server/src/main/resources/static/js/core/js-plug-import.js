@@ -26,6 +26,7 @@ async function load() {
     //全局组件
     await addJsScripts([
         requestPrefix + '/components/ListMenu.js',
+        requestPrefix + '/components/TabsNav.js',
     ]);
 
     //路由和view 组件

@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.METHOD,ElementType.TYPE})//作用:方法和类
 @Retention(RetentionPolicy.RUNTIME)
-public @interface DynamicDataSourceAnno {
-    String key() default ""; //数据源的key
+public @interface DBSwitch {
+    String value() default ""; //数据源的key
 
 }

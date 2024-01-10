@@ -9,6 +9,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.core.env.Environment;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -19,7 +21,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 // DataSourceAutoConfiguration取消自动装配数据源, 我们自己配置数据源
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@MapperScan({"com.utils.**.mapper", "com.utils.**.dao"})
+@MapperScan({"com.utils.**.mapper"})
+@EnableAspectJAutoProxy(proxyTargetClass = true) //开启AOP的动态代理,这样可以不用实现接口就能使用AOP
 public class WebApplication {
 
     public static void main(String[] args) {

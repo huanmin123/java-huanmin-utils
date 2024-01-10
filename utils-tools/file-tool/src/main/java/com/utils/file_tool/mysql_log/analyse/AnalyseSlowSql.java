@@ -1,6 +1,6 @@
 package com.utils.file_tool.mysql_log.analyse;
 
-import com.utils.file_tool.dal.mapper.ExplainSqlMapper;
+import com.utils.file_tool.mysql_log.dal.mapper.ExplainSqlMapper;
 import com.utils.file_tool.mysql_log.entity.EplainEntity;
 import com.utils.file_tool.mysql_log.entity.SlowEntity;
 import com.utils.file_tool.mysql_log.slowsql.SlowSqlAnalyse;

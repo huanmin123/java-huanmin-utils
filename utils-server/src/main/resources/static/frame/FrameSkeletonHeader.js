@@ -13,28 +13,38 @@ const FrameSkeletonHeader={
                     <li class=" pull-left  text-center" id="LOGO" >
                     </li>
                     <li class="pull-left  text-center ">
-                      <i class="icon icon-home"></i> <a href="#/">主页</a>
+                     <div>
+                        <i class="icon icon-home"></i> 
+                         <a href="#/">主页</a>
+                    </div>
                     </li>
                     <li class="pull-left  text-center "  >
-                     <i class="icon icon-file-o"></i>
-                      <a href="#/fileTool" >文档工具
-                      </a>
+                      <div>
+                        <i class="icon icon-file-o"></i>
+                        <a href="#/fileTool" >文档工具</a>
+                      </div>
                     </li>                    
                     <li class="pull-left  text-center "  >
-                     <i class="icon icon-bars"></i>
-                      <a href="#/mysqlTool" >MYSQL工具
-                      </a>
+                     <div>
+                       <i class="icon icon-bars"></i>
+                        <a href="#/mysqlTool" >MYSQL工具</a>
+                      </div>
                     </li>
                     <li class="pull-left  text-center "  >
-                      <i class="icon icon-time"></i> 
-                      <a href="#/timer" >定时器
-                      </a>
+                        <div>
+                        <i class="icon icon-time"></i> 
+                        <a href="#/timer" >定时器</a>
+                       </div>
                     </li>
                     <li class="pull-left  text-center ">
-                      <a href="#/">联系</a>
+                      <div>
+                            <a href="#/">联系</a>
+                      </div>
                     </li>
                     <li class="pull-left text-center ">
-                      <a href="#/">关于</a>
+                      <div>
+                        <a href="#/">关于</a>
+                      </div>
                     </li>
                   </ul>
             </div>
@@ -65,6 +75,11 @@ const FrameSkeletonHeader={
       </div>
     `,
     mounted: function () {
+        $('#FrameSkeletonHeaderItem').on('click', 'li>div', function() {
+            console.log($(this).closest('li>div'))
+            $('#FrameSkeletonHeaderItem li>div').removeClass('FrameSkeletonHeaderItemCss');
+            $(this).closest('li>div').addClass('FrameSkeletonHeaderItemCss');
+        });
 
     },
     methods: {

@@ -34,7 +34,6 @@
  */
 
 const  ListMenu={
-    name: 'ListMenu',
     props: {
         ListMenuData: JSON
     },

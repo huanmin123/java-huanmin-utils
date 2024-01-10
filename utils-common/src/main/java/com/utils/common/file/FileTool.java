@@ -1,6 +1,6 @@
 package com.utils.common.file;
 
-import com.utils.common.base.NullUtils;
+import com.utils.common.base.NullUtil;
 import com.utils.common.base.UniversalException;
 import com.utils.common.string.StringUtil;
 import info.monitorenter.cpdetector.io.*;
@@ -90,7 +90,7 @@ public class FileTool {
                 str = str.replaceAll("\r\n|\n", split);//因为可能出现\r\n被截断成\n的情况,所以需要将换行符替换成分隔符
                 String[] split1 = str.split(split);
                 String num = split1[0];
-                if (NullUtils.isEmpty(num)) {//如果是空的,则跳过
+                if (NullUtil.isEmpty(num)) {//如果是空的,则跳过
                     index += 1;
                     r.seek(index);
                     data = new byte[20];
@@ -199,7 +199,7 @@ public class FileTool {
     //截取文件指定行之后的内容一直到指定行的内容  ,然后写入到指定文件
     public static void cutFileLineToWrite(File inFile, File outFile, String startLine, String endLine) {
         String s = cutFileLine( inFile, startLine, endLine);
-        if (NullUtils.notEmpty(s)) {
+        if (NullUtil.notEmpty(s)) {
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(outFile))) {
                 bw.write(s);
             } catch (IOException e) {

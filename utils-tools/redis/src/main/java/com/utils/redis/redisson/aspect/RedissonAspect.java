@@ -9,7 +9,7 @@ package com.utils.redis.redisson.aspect;
  * @Description: 文件作用详细描述....
  */
 
-import com.utils.common.base.NullUtils;
+import com.utils.common.base.NullUtil;
 import com.utils.common.spring.HttpJsonResponse;
 import com.utils.redis.redisson.utils.RedissonLockUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -57,9 +57,9 @@ public class RedissonAspect {
         Assert.notNull(request, "request can not null");
 
         //如果没有唯一表示那么就使用token或者sessionID来唯一表示
-        if(!NullUtils.notEmpty(keyName)){
+        if(!NullUtil.notEmpty(keyName)){
             String token = request.getHeader(tokenName);
-            if(NullUtils.notEmpty(token)){
+            if(NullUtil.notEmpty(token)){
                 keyName=token;
             }else{
                 //使用sessionID (注意保证分布式session共享)
