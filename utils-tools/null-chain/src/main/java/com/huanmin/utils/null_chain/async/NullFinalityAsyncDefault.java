@@ -32,23 +32,31 @@ public class NullFinalityAsyncDefault  <T extends Serializable> implements NullF
     }
 
 
+    @Override
+    public void is(Consumer<Boolean> consumer) {
 
+    }
 
     @Override
     public void isOr(Consumer<? super T> action, Runnable emptyAction) {
 
     }
 
-
     @Override
-    public <X extends Throwable> T orThrow(Supplier<? extends X> exceptionSupplier) throws X {
+    public T get(Consumer<? super T> consumer) throws NullPointerException {
         return null;
     }
 
     @Override
-    public T orElse(T defaultValue) {
-        return null;
+    public <X extends Throwable> void orThrow(Consumer<T> consumer, Supplier<? extends X> exceptionSupplier) throws X {
+
     }
+
+    @Override
+    public void orElse(Consumer<T> consumer, T defaultValue) {
+
+    }
+
 
     //将NullChainBase转换为NullChainAsyncDefault
     protected NullFinalityAsyncDefault<T> convert(NullChainBase<T> nullChainBase){

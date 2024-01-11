@@ -13,7 +13,7 @@ public interface NullFinalityAsync<T> extends Serializable {
 
     T get(Consumer<? super T> consumer) throws NullPointerException;
 
-    <X extends RuntimeException> void orThrow(Consumer<T> consumer,Supplier<? extends X> exceptionSupplier) ;
+    <X extends Throwable> void orThrow(Consumer<T> consumer,Supplier<? extends X> exceptionSupplier) throws X;
 
     void orElse(Consumer<T> consumer,T defaultValue);
 
