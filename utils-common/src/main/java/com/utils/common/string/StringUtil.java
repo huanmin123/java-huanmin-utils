@@ -125,12 +125,28 @@ public class StringUtil {
 
     //判断是否是数字包括负数  是返回true 不是返回false
     public static boolean isNumeric(String str) {
-        if (str == null || str.length() == 0) {
+        if (str == null || str.isEmpty()) {
             return false;
         }
         //截取掉-号
         if (str.startsWith("-")) {
             str = str.substring(1);
+        }
+        for (int i = str.length(); --i >= 0; ) {
+            if (!Character.isDigit(str.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+    //判断是否是正数字
+    public static boolean isPositiveNumeric(String str) {
+        if (str == null || str.isEmpty()) {
+            return false;
+        }
+        //截取掉-号
+        if (str.startsWith("-")) {
+            return false;
         }
         for (int i = str.length(); --i >= 0; ) {
             if (!Character.isDigit(str.charAt(i))) {

@@ -1,0 +1,36 @@
+body {
+    /*min-width: 980px;*/
+}
+
+#HeaderNav li i{
+    color: #ffffff;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+/*给js内部动态切换的*/
+.FrameSkeletonHeaderItemCss{
+    /*  鼠标悬浮时候出现白色下划线*/
+    border-bottom: 2px solid #ffffff  !important;
+}
+
+#FrameLeft i{
+    color: #cd5765;
+}
+
+#FrameSkeletonHeader{
+    /*   背景颜色渐变*/
+    background: linear-gradient(to right, #B4022AFF , #c5022e, #d20231, #e40235);
+
+}
+
+#HeaderNav li:hover {
+    background-color: #b6022b;
+}
+
+#HeaderNav li a{
+    color: #fcf6f7;
+}
+#FrameSkeletonHeaderItem{
+    font-size: 16px;
+}

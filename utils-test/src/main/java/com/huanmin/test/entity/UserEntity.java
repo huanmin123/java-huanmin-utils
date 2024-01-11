@@ -7,6 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Builder
 @Data
@@ -21,6 +24,7 @@ public class UserEntity implements Serializable {
     private  String sex;//性别
     private  String site; //地址
     private  Boolean isDel; //是否删除
+    private LocalDate date; //日期
     private  RoleEntity roleData;
 
 

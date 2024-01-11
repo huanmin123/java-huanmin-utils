@@ -41,6 +41,10 @@
             <artifactId>file-tool</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.huanmin</groupId>
+            <artifactId>null-chain</artifactId>
+        </dependency>
 
 
 

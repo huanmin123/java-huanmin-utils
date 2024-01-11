@@ -256,6 +256,22 @@ public class LocalDateUtil {
         return dateTimeFormatter.format(temporal);
     }
 
+    //获取当前时间戳
+    public static long getTimestamp() {
+        return System.currentTimeMillis();
+    }
+    //将LocalDateTime转换为时间戳
+    public static long getTimestamp(LocalDateTime localDateTime) {
+        return localDateTime.toInstant(ZoneOffset.of("+8")).toEpochMilli();
+    }
+    //将LocalDate转换为时间戳
+    public static long getTimestamp(LocalDate localDate) {
+        return localDate.atStartOfDay(ZoneOffset.of("+8")).toInstant().toEpochMilli();
+    }
+
+
+
+
     /**
      * 日期时间字符串转换为日期时间(java.time.LocalDateTime)
      *

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns: lang="ch">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/static/css/zui.min.css">
+    <link rel="stylesheet" href="/static/css/zui.datagrid.min.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/zui.min.js"></script>
+    <script src="/static/js/zui.datagrid.min.js"></script>
+
+    <link rel="stylesheet" href="/static/css/FrameSkeleton.css">
+    <link rel="stylesheet" href="/static/css/FrameSkeletonHeader.css">
+    <link rel="stylesheet" href="/static/css/FrameSkeletonLeft.css">
+    <link rel="stylesheet" href="/static/css/FrameSkeletonBody.css">
+    <link rel="stylesheet" href="/static/css/FrameSkeletonFooter.css">
+    <link rel="stylesheet" href="/static/css/public.css">
+    <link rel="stylesheet" href="/static/css/ListMenu.css">
+    <link rel="shortcut icon" href="/static/images/胡.png" type="image/x-icon"/>
+</head>
+<body>
+<div id="app">
+    <frames-keleton >
+        <template #left>
+            <frame-skeleton-left></frame-skeleton-left>
+        </template>
+
+        <template #header>
+            <!--    插槽的内容放这里 -->
+            <frame-skeleton-header></frame-skeleton-header>
+        </template>
+
+        <template #body>
+            <!-- 插槽的内容放这里 -->
+            <frame-skeleton-body></frame-skeleton-body>
+        </template>
+
+        <template #footer>
+            <!--  插槽的内容放这里 -->
+            <frames-keleton-footer></frames-keleton-footer>
+        </template>
+    </frames-keleton>
+</div>
+<script src="/js/core/utils.js"></script>
+<script src="/js/core/js-plug-import.js"></script>
+
+</body>
+</html>

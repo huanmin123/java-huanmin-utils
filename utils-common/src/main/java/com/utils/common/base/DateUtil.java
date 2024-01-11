@@ -638,13 +638,6 @@ public class DateUtil {
     //字符串时间+8小时返回字符串
     
 
-    public static void main(String[] args) {
-        long dateWeek = DateUtil.getDateWeek(new Date(),2);
-        Date date = new Date(dateWeek);
-        String s = DateUtil.dateTurnString(date, DateEnum.DATETIME_PATTERN);
-        System.out.println(s);
-
-    }
 
 
 

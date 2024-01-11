@@ -1,0 +1,72 @@
+
+#HeaderNav #FrameSkeletonHeaderItem ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+#HeaderNav #FrameSkeletonHeaderItem li {
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-width: 40px;
+    margin-right: 16px;
+}
+
+#HeaderNav #FrameSkeletonHeaderItem li a{
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+
+#LOGO{
+    width: 150px !important;
+    height: 60px;
+    background-image: url("/static/images/LOGO.png");
+    background-repeat: no-repeat;
+    background-size: 150px 60px;
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+
+#FrameSkeletonHeaderInform>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+}
+
+#FrameSkeletonHeaderInform>ul>li {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 5px;
+}
+
+#FrameSkeletonHeaderInform i{
+    font-size: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+#FrameSkeletonHeaderInformDropdown .dropdown-menu{
+    min-width: 100px;
+}
+#FrameSkeletonHeaderInformDropdown .dropdown-menu a{
+  color: rgba(37, 37, 37, 0.77) ;
+}
+
+#FrameSkeletonHeaderInformDropdown .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+    background-color: #f5dcde;
+}
+#FrameSkeletonHeaderInformDropdown{
+    display: inline-block;
+}
+#FrameSkeletonHeaderInformText>i, #FrameSkeletonHeaderInformDropdown>a{
+    display: inline-block;
+    vertical-align: middle;
+}
+#FrameSkeletonHeaderInformDropdown>a{
+/*    去除下换线*/
+    text-decoration: none;
+}
