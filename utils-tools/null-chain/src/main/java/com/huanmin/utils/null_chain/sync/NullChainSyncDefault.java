@@ -1,6 +1,7 @@
 package com.huanmin.utils.null_chain.sync;
 
-import com.huanmin.utils.null_chain.NullChain;
+import com.huanmin.utils.null_chain.base.NullChain;
+import com.huanmin.utils.null_chain.async.NullChainAsync;
 import com.huanmin.utils.null_chain.NullFun;
 
 import java.io.Serializable;
@@ -12,10 +13,10 @@ import java.util.function.Supplier;
  * @author huanmin
  * @date 2024/1/11
  */
-public class NullChainDefault<T extends Serializable> extends NullConvertDefault<T> implements NullChain<T> {
+public class NullChainSyncDefault<T extends Serializable> extends NullConvertSyncDefault<T> implements NullChain<T> {
 
 
-    public NullChainDefault(T object, boolean isNull, StringBuffer linkLog) {
+    public NullChainSyncDefault(T object, boolean isNull, StringBuffer linkLog) {
         super(object, isNull, linkLog);
     }
 
@@ -50,6 +51,16 @@ public class NullChainDefault<T extends Serializable> extends NullConvertDefault
     }
 
     @Override
+    public <U extends Serializable> NullChain<U> convert(NullFun<? super T, ? extends U> mapper) {
+        return this.nullChainBase.convert(mapper);
+    }
+
+    @Override
+    public NullChainAsync<T> async(NullFun<? super T, ?> handler) {
+        return null;
+    }
+
+    @Override
     public <U> NullChain<T> pick(NullFun<? super T, ? extends U>... mapper) {
         return this.nullChainBase.pick(mapper);
     }
@@ -67,5 +78,11 @@ public class NullChainDefault<T extends Serializable> extends NullConvertDefault
     @Override
     public NullChain<T> deepCopy() {
         return this.nullChainBase.deepCopy();
+    }
+
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.nullChainBase.is());
     }
 }

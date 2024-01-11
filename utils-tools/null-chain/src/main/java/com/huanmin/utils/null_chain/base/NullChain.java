@@ -1,4 +1,7 @@
-package com.huanmin.utils.null_chain;
+package com.huanmin.utils.null_chain.base;
+
+import com.huanmin.utils.null_chain.async.NullChainAsync;
+import com.huanmin.utils.null_chain.NullFun;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,6 +13,9 @@ import java.util.function.Supplier;
  * @date 2024/1/11
  */
 public interface NullChain<T> extends  NullConvert<T>, NullFinality<T> {
+
+
+
     <U extends Serializable> NullChain<U> of(NullFun<? super T, ? extends U > function);
 
 
@@ -24,8 +30,12 @@ public interface NullChain<T> extends  NullConvert<T>, NullFinality<T> {
 
     NullChain<T> or(Supplier<? extends NullChain<T>> supplier);
 
+    //将一个类型转换为另外一个类型, 万能转换,啥都能做
+    <U  extends Serializable> NullChain<U> convert(NullFun<? super T, ? extends U> mapper);
 
 
+    //异步执行,
+    NullChainAsync<T > async(NullFun<? super T, ?> handler);
 
 
     //将单个NullChain转换为新的NullChain,用于提取一个NullChain<T>中多个值,然后产生一个新的NullChain<T>, 如果是空的那么就不取

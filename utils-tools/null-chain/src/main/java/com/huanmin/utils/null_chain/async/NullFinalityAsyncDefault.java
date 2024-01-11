@@ -1,6 +1,7 @@
 package com.huanmin.utils.null_chain.async;
 
-import com.huanmin.utils.null_chain.NullFinality;
+import com.huanmin.utils.null_chain.base.NullFinality;
+import com.huanmin.utils.null_chain.base.NullChainBase;
 
 import java.io.Serializable;
 import java.util.LinkedList;
@@ -9,26 +10,25 @@ import java.util.concurrent.Future;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class NullFinalityAsyncDefault  <T extends Serializable> implements NullFinality<T>{
-    protected boolean isNull=false; //true 为null ,false 不为null
-    protected T value;
+public class NullFinalityAsyncDefault  <T extends Serializable> implements NullFinalityAsync<T>{
+    protected NullChainBase<T> nullChainBase;
     protected StringBuffer linkLog = new StringBuffer();
-    protected Future<?> future;
+    protected Future<T> future;
+    protected boolean  async=false;//true 异步，false 同步
     protected Queue<Runnable> asyncQueue;
-    protected boolean async=false;
 
-    protected NullFinalityAsyncDefault(Future<?> future,T object, boolean async, boolean isNull, StringBuffer linkLog) {
-        this.isNull = isNull;
-        this.value = object;
+    protected NullFinalityAsyncDefault(Future<T> future, boolean isNull, StringBuffer linkLog) {
         this.future = future;
-        this.async = async;
+        this.async=true;
         this.asyncQueue = new LinkedList<>();
-        if (object != null) {
-            this.linkLog.append(object.getClass().getName()).append("->");
-        }
-        if (linkLog.length() > 0) {
-            this.linkLog.append(linkLog);
-        }
+        this.nullChainBase = new NullChainBase<>(null, isNull, linkLog);
+    }
+
+    protected NullFinalityAsyncDefault( boolean isNull,T value, StringBuffer linkLog) {
+        this.future = null;
+        this.async=false;
+        this.asyncQueue = new LinkedList<>();
+        this.nullChainBase = new NullChainBase<>(value, isNull, linkLog);
     }
     @Override
     public boolean is() {

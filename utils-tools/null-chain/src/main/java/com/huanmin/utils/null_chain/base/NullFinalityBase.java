@@ -1,8 +1,6 @@
 package com.huanmin.utils.null_chain.base;
 
 
-import com.huanmin.utils.null_chain.NullFinality;
-
 import java.io.Serializable;
 import java.util.function.Consumer;
 import java.util.function.Supplier;

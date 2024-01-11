@@ -1,6 +1,7 @@
-package com.huanmin.utils.null_chain;
+package com.huanmin.utils.null_chain.base;
 
 import com.huanmin.utils.common.enums.DateEnum;
+import com.huanmin.utils.null_chain.NullFun;
 
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -11,13 +12,11 @@ import java.util.stream.Stream;
  */
 public interface NullConvert<T>   {
 
-    //将一个类型转换为另外一个类型, 万能转换,啥都能做
-    <U> U convert(NullFun<? super T, ? extends U> mapper);
+
 
     Stream<T> stream();
 
     Optional<T> optional();
-
 
 
     //=====================个性化处理, 针对日常最常用的几种类型转换=====================

@@ -5,8 +5,8 @@ import com.huanmin.test.entity.RoleEntity;
 import com.huanmin.test.entity.UserEntity;
 import com.huanmin.utils.common.obj.serializable.SerializeUtil;
 import com.huanmin.utils.null_chain.NULL;
-import com.huanmin.utils.null_chain.NullChain;
-import com.huanmin.utils.null_chain.sync.NullChainDefault;
+import com.huanmin.utils.null_chain.base.NullChain;
+import com.huanmin.utils.null_chain.sync.NullChainSyncDefault;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -79,7 +79,7 @@ public class ObjNullTest {
         String empty = NULL.of(userEntity).of(UserEntity::getRoleData).of(RoleEntity::getRoleName).toStr();
         System.out.println(empty);
 
-        Integer convert = NULL.of(userEntity).of(UserEntity::getRoleData).of(RoleEntity::getRoleName).convert(Integer::parseInt);
+        Integer convert = NULL.of(userEntity).of(UserEntity::getRoleData).of(RoleEntity::getRoleName).convert(Integer::parseInt).get();
         System.out.println(convert);
 
         NULL.of(userEntity).of(UserEntity::getRoleData).of(RoleEntity::getRoleName).stream().forEach(System.out::println);
@@ -110,7 +110,7 @@ public class ObjNullTest {
         NullChain<UserEntity> userEntityNullChain = NULL.of(build) ;
 
         byte[] serialize = SerializeUtil.serialize(userEntityNullChain);
-        NullChain<UserEntity> unserialize = SerializeUtil.unserialize(serialize, NullChainDefault.class);
+        NullChain<UserEntity> unserialize = SerializeUtil.unserialize(serialize, NullChainSyncDefault.class);
         System.out.println(unserialize.is());
     }
 }

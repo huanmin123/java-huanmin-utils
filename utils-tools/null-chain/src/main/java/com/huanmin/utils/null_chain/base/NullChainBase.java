@@ -4,9 +4,9 @@ import com.huanmin.utils.common.base.LambdaUtil;
 import com.huanmin.utils.common.base.UniversalException;
 import com.huanmin.utils.common.obj.copy.BeanCopyUtil;
 import com.huanmin.utils.null_chain.NULL;
-import com.huanmin.utils.null_chain.NullBuild;
-import com.huanmin.utils.null_chain.NullChain;
+import com.huanmin.utils.null_chain.async.NullChainAsync;
 import com.huanmin.utils.null_chain.NullFun;
+import com.huanmin.utils.null_chain.NullBuild;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
@@ -119,6 +119,16 @@ public class NullChainBase<T extends Serializable> extends NullConvertBase<T> im
     }
 
     @Override
+    public <U  extends Serializable> NullChain<U> convert(NullFun<? super T, ? extends U> mapper) {
+        if (isNull) {
+            throw new NullPointerException(linkLog.toString());
+        }
+        U apply = mapper.apply(value);
+        return NULL.of(apply);
+    }
+
+
+    @Override
     @SuppressWarnings("unchecked")
     public <U> NullChain<T> pick(List<NullFun<? super T, ? extends U>> mapper) {
         if (isNull) {
@@ -167,10 +177,11 @@ public class NullChainBase<T extends Serializable> extends NullConvertBase<T> im
     }
 
 
-
-
     @Override
-    public String toString() {
-        return String.valueOf(isNull);
+    public NullChainAsync<T> async(NullFun<? super T, ?> handler) {
+        return null;
     }
+
+
+
 }

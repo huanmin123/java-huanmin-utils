@@ -1,19 +1,10 @@
 package com.huanmin.utils.null_chain.async;
 
 import com.huanmin.utils.common.enums.DateEnum;
-import com.huanmin.utils.common.json.JsonJacksonUtil;
-import com.huanmin.utils.common.obj.serializable.SerializeUtil;
-import com.huanmin.utils.common.string.StringUtil;
-import com.huanmin.utils.null_chain.NullConvert;
+import com.huanmin.utils.null_chain.base.NullConvert;
 import com.huanmin.utils.null_chain.NullFun;
-import com.huanmin.utils.null_chain.sync.NullFinalityDefault;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
-import java.util.Date;
 import java.util.Optional;
 import java.util.concurrent.Future;
 import java.util.stream.Stream;
@@ -22,17 +13,18 @@ import java.util.stream.Stream;
  * @author huanmin
  * @date 2024/1/11
  */
-public  class NullConvertAsyncDefault<T extends Serializable> extends NullFinalityAsyncDefault<T > implements NullConvert<T> {
+public  class NullConvertAsyncDefault<T extends Serializable> extends NullFinalityAsyncDefault<T > implements NullConvertAsync<T> {
 
 
-    protected NullConvertAsyncDefault(Future<?> future, T object, boolean async, boolean isNull, StringBuffer linkLog) {
-        super(future, object, async, isNull, linkLog);
+    protected NullConvertAsyncDefault(Future<T> future, boolean isNull, StringBuffer linkLog) {
+        super(future, isNull, linkLog);
     }
 
-    @Override
-    public <U> U convert(NullFun<? super T, ? extends U> mapper) {
-        return null;
+    protected NullConvertAsyncDefault(boolean isNull, T value, StringBuffer linkLog) {
+        super(isNull, value, linkLog);
     }
+
+
 
     @Override
     public Stream<T> stream() {

@@ -3,7 +3,8 @@ package com.huanmin.utils.null_chain;
 import com.huanmin.utils.common.json.JsonJacksonUtil;
 import com.huanmin.utils.common.obj.copy.BeanCopyUtil;
 import com.huanmin.utils.common.obj.serializable.SerializeUtil;
-import com.huanmin.utils.null_chain.sync.NullChainDefault;
+import com.huanmin.utils.null_chain.base.NullChain;
+import com.huanmin.utils.null_chain.sync.NullChainSyncDefault;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -53,7 +54,7 @@ public class NULL {
         if (bytes == null) {
             return NullBuild.empty();
         }
-        NullChain<T> unserialize = SerializeUtil.unserialize(bytes, NullChainDefault.class);
+        NullChain<T> unserialize = SerializeUtil.unserialize(bytes, NullChainSyncDefault.class);
         if (unserialize == null) {
             return NullBuild.empty();
         }

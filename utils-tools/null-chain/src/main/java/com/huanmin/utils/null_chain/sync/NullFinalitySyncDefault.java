@@ -1,12 +1,10 @@
 package com.huanmin.utils.null_chain.sync;
 
 
-import com.huanmin.utils.null_chain.NullFinality;
+import com.huanmin.utils.null_chain.base.NullFinality;
 import com.huanmin.utils.null_chain.base.NullChainBase;
 
 import java.io.Serializable;
-import java.util.Queue;
-import java.util.concurrent.Future;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -14,13 +12,13 @@ import java.util.function.Supplier;
  * @author huanmin
  * @date 2024/1/11
  */
-public  class NullFinalityDefault<T extends Serializable> implements NullFinality<T> {
+public  class NullFinalitySyncDefault<T extends Serializable> implements NullFinality<T> {
     protected NullChainBase<T> nullChainBase;
 
-    private NullFinalityDefault() {
+    private NullFinalitySyncDefault() {
     }
 
-    protected NullFinalityDefault(T object, boolean isNull, StringBuffer linkLog) {
+    protected NullFinalitySyncDefault(T object, boolean isNull, StringBuffer linkLog) {
         this.nullChainBase = new NullChainBase<>(object, isNull, linkLog);
     }
 
