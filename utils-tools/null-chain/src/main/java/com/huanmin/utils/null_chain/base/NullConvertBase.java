@@ -1,9 +1,11 @@
-package com.huanmin.utils.null_chain;
+package com.huanmin.utils.null_chain.base;
 
 import com.huanmin.utils.common.enums.DateEnum;
 import com.huanmin.utils.common.json.JsonJacksonUtil;
 import com.huanmin.utils.common.obj.serializable.SerializeUtil;
 import com.huanmin.utils.common.string.StringUtil;
+import com.huanmin.utils.null_chain.NullConvert;
+import com.huanmin.utils.null_chain.NullFun;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -18,7 +20,7 @@ import java.util.stream.Stream;
  * @author huanmin
  * @date 2024/1/11
  */
-public  class NullConvertDefault<T extends Serializable> extends NullFinalityDefault<T > implements NullConvert<T> {
+public  class NullConvertBase<T extends Serializable> extends NullFinalityBase<T > implements NullConvert<T> {
 
     @Override
     public <U> U convert(NullFun<? super T, ? extends U> mapper) {

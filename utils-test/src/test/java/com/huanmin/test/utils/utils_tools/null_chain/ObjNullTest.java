@@ -6,7 +6,7 @@ import com.huanmin.test.entity.UserEntity;
 import com.huanmin.utils.common.obj.serializable.SerializeUtil;
 import com.huanmin.utils.null_chain.NULL;
 import com.huanmin.utils.null_chain.NullChain;
-import com.huanmin.utils.null_chain.NullChainDefault;
+import com.huanmin.utils.null_chain.sync.NullChainDefault;
 import org.junit.Before;
 import org.junit.Test;
 

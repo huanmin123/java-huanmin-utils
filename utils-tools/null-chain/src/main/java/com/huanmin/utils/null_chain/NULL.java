@@ -3,6 +3,7 @@ package com.huanmin.utils.null_chain;
 import com.huanmin.utils.common.json.JsonJacksonUtil;
 import com.huanmin.utils.common.obj.copy.BeanCopyUtil;
 import com.huanmin.utils.common.obj.serializable.SerializeUtil;
+import com.huanmin.utils.null_chain.sync.NullChainDefault;
 
 import java.io.Serializable;
 import java.util.Arrays;

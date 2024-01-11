@@ -1,14 +1,19 @@
-package com.huanmin.utils.null_chain;
+package com.huanmin.utils.null_chain.base;
 
 import com.huanmin.utils.common.base.LambdaUtil;
 import com.huanmin.utils.common.base.UniversalException;
 import com.huanmin.utils.common.obj.copy.BeanCopyUtil;
+import com.huanmin.utils.null_chain.NULL;
+import com.huanmin.utils.null_chain.NullBuild;
+import com.huanmin.utils.null_chain.NullChain;
+import com.huanmin.utils.null_chain.NullFun;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.*;
-import java.util.concurrent.Future;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -16,10 +21,10 @@ import java.util.function.Supplier;
  * @author huanmin
  * @date 2024/1/11
  */
-public class NullChainDefault<T extends Serializable> extends NullThreadDefault<T> implements NullChain<T> {
+public class NullChainBase<T extends Serializable> extends NullConvertBase<T> implements NullChain<T> {
     private static final long serialVersionUID = 123456791011L;
 
-    protected NullChainDefault(T object, boolean isNull, StringBuffer linkLog) {
+    public NullChainBase(T object, boolean isNull, StringBuffer linkLog) {
         this.isNull = isNull;
         this.value = object;
         if (object != null) {
@@ -30,18 +35,7 @@ public class NullChainDefault<T extends Serializable> extends NullThreadDefault<
         }
     }
 
-    protected NullChainDefault(Future<?> future,T object, boolean async, boolean isNull, StringBuffer linkLog) {
-        this.isNull = isNull;
-        this.value = object;
-        this.future = future;
-        this.async = async;
-        if (object != null) {
-            this.linkLog.append(object.getClass().getName()).append("->");
-        }
-        if (linkLog.length() > 0) {
-            this.linkLog.append(linkLog);
-        }
-    }
+
 
     @Override
     @SuppressWarnings("unchecked")

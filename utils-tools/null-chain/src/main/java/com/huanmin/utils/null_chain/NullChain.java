@@ -9,7 +9,7 @@ import java.util.function.Supplier;
  * @author huanmin
  * @date 2024/1/11
  */
-public interface NullChain<T> extends NullThread<T>, NullConvert<T>, NullFinality<T> {
+public interface NullChain<T> extends  NullConvert<T>, NullFinality<T> {
     <U extends Serializable> NullChain<U> of(NullFun<? super T, ? extends U > function);
 
 
