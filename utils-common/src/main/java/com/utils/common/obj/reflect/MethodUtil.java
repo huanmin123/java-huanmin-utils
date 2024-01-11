@@ -46,6 +46,7 @@ public final class MethodUtil {
                     , target.getClass().getName(), method.getName()), ex);
         }
     }
+
     /**
      * 运行指定的方法
      *
@@ -64,8 +65,9 @@ public final class MethodUtil {
         // 找到具体方法然后给方法传入参数
         Object invoke = method.invoke(o, args);
 
-        return  invoke;
+        return invoke;
     }
+
     //通过名称调用无惨方法
     @SneakyThrows
     public static Object runMethod(Class clazz, String methodName) {
@@ -75,8 +77,9 @@ public final class MethodUtil {
         makeAccessible(method);
         // 找到具体方法然后给方法传入参数
         Object invoke = method.invoke(o, new Object[0]);
-        return  invoke;
+        return invoke;
     }
+
     @SneakyThrows
     public static Object runMethod(Object o, String methodName) {
         //通过方法名和 参数个数+类型 能确认调用具体的方式
@@ -84,7 +87,7 @@ public final class MethodUtil {
         makeAccessible(method);
         // 找到具体方法然后给方法传入参数
         Object invoke = method.invoke(o, new Object[0]);
-        return  invoke;
+        return invoke;
     }
 
     @SneakyThrows
@@ -96,7 +99,7 @@ public final class MethodUtil {
         // 找到具体方法然后给方法传入参数
         Object invoke = method.invoke(o, args);
 
-        return  invoke;
+        return invoke;
     }
 
 
@@ -158,13 +161,9 @@ public final class MethodUtil {
     }
 
 
-
-
-
-
     //获取指定类的所有公共方法
     public static Method[] getMethodAll(Class clazz) {
-        return  clazz.getDeclaredMethods();
+        return clazz.getDeclaredMethods();
     }
 
 
@@ -185,6 +184,17 @@ public final class MethodUtil {
         }
 
         return name;
+    }
+
+    //通过属性名称获方法名称 ,get,set,is
+    public static String fieldToGetMethod(String name) {
+        return "get" + name.substring(0, 1).toUpperCase(Locale.ENGLISH) + name.substring(1);
+    }
+    public static String fieldToSetMethod(String name) {
+        return "set" + name.substring(0, 1).toUpperCase(Locale.ENGLISH) + name.substring(1);
+    }
+    public static String fieldToIsMethod(String name) {
+        return "is" + name.substring(0, 1).toUpperCase(Locale.ENGLISH) + name.substring(1);
     }
 
 

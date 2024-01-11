@@ -3,6 +3,7 @@ package com.utils.common.obj.copy;
 import org.springframework.cglib.beans.BeanCopier;
 
 import java.lang.reflect.Array;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,7 +31,7 @@ public class BeanCopierUtil {
      * @param target 目标文件
      * 因为是引用类型所以直接作用于目标对象所以无需返回值
      */
-    public static void copy(Object source, Object target) {
+    public static void copy(Object source, Object target, String... ignoreProperties) {
         String key = genKey(source.getClass(), target.getClass());
         BeanCopier beanCopier;
         if (BEAN_COPIER_CACHE.containsKey(key)) {
@@ -42,6 +43,8 @@ public class BeanCopierUtil {
         beanCopier.copy(source, target, null);
 
     }
+
+
 
     /**
      * 生成key

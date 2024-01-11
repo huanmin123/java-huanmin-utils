@@ -2,6 +2,9 @@ package com.utils.null_chain;
 
 import com.utils.common.base.LambdaUtil;
 import com.utils.common.base.UniversalException;
+import com.utils.common.obj.copy.BeanCopierUtil;
+import com.utils.common.obj.copy.BeanCopyUtil;
+import org.springframework.beans.BeanUtils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -106,10 +109,7 @@ public  class NullChainDefault<T> extends  NullConvertDefault<T> implements Null
         return !isNull ? this : supplier.get();
     }
 
-    @Override
-    public <B, R> NullChain<R> merge(Class<R> tClass, NullChain<B>... nullChains) {
-        return null;
-    }
+
 
     @Override
     public <U> NullChain<U> pick(NullFun<? super T, ? extends U>... mapper) {

@@ -23,7 +23,7 @@ public class UserEntity implements Serializable {
     private  Integer age; //年龄
     private  String sex;//性别
     private  String site; //地址
-    private  Boolean isDel; //是否删除
+    private  Boolean del; //是否删除
     private LocalDate date; //日期
     private  RoleEntity roleData;
 

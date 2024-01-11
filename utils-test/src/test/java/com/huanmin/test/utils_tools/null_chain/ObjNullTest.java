@@ -1,17 +1,19 @@
 package com.huanmin.test.utils_tools.null_chain;
 
 
+import com.alibaba.fastjson.JSON;
 import com.huanmin.test.entity.RoleEntity;
 import com.huanmin.test.entity.UserEntity;
-
+import com.utils.common.base.UserData;
 import com.utils.null_chain.Null;
-import com.utils.common.enums.DateEnum;
 import com.utils.null_chain.NullChain;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.util.Arrays;
 
 
 public class ObjNullTest {
@@ -27,14 +29,23 @@ public class ObjNullTest {
         roleEntity.setRoleName("1234");
         userEntity.setRoleData(roleEntity);
         userEntitys[0] = userEntity;
+
     }
 
     @Test
     public void test1() throws ParseException {
-        NullChain<UserEntity>[] array = Null.toArray(userEntitys);
-        for (NullChain<UserEntity> userEntityNullChain : array) {
-            System.out.println(userEntityNullChain);
-        }
+        UserEntity userEntity1 = new UserEntity();
+        userEntity1.setId(1);
+        userEntity1.setName("huanmin1");
+        UserData userEntity2 = new UserData();
+        userEntity2.setSex("男");
+
+        NullChain<UserEntity> userEntityNullChain1 = Null.of(userEntity1);
+        NullChain<UserData> userEntityNullChain2 = Null.of(userEntity2);
+
+        UserData userEntity3 = Null.merge(UserData.class, Arrays.asList(userEntityNullChain1, userEntityNullChain2)).get();
+        System.out.println(userEntity3);
+
     }
 
     @Test
