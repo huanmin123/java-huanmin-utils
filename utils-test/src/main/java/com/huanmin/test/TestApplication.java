@@ -1,6 +1,6 @@
 package com.huanmin.test;
 
-import com.utils.common.base.UniversalException;
+import com.huanmin.utils.common.base.UniversalException;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

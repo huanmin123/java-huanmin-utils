@@ -2,8 +2,8 @@ package com.huanmin.test.core.run;
 
 import com.huanmin.test.core.annotation.SpringTest;
 import com.huanmin.test.core.annotation.Test;
-import com.utils.common.base.UniversalException;
-import com.utils.common.obj.reflect.AnnotationUtil;
+import com.huanmin.utils.common.base.UniversalException;
+import com.huanmin.utils.common.obj.reflect.AnnotationUtil;
 import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;

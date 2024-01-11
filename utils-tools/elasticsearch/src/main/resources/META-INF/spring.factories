@@ -1,4 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-org.huanmin.es8.config.Es8Config
+com.huanmin.utils.es8.config.Es8Config
 
 

@@ -1,4 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.utils.xss.config.XssConfig
+com.huanmin.utils.xss.config.XssConfig
 
 

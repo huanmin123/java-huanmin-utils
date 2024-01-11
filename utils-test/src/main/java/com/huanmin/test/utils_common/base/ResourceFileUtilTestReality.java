@@ -2,8 +2,8 @@ package com.huanmin.test.utils_common.base;
 
 import com.huanmin.test.core.annotation.SpringTest;
 import com.huanmin.test.core.annotation.Test;
-import com.utils.common.file.ResourceFileUtil;
-import com.utils.common.file.TransitionFileStreamUtil;
+import com.huanmin.utils.common.file.ResourceFileUtil;
+import com.huanmin.utils.common.file.TransitionFileStreamUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

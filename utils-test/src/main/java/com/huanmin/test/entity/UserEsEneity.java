@@ -2,10 +2,10 @@ package com.huanmin.test.entity;
 
 
 import lombok.Data;
-import org.huanmin.es8.annotation.DocId;
-import org.huanmin.es8.annotation.EsClass;
-import org.huanmin.es8.annotation.EsField;
-import org.huanmin.es8.enums.EsDataType;
+import com.huanmin.utils.es8.annotation.DocId;
+import com.huanmin.utils.es8.annotation.EsClass;
+import com.huanmin.utils.es8.annotation.EsField;
+import com.huanmin.utils.es8.enums.EsDataType;
 
 
 // 只能使用包装类型 ,不能使用基础类型 ,否则会导致一些高级特性有问题
