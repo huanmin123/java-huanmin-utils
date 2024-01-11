@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 public interface NullFinality<T>  extends Serializable {
     boolean is();
 
-    void is(Consumer<? super T> consumer);
+    void get(Consumer<? super T> consumer);
     void isOr(Consumer<? super T> action, Runnable emptyAction);
 
 

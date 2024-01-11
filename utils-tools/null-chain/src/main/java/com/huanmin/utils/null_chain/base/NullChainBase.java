@@ -107,7 +107,7 @@ public class NullChainBase<T extends Serializable> extends NullConvertBase<T> im
     public <U extends Serializable> NullChain<U> map(NullFun<? super T, ? extends U> mapper) {
         Objects.requireNonNull(mapper, "mapper is null");
         if (isNull) {
-            return NullBuild.empty();
+            return NullBuild.empty(linkLog);
         } else {
             return NULL.of(mapper.apply(value));
         }
@@ -121,7 +121,7 @@ public class NullChainBase<T extends Serializable> extends NullConvertBase<T> im
     @Override
     public <U  extends Serializable> NullChain<U> convert(NullFun<? super T, ? extends U> mapper) {
         if (isNull) {
-            throw new NullPointerException(linkLog.toString());
+            return NullBuild.empty(linkLog);
         }
         U apply = mapper.apply(value);
         return NULL.of(apply);
@@ -132,7 +132,7 @@ public class NullChainBase<T extends Serializable> extends NullConvertBase<T> im
     @SuppressWarnings("unchecked")
     public <U> NullChain<T> pick(List<NullFun<? super T, ? extends U>> mapper) {
         if (isNull) {
-            return NullBuild.empty();
+            return NullBuild.empty(linkLog);
         }
         try {
             T object = (T) value.getClass().newInstance();

@@ -14,13 +14,15 @@ public  class NullFinalityBase<T extends Serializable> implements NullFinality<T
     protected T value;
     protected StringBuffer linkLog = new StringBuffer();
 
+
+
     @Override
     public boolean is() {
         return isNull;
     }
 
     @Override
-    public void is(Consumer<? super T> consumer) {
+    public void get(Consumer<? super T> consumer) {
         if (!isNull) {
             consumer.accept(value);
         }
@@ -60,4 +62,8 @@ public  class NullFinalityBase<T extends Serializable> implements NullFinality<T
     }
 
 
+
+    public StringBuffer getLinkLog() {
+        return linkLog;
+    }
 }

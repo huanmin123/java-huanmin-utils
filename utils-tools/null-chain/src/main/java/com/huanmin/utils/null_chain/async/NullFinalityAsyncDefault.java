@@ -30,25 +30,15 @@ public class NullFinalityAsyncDefault  <T extends Serializable> implements NullF
         this.asyncQueue = new LinkedList<>();
         this.nullChainBase = new NullChainBase<>(value, isNull, linkLog);
     }
-    @Override
-    public boolean is() {
-        return false;
-    }
 
-    @Override
-    public void is(Consumer<? super T> consumer) {
 
-    }
+
 
     @Override
     public void isOr(Consumer<? super T> action, Runnable emptyAction) {
 
     }
 
-    @Override
-    public T get() throws NullPointerException {
-        return null;
-    }
 
     @Override
     public <X extends Throwable> T orThrow(Supplier<? extends X> exceptionSupplier) throws X {
@@ -58,5 +48,10 @@ public class NullFinalityAsyncDefault  <T extends Serializable> implements NullF
     @Override
     public T orElse(T defaultValue) {
         return null;
+    }
+
+    //将NullChainBase转换为NullChainAsyncDefault
+    protected NullFinalityAsyncDefault<T> convert(NullChainBase<T> nullChainBase){
+        return  new NullFinalityAsyncDefault<>( nullChainBase.is(),nullChainBase.get(), nullChainBase.getLinkLog());
     }
 }

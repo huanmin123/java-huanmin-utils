@@ -6,18 +6,15 @@ import java.util.function.Supplier;
 
 public interface NullFinalityAsync<T> extends Serializable {
 
-    boolean is();
 
-    void is(Consumer<? super T> consumer);
+    void is(Consumer<Boolean> consumer);
 
     void isOr(Consumer<? super T> action, Runnable emptyAction);
 
+    T get(Consumer<? super T> consumer) throws NullPointerException;
 
-    T get() throws NullPointerException;
+    <X extends RuntimeException> void orThrow(Consumer<T> consumer,Supplier<? extends X> exceptionSupplier) ;
 
-
-    <X extends Throwable> T orThrow(Supplier<? extends X> exceptionSupplier) throws X;
-
-    T orElse(T defaultValue);
+    void orElse(Consumer<T> consumer,T defaultValue);
 
 }

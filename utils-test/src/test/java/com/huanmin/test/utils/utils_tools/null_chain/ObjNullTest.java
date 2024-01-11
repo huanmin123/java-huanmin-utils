@@ -64,7 +64,7 @@ public class ObjNullTest {
         System.out.println(b);
         String s = NULL.of(userEntity).of(UserEntity::getRoleData).of(RoleEntity::getRoleName).get();
         System.out.println(s);
-        NULL.of(userEntity).of(UserEntity::getRoleData).of(RoleEntity::getRoleName).is( System.out::println);
+        NULL.of(userEntity).of(UserEntity::getRoleData).of(RoleEntity::getRoleName).get( System.out::println);
 
         NULL.of(userEntity).of(UserEntity::getRoleData).of(RoleEntity::getRoleName).isOr(
                 System.out::println,
@@ -92,7 +92,7 @@ public class ObjNullTest {
     public void test1_error() {
         boolean b = NULL.no(userEntity).of(UserEntity::getRoleData).of(RoleEntity::getRoleName).is();
 
-        NULL.no(userEntity).no(UserEntity::getRoleData).of(RoleEntity::getRoleName).is( System.out::println);
+        NULL.no(userEntity).no(UserEntity::getRoleData).of(RoleEntity::getRoleName).get( System.out::println);
 
         NULL.no(userEntity).no(UserEntity::getRoleData).no(RoleEntity::getRoleName).isOr(
                 System.out::println,
