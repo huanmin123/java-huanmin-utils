@@ -1,15 +1,14 @@
 package com.utils.null_chain;
 
-import com.google.common.collect.Maps;
 import com.utils.common.base.LambdaUtil;
 import com.utils.common.base.UniversalException;
 import com.utils.common.obj.copy.BeanCopyUtil;
-import org.checkerframework.checker.units.qual.K;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
+import java.util.concurrent.Future;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -17,12 +16,25 @@ import java.util.function.Supplier;
  * @author huanmin
  * @date 2024/1/11
  */
-public class NullChainDefault<T extends Serializable> extends NullConvertDefault<T> implements NullChain<T> {
+public class NullChainDefault<T extends Serializable> extends NullThreadDefault<T> implements NullChain<T> {
     private static final long serialVersionUID = 123456791011L;
 
-    private NullChainDefault(T object, boolean isNull, StringBuffer linkLog) {
+    protected NullChainDefault(T object, boolean isNull, StringBuffer linkLog) {
         this.isNull = isNull;
         this.value = object;
+        if (object != null) {
+            this.linkLog.append(object.getClass().getName()).append("->");
+        }
+        if (linkLog.length() > 0) {
+            this.linkLog.append(linkLog);
+        }
+    }
+
+    protected NullChainDefault(Future<?> future,T object, boolean async, boolean isNull, StringBuffer linkLog) {
+        this.isNull = isNull;
+        this.value = object;
+        this.future = future;
+        this.async = async;
         if (object != null) {
             this.linkLog.append(object.getClass().getName()).append("->");
         }
@@ -37,7 +49,7 @@ public class NullChainDefault<T extends Serializable> extends NullConvertDefault
         try {
             String methodName = LambdaUtil.methodInvocation(function);
             if (isNull) {
-                return empty(linkLog);
+                return NullBuild.empty(linkLog);
             }
             //反射获取值
             Class<?> aClass = value.getClass();
@@ -45,10 +57,10 @@ public class NullChainDefault<T extends Serializable> extends NullConvertDefault
             Object invoke = methodName1.invoke(value);
             if (invoke == null) {
                 linkLog.append(methodName).append("?");
-                return empty(linkLog);
+                return NullBuild.empty(linkLog);
             } else {
                 linkLog.append(methodName).append("->");
-                return noEmpty((U) invoke, linkLog);
+                return NullBuild.noEmpty((U) invoke, linkLog);
             }
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             throw new UniversalException(e, "请检测类是否实现了get和set方法,建议在类上加上lombok的@Data注解");
@@ -61,7 +73,7 @@ public class NullChainDefault<T extends Serializable> extends NullConvertDefault
         if (!nullChain.is()) {
             consumer.accept(nullChain.get());
         }
-        return noEmpty(nullChain.get(), linkLog);
+        return NullBuild.noEmpty(nullChain.get(), linkLog);
     }
 
     @Override
@@ -70,7 +82,7 @@ public class NullChainDefault<T extends Serializable> extends NullConvertDefault
         try {
             String methodName = LambdaUtil.methodInvocation(function);
             if (isNull) {
-                return empty(linkLog);
+                return NullBuild.empty(linkLog);
             }
             //反射获取值
             Class<?> aClass = value.getClass();
@@ -82,7 +94,7 @@ public class NullChainDefault<T extends Serializable> extends NullConvertDefault
             } else {
                 linkLog.append(methodName).append("->");
             }
-            return noEmpty((U) invoke, linkLog);
+            return NullBuild.noEmpty((U) invoke, linkLog);
         } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
             throw new UniversalException(e, "请检测类是否实现了get和set方法,建议在类上加上lombok的@Data注解");
         }
@@ -94,14 +106,14 @@ public class NullChainDefault<T extends Serializable> extends NullConvertDefault
         if (!nullChain.is()) {
             consumer.accept(nullChain.get());
         }
-        return noEmpty(nullChain.get(), linkLog);
+        return NullBuild.noEmpty(nullChain.get(), linkLog);
     }
 
     @Override
     public <U extends Serializable> NullChain<U> map(NullFun<? super T, ? extends U> mapper) {
         Objects.requireNonNull(mapper, "mapper is null");
         if (isNull) {
-            return empty();
+            return NullBuild.empty();
         } else {
             return NULL.of(mapper.apply(value));
         }
@@ -116,7 +128,7 @@ public class NullChainDefault<T extends Serializable> extends NullConvertDefault
     @SuppressWarnings("unchecked")
     public <U> NullChain<T> pick(List<NullFun<? super T, ? extends U>> mapper) {
         if (isNull) {
-            return empty();
+            return NullBuild.empty();
         }
         try {
             T object = (T) value.getClass().newInstance();
@@ -161,40 +173,7 @@ public class NullChainDefault<T extends Serializable> extends NullConvertDefault
     }
 
 
-    protected static <T extends Serializable> NullChain<T> empty() {
-        return new NullChainDefault<>(null, true, new StringBuffer());
-    }
 
-    protected static <K, V extends Serializable> Map<K, NullChain<V>> emptyMap() {
-        Map<K, V> map = new HashMap<>();
-        return (Map<K, NullChain<V>>) map;
-    }
-    //空list
-    protected static <T extends Serializable> List<NullChain<T>> emptyList() {
-        List<T> list = new ArrayList<>();
-        return (List<NullChain<T>>) list;
-    }
-
-    //空array
-    protected static <T extends Serializable> NullChain<T>[] emptyArray() {
-        return (NullChain<T>[]) new NullChain[0];
-    }
-
-
-
-    protected static <T extends Serializable> NullChain<T> empty(StringBuffer linkLog) {
-        return new NullChainDefault<>(null, true, linkLog);
-    }
-
-    protected static <T extends Serializable> NullChain<T> noEmpty(T object) {
-
-        return new NullChainDefault<>(object, false, new StringBuffer());
-    }
-
-
-    protected static <T extends Serializable> NullChain<T> noEmpty(T object, StringBuffer linkLog) {
-        return new NullChainDefault<>(object, false, linkLog);
-    }
 
     @Override
     public String toString() {

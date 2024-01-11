@@ -12,9 +12,6 @@ import org.junit.Test;
 
 import java.io.Serializable;
 import java.text.ParseException;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Map;
 
 
 public class ObjNullTest {
@@ -43,7 +40,7 @@ public class ObjNullTest {
                 "  \"sex\": \"sex_445e6214722b\",\n" +
                 "  \"site\": \"site_d23f574e7661\",\n" +
                 "  \"del\": false,\n" +
-                "  \"date\": \"2024-01-11 15:33:02\",\n" +
+                "  \"date\": \"2024-01-11\",\n" +
                 "  \"roleData\": {\n" +
                 "    \"id\": 0,\n" +
                 "    \"roleName\": \"roleName_aa5ed84ad551\",\n" +
@@ -52,8 +49,11 @@ public class ObjNullTest {
                 "    \"roleStatus\": false\n" +
                 "  }\n" +
                 "}";
-        NULL.toNULL( json, UserEntity.class).stream().forEach(System.out::println);
+        String json1 = NULL.toNULL(json, UserEntity.class).toJson();
+        System.out.println(json1);
 
+        NullChain<Serializable> serializableNullChain = NULL.of(null);
+        System.out.println(serializableNullChain.is());
 
     }
 

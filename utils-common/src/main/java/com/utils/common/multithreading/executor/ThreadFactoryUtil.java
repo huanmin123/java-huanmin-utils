@@ -23,7 +23,7 @@ public class ThreadFactoryUtil {
     //现在栈大小都是1M, 那么假设你空闲内存有10G,那么最大线程数就是10G/1M=10000 ,但是一般来说5000就够了,其他程序也需要内存, 到了这个峰值那么就需要考虑
     //是否是逻辑问题,如果是逻辑问题,那么就需要考虑是否需要优化,如果不是逻辑问题,那么就需要考虑是否需要增加机器了, 官方建议jvm最大内存使用30G左右是极限了在多也没用,只会越来越慢
     // 而这30G除非就你一个程序不然你最多可用25G,因为还有其他程序需要内存,所以这个线程池的最大线程数就是25G/1M=25000, 但是考虑到单业务最大并发量,一般来说单台机器5000那么就是极限了
-    private final   static int  LIMIT_MAXIMUM_POOL_SIZE=5000;   //如果单业务超出队列后还创建了5000次线程,那么就会报错,代码肯定有问题,要不就是该加服务器了,所以这里限制一下
+    private final   static int  LIMIT_MAXIMUM_POOL_SIZE=1000;   //如果单业务超出队列后还创建了1000次线程,那么就会报错,代码肯定有问题,要不就是该加服务器了,所以这里限制一下
 
 
     //配置线程参数
@@ -42,7 +42,9 @@ public class ThreadFactoryUtil {
         FIleSliceUploadController("FIleSliceUploadController",20,1000,"FIleSliceUploadController"),
         SynchronousQueueUtil("SynchronousQueueUtils",20,1000,"SynchronousQueueUtils"),
         BucketSortUtil("BucketSortUtil",200,10000,"BucketSortUtil"),
-        Netty("Netty",20,1000,"Netty");
+        Netty("Netty",20,1000,"Netty"),
+
+        NULL("NULL",500,1000,"Netty");
 
         private String threadNamePrefix; //线程名称,前缀
         private int maximumPoolSize;//最大线程数

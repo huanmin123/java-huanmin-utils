@@ -14,6 +14,7 @@ public interface NullFinality<T>  extends Serializable {
     void is(Consumer<? super T> consumer);
     void isOr(Consumer<? super T> action, Runnable emptyAction);
 
+
     T get() throws NullPointerException;
 
 

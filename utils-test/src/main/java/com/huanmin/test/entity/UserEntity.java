@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -25,8 +26,9 @@ public class UserEntity implements Serializable {
     private String sex;//性别
     private String site; //地址
     private Boolean del; //是否删除
-
-    private Date date; //日期
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate date; //日期
     private RoleEntity roleData;
 
 

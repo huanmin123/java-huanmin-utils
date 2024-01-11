@@ -1,7 +1,10 @@
 package com.utils.null_chain;
 
 
+import com.utils.null_chain.NullFinality;
+
 import java.io.Serializable;
+import java.util.concurrent.Future;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -10,9 +13,11 @@ import java.util.function.Supplier;
  * @date 2024/1/11
  */
 public  class NullFinalityDefault<T extends Serializable> implements NullFinality<T> {
-    protected boolean isNull; //true 为null ,false 不为null
+    protected boolean isNull=false; //true 为null ,false 不为null
     protected T value;
     protected StringBuffer linkLog = new StringBuffer();
+    protected Future<?> future;
+    protected boolean async=false;
 
     @Override
     public boolean is() {

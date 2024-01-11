@@ -4,9 +4,6 @@ package com.huanmin.test.utils_common.obj.serializable;
 
 import com.huanmin.test.entity.UserEntity;
 import com.utils.common.obj.serializable.SerializeUtil;
-import com.utils.null_chain.NULL;
-import com.utils.null_chain.NullChain;
-import com.utils.null_chain.NullChainDefault;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

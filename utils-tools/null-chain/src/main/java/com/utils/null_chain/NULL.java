@@ -1,6 +1,5 @@
 package com.utils.null_chain;
 
-import com.utils.common.json.JsonFastJsonUtil;
 import com.utils.common.json.JsonJacksonUtil;
 import com.utils.common.obj.copy.BeanCopyUtil;
 import com.utils.common.obj.serializable.SerializeUtil;
@@ -10,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -27,14 +27,14 @@ import java.util.stream.Collectors;
 public class NULL {
     public static <T extends Serializable> NullChain<T> of(T o) {
         if (o == null) {
-            return NullChainDefault.empty();
+            return NullBuild.empty();
         }
-        return NullChainDefault.noEmpty(o);
+        return NullBuild.noEmpty(o);
     }
 
     //遇到空直接抛异常
     public static <T extends Serializable> NullChain<T> no(T object) {
-        return NullChainDefault.noEmpty(Objects.requireNonNull(object));
+        return NullBuild.noEmpty(Objects.requireNonNull(object));
     }
 
 
@@ -43,7 +43,7 @@ public class NULL {
         T t = JsonJacksonUtil.jsonToBean(json, tClass);
 //        T t = JsonFastJsonUtil.parse(json, tClass);
         if (t == null) {
-            return NullChainDefault.empty();
+            return NullBuild.empty();
         }
         return NULL.of(t);
     }
@@ -51,11 +51,11 @@ public class NULL {
     @SuppressWarnings("unchecked")
     public static <T extends Serializable> NullChain<T> toNULL(byte[] bytes, Class<T> tClass) {
         if (bytes == null) {
-            return NullChainDefault.empty();
+            return NullBuild.empty();
         }
         NullChain<T> unserialize = SerializeUtil.unserialize(bytes, NullChainDefault.class);
         if (unserialize == null) {
-            return NullChainDefault.empty();
+            return NullBuild.empty();
         }
         return unserialize;
     }
@@ -67,7 +67,7 @@ public class NULL {
     @SuppressWarnings("unchecked")
     public static <T extends Serializable> NullChain<T>[] toArray(T... array) {
         if (array == null) {
-            return NullChainDefault.emptyArray();
+            return NullBuild.emptyArray();
         }
         return toList(Arrays.asList(array)).toArray(new NullChain[array.length]);
     }
@@ -78,7 +78,7 @@ public class NULL {
     //将List<T> 转换为 List<NullChain<T>>
     public static <T extends Serializable> List<NullChain<T>> toList(List<T> list) {
         if (list == null||list.isEmpty()) {
-            return NullChainDefault.emptyList();
+            return NullBuild.emptyList();
         }
         return list.stream().map(NULL::of).collect(Collectors.toList());
     }
@@ -89,7 +89,7 @@ public class NULL {
     public static <T extends Serializable> List<NullChain<T>> toList(String json, Class<T> tClass) {
         List<T> ts = JsonJacksonUtil.jsonToList(json, tClass);
         if (ts.isEmpty()) {
-            return NullChainDefault.emptyList();
+            return NullBuild.emptyList();
         }
         return toList(ts);
     }
@@ -99,7 +99,7 @@ public class NULL {
     public static <T extends Serializable> Map<String,NullChain<T>> toMap(String json, Class<T> tClass) {
         Map<String, T> stringTMap = JsonJacksonUtil.jsonToMap(json, tClass);
         if (stringTMap.isEmpty()) {
-            return NullChainDefault.emptyMap();
+            return NullBuild.emptyMap();
         }
         return toMap(stringTMap);
     }
@@ -107,7 +107,7 @@ public class NULL {
     //将Map<K,V> 转换为 Map<K,NullChain<V>>
     public static <K, V extends Serializable> Map<K, NullChain<V>> toMap(Map<K, V> map) {
         if (map == null||map.isEmpty()) {
-             return NullChainDefault.emptyMap() ;
+             return NullBuild.emptyMap() ;
         }
         return map.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, e -> NULL.of(e.getValue())));
     }
@@ -126,7 +126,7 @@ public class NULL {
      */
     public static <R extends Serializable> NullChain<R> merge(Class<R> tClass, List<NullChain<?>> nullChains) {
         if (nullChains == null||nullChains.isEmpty()) {
-            return NullChainDefault.empty();
+            return NullBuild.empty();
         }
         try {
             R r = tClass.newInstance();
@@ -143,7 +143,7 @@ public class NULL {
 
     public static <B, R extends Serializable> NullChain<R> merge(Class<R> tClass, NullChain<B>... nullChains) {
         if (nullChains == null||nullChains.length==0) {
-            return NullChainDefault.empty();
+            return NullBuild.empty();
         }
         return merge(tClass, Arrays.asList(nullChains));
     }
