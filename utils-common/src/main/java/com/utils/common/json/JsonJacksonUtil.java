@@ -32,7 +32,15 @@ public class JsonJacksonUtil {
 
     private static ObjectMapper objectMapper = new ObjectMapper();
     static {
-        //对象的所有字段全部列入
+        //configure方法 配置一些需要的参数
+        // 转换为格式化的json 显示出来的格式美化
+        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+
+        //序列化的时候序列对象的那些属性
+        //JsonInclude.Include.NON_DEFAULT 属性为默认值不序列化
+        //JsonInclude.Include.ALWAYS      所有属性
+        //JsonInclude.Include.NON_EMPTY   属性为 空（“”） 或者为 NULL 都不序列化
+        //JsonInclude.Include.NON_NULL    属性为NULL 不序列化
         objectMapper.setSerializationInclusion(JsonInclude.Include.ALWAYS);
         //取消默认转换timestamps形式
         objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS,false);
@@ -41,12 +49,16 @@ public class JsonJacksonUtil {
         //忽略 在json字符串中存在，但是在java对象中不存在对应属性的情况。防止错误
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false);
         //设置Date类型的序列化及反序列化格式
+        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
         objectMapper.setDateFormat(new SimpleDateFormat(DateEnum.DATETIME_PATTERN.getValue()));
         // 允许出现单引号
         objectMapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
+        //处理不同的时区偏移格式
+        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         //添加各种时间的序列化和反序列化的格式,localDate,localDateTime,localTime....
-        JavaTimeModule javaTimeModule = new JavaTimeModule();
-        objectMapper.registerModule(javaTimeModule);
+        objectMapper.registerModule(new JavaTimeModule());
+        // 忽略 transient 修饰的属性
+        objectMapper.configure(MapperFeature.PROPAGATE_TRANSIENT_MARKER, true);
 
     }
 

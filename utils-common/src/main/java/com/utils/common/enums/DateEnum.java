@@ -9,7 +9,7 @@ public enum DateEnum {
      * 显示年月日时分秒，例如 2015-08-11 09:51:53.
      */
     DATETIME_PATTERN("yyyy-MM-dd HH:mm:ss"),
-    DATETIME_T_PATTERN("yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"),
+    DATETIME_T_PATTERN("yyyy-MM-dd'T'HH:mm:ss.SSSX"),
     /**
      * 仅显示年月日，例如 2015-08-11.
      */
