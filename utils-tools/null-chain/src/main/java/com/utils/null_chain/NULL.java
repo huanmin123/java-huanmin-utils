@@ -1,5 +1,6 @@
 package com.utils.null_chain;
 
+import com.utils.common.json.JsonFastJsonUtil;
 import com.utils.common.json.JsonJacksonUtil;
 import com.utils.common.obj.copy.BeanCopyUtil;
 import com.utils.common.obj.serializable.SerializeUtil;
@@ -40,6 +41,7 @@ public class NULL {
     //将json转换为NullChain<T>
     public static <T extends Serializable> NullChain<T> toNULL(String json, Class<T> tClass) {
         T t = JsonJacksonUtil.jsonToBean(json, tClass);
+//        T t = JsonFastJsonUtil.parse(json, tClass);
         if (t == null) {
             return NullChainDefault.empty();
         }

@@ -24,7 +24,7 @@ public class ObjNullTest {
     public void before() {
         userEntity.setId(1);
         userEntity.setName("huanmin");
-        userEntity.setDate(LocalDate.now());
+//        userEntity.setDate(LocalDate.now());
 
         RoleEntity roleEntity = new RoleEntity();
         roleEntity.setRoleName("1234");
@@ -35,9 +35,24 @@ public class ObjNullTest {
 
     @Test
     public void test1() throws ParseException {
-        NullChain<Serializable>[] array = NULL.toArray(null);
-
-        System.out.println(array.length);
+        String json="{\n" +
+                "  \"id\": 0,\n" +
+                "  \"name\": \"name_d2a111e3ee4b\",\n" +
+                "  \"pass\": \"pass_dc051459e118\",\n" +
+                "  \"age\": 0,\n" +
+                "  \"sex\": \"sex_445e6214722b\",\n" +
+                "  \"site\": \"site_d23f574e7661\",\n" +
+                "  \"del\": false,\n" +
+                "  \"date\": \"2024-01-11 15:33:02\",\n" +
+                "  \"roleData\": {\n" +
+                "    \"id\": 0,\n" +
+                "    \"roleName\": \"roleName_aa5ed84ad551\",\n" +
+                "    \"roleCreationTime\": \"2024-01-11 15:33:02\",\n" +
+                "    \"roleDescription\": \"roleDescription_0bec7771f0a3\",\n" +
+                "    \"roleStatus\": false\n" +
+                "  }\n" +
+                "}";
+        NULL.toNULL( json, UserEntity.class).stream().forEach(System.out::println);
 
 
     }

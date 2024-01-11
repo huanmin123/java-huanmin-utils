@@ -1,6 +1,7 @@
 package com.huanmin.test.entity;
 
 import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,7 +25,8 @@ public class UserEntity implements Serializable {
     private String sex;//性别
     private String site; //地址
     private Boolean del; //是否删除
-    private LocalDate date; //日期
+
+    private Date date; //日期
     private RoleEntity roleData;
 
 
