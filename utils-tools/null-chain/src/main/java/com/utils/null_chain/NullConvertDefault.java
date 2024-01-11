@@ -1,8 +1,11 @@
 package com.utils.null_chain;
 
 import com.utils.common.enums.DateEnum;
+import com.utils.common.json.JsonJacksonUtil;
+import com.utils.common.obj.serializable.SerializeUtil;
 import com.utils.common.string.StringUtil;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -15,7 +18,7 @@ import java.util.stream.Stream;
  * @author huanmin
  * @date 2024/1/11
  */
-public  class NullConvertDefault<T> extends NullFinalityDefault<T> implements NullConvert<T> {
+public  class NullConvertDefault<T extends Serializable> extends NullFinalityDefault<T > implements NullConvert<T> {
 
     @Override
     public <U> U convert(NullFun<? super T, ? extends U> mapper) {
@@ -119,5 +122,23 @@ public  class NullConvertDefault<T> extends NullFinalityDefault<T> implements Nu
             return sdf.format(parse);
         }
         throw new NullPointerException(linkLog.toString() + " 注意上级调用不是时间对象(Date,LocalDate,LocalDateTime)或者10或13位时间戳(数值或字符串),无法使用toDateFormat方法");
+    }
+
+    @Override
+    public byte[] toBytes() {
+        byte[] serialize = SerializeUtil.serialize(value);
+        if (serialize == null) {
+            throw new NullPointerException(linkLog.toString());
+        }
+        return serialize;
+    }
+
+    //使用的是Jackson转换,如果要使用fastjson,请自行修改
+    @Override
+    public String toJson() {
+        if (isNull) {
+            throw new NullPointerException(linkLog.toString());
+        }
+        return JsonJacksonUtil.toJson(value);
     }
 }

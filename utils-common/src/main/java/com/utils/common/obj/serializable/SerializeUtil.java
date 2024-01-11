@@ -22,7 +22,6 @@ public class SerializeUtil {
             return bytes;
         } catch (Exception e) {
              UniversalException.logError(e);
-            System.err.println(e.getMessage());
         }
         return null;
     }
@@ -40,7 +39,8 @@ public class SerializeUtil {
             ObjectInputStream ois = new ObjectInputStream(bais);
             return (T) ois.readObject();
         } catch (Exception e) {
-            System.err.println(e.getMessage());
+           UniversalException.logError(e);
+
         }
         return null;
     }

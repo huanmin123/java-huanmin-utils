@@ -31,4 +31,11 @@ public interface NullConvert<T>   {
     //将时间类型(Date,LocalDate,LocalDateTime), 10或13位时间戳(数值或字符串), 转换为指定格式化后的时间字符串
     String toDateFormat(DateEnum dateEnum);
 
+    //序列化, 而反序列化, 请使用NULL.toNULL(byte[] bytes, Class<T> tClass)方法
+    byte[] toBytes();
+
+    //将对象转换为json
+    String toJson();
+
+
 }

@@ -1,6 +1,7 @@
 package com.utils.null_chain;
 
 
+import java.io.Serializable;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -8,7 +9,7 @@ import java.util.function.Supplier;
  * @author huanmin
  * @date 2024/1/11
  */
-public  class NullFinalityDefault<T> implements NullFinality<T> {
+public  class NullFinalityDefault<T extends Serializable> implements NullFinality<T> {
     protected boolean isNull; //true 为null ,false 不为null
     protected T value;
     protected StringBuffer linkLog = new StringBuffer();
