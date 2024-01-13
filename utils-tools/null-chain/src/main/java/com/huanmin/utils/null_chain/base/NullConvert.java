@@ -1,8 +1,6 @@
 package com.huanmin.utils.null_chain.base;
 
 import com.huanmin.utils.common.enums.DateEnum;
-import com.huanmin.utils.null_chain.NullFun;
-
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -13,11 +11,9 @@ import java.util.stream.Stream;
 public interface NullConvert<T>   {
 
 
-
     Stream<T> stream();
 
     Optional<T> optional();
-
 
     //=====================个性化处理, 针对日常最常用的几种类型转换=====================
 
@@ -35,6 +31,5 @@ public interface NullConvert<T>   {
 
     //将对象转换为json
     String toJson();
-
 
 }

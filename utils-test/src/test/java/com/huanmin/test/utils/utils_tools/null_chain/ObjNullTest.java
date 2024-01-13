@@ -6,11 +6,10 @@ import com.huanmin.test.entity.UserEntity;
 import com.huanmin.utils.common.obj.serializable.SerializeUtil;
 import com.huanmin.utils.null_chain.NULL;
 import com.huanmin.utils.null_chain.base.NullChain;
-import com.huanmin.utils.null_chain.sync.NullChainSyncDefault;
+import com.huanmin.utils.null_chain.base.NullChainBase;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.Serializable;
 import java.text.ParseException;
 
 
@@ -31,29 +30,19 @@ public class ObjNullTest {
     }
 
     @Test
-    public void test1() throws ParseException {
-        String json="{\n" +
-                "  \"id\": 0,\n" +
-                "  \"name\": \"name_d2a111e3ee4b\",\n" +
-                "  \"pass\": \"pass_dc051459e118\",\n" +
-                "  \"age\": 0,\n" +
-                "  \"sex\": \"sex_445e6214722b\",\n" +
-                "  \"site\": \"site_d23f574e7661\",\n" +
-                "  \"del\": false,\n" +
-                "  \"date\": \"2024-01-11\",\n" +
-                "  \"roleData\": {\n" +
-                "    \"id\": 0,\n" +
-                "    \"roleName\": \"roleName_aa5ed84ad551\",\n" +
-                "    \"roleCreationTime\": \"2024-01-11 15:33:02\",\n" +
-                "    \"roleDescription\": \"roleDescription_0bec7771f0a3\",\n" +
-                "    \"roleStatus\": false\n" +
-                "  }\n" +
-                "}";
-        String json1 = NULL.toNULL(json, UserEntity.class).toJson();
-        System.out.println(json1);
+    public void test1() throws ParseException, InterruptedException {
+        //Void.TYPE
+        NULL.of(userEntity).of(UserEntity::getRoleData).async((data)->{
+            Thread.sleep(1000);
+            System.out.println("111111111111async111111111111111");
+            return data.get().getRoleName();
+        }).async((data)->{
+            System.out.println("222222222222async222222222222222"+data.get());
+            return Void.TYPE;
+        });
 
-        NullChain<Serializable> serializableNullChain = NULL.of(null);
-        System.out.println(serializableNullChain.is());
+        System.out.println("main");
+        Thread.sleep(4000);
 
     }
 
@@ -66,7 +55,7 @@ public class ObjNullTest {
         System.out.println(s);
         NULL.of(userEntity).of(UserEntity::getRoleData).of(RoleEntity::getRoleName).get( System.out::println);
 
-        NULL.of(userEntity).of(UserEntity::getRoleData).of(RoleEntity::getRoleName).isOr(
+        NULL.of(userEntity).of(UserEntity::getRoleData).of(RoleEntity::getRoleName).get(
                 System.out::println,
                 ()-> System.out.println("isOr")
         );
@@ -94,7 +83,7 @@ public class ObjNullTest {
 
         NULL.no(userEntity).no(UserEntity::getRoleData).of(RoleEntity::getRoleName).get( System.out::println);
 
-        NULL.no(userEntity).no(UserEntity::getRoleData).no(RoleEntity::getRoleName).isOr(
+        NULL.no(userEntity).no(UserEntity::getRoleData).no(RoleEntity::getRoleName).get(
                 System.out::println,
                 ()-> System.out.println("isOr")
         );
@@ -110,7 +99,7 @@ public class ObjNullTest {
         NullChain<UserEntity> userEntityNullChain = NULL.of(build) ;
 
         byte[] serialize = SerializeUtil.serialize(userEntityNullChain);
-        NullChain<UserEntity> unserialize = SerializeUtil.unserialize(serialize, NullChainSyncDefault.class);
+        NullChain<UserEntity> unserialize = SerializeUtil.unserialize(serialize, NullChainBase.class);
         System.out.println(unserialize.is());
     }
 }

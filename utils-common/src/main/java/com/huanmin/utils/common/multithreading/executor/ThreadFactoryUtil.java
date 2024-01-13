@@ -43,8 +43,7 @@ public class ThreadFactoryUtil {
         SynchronousQueueUtil("SynchronousQueueUtils",20,1000,"SynchronousQueueUtils"),
         BucketSortUtil("BucketSortUtil",200,10000,"BucketSortUtil"),
         Netty("Netty",20,1000,"Netty"),
-
-        NULL("NULL",500,1000,"Netty");
+        NULL("NULL",100,5000,"NULL");
 
         private String threadNamePrefix; //线程名称,前缀
         private int maximumPoolSize;//最大线程数

@@ -1,44 +1,41 @@
 package com.huanmin.utils.null_chain;
 
-import com.huanmin.utils.null_chain.async.NullChainAsync;
+
+import com.google.common.collect.Maps;
 import com.huanmin.utils.null_chain.base.NullChain;
-import com.huanmin.utils.null_chain.sync.NullChainSyncDefault;
+import com.huanmin.utils.null_chain.base.NullChainBase;
 
 import java.io.Serializable;
 import java.util.*;
-import java.util.function.Supplier;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.Future;
 
 /**
  * @author huanmin
  * @date 2024/1/11
  */
 public class NullBuild {
-    public static <T extends Serializable> NullChain<T> asyncRun(boolean async, Queue<Supplier<NullChain<T>>> asyncQueue, Supplier<NullChain<T>> supplier, NullChain<T> current ) throws RuntimeException {
-        if (async) {
-            //前一个任务是异步的,那么之后的任务需要在前一个任务执行完毕后执行
-            asyncQueue.add(supplier);
-            return current; //返回当前任务
-        } else {
-            return supplier.get();
-        }
-    }
+    public static Map<String, Object> resultMap= Maps.newConcurrentMap();
+    public static Map<String, Queue<Thread>> threadMap= Maps.newConcurrentMap();
+    public static Map<String, Boolean> stopMap= Maps.newConcurrentMap();
+
 
     public static <T extends Serializable> NullChain<T> empty() {
-        return new NullChainSyncDefault<>((T) null, true, new StringBuffer());
+        return new NullChainBase<>((T) null, true, new StringBuffer());
     }
 
     public static <T extends Serializable> NullChain<T> empty(StringBuffer linkLog) {
-        return new NullChainSyncDefault<T>((T) null, true, linkLog);
+        return new NullChainBase<T>((T) null, true, linkLog);
     }
 
     public static <T extends Serializable> NullChain<T> noEmpty(T object) {
 
-        return new NullChainSyncDefault<>(object, false, new StringBuffer());
+        return new NullChainBase<>(object, false, new StringBuffer());
     }
 
 
     public static <T extends Serializable> NullChain<T> noEmpty(T object, StringBuffer linkLog) {
-        return new NullChainSyncDefault<>(object, false, linkLog);
+        return new NullChainBase<>(object, false, linkLog);
     }
 
     public static <K, V extends Serializable> Map<K, NullChain<V>> emptyMap() {
@@ -55,15 +52,6 @@ public class NullBuild {
     //空array
     public static <T extends Serializable> NullChain<T>[] emptyArray() {
         return (NullChain<T>[]) new NullChain[0];
-    }
-    public static <T extends Serializable> NullChainAsync<T> asyncRun(boolean async, Queue<Supplier<NullChainAsync<T>>> asyncQueue, Supplier<NullChainAsync<T>> supplier, NullChainAsync<T> current ) throws RuntimeException {
-        if (async) {
-            //前一个任务是异步的,那么之后的任务需要在前一个任务执行完毕后执行
-            asyncQueue.add(supplier);
-            return current; //返回当前任务
-        } else {
-            return supplier.get();
-        }
     }
 
 

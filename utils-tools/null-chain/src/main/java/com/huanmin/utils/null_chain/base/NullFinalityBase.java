@@ -14,6 +14,22 @@ public  class NullFinalityBase<T extends Serializable> implements NullFinality<T
     protected T value;
     protected StringBuffer linkLog = new StringBuffer();
 
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+    public void setLinkLog(StringBuffer linkLog) {
+        this.linkLog = linkLog;
+    }
+
+    public void setNull(boolean aNull) {
+        isNull = aNull;
+    }
+
+    public StringBuffer getLinkLog() {
+        return linkLog;
+    }
+
 
 
     @Override
@@ -29,7 +45,7 @@ public  class NullFinalityBase<T extends Serializable> implements NullFinality<T
     }
 
     @Override
-    public void isOr(Consumer<? super T> action, Runnable emptyAction) {
+    public void get(Consumer<? super T> action, Runnable emptyAction) {
         if (!isNull) {
             action.accept(value);
         } else {
@@ -63,7 +79,4 @@ public  class NullFinalityBase<T extends Serializable> implements NullFinality<T
 
 
 
-    public StringBuffer getLinkLog() {
-        return linkLog;
-    }
 }

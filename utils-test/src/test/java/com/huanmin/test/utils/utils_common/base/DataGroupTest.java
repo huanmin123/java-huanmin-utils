@@ -31,6 +31,10 @@ public class DataGroupTest {
             Map<String, List<long[]>> map = DataGroup.dataGrouptWice(datalong.length, 100, 10);
             List<long[]> segmentation = map.get("segmentation"); //一次分组
             System.out.println("segmentation:len:"+segmentation.size());
+            segmentation.forEach(longs -> {
+                System.out.println(longs[0] + "  " + longs[1]);
+            });
+            System.out.println("==================================");
             List<long[]> segmentationGoup1 = map.get("segmentationGoup");//基于第一次分组长度进行二次分组
             for (long[] longs : segmentationGoup1) {
     
@@ -46,7 +50,10 @@ public class DataGroupTest {
         List<long[]> longs = DataGroup.dataGroupOnce(datalong.length, 100);
         Integer vSection = DataGroup.getVSection(longs, v);
         System.out.println("index:"+vSection);
+
+
         long[] longs1 = longs.get(vSection);
+
         System.out.println(longs1[0] + "  " + longs1[1]);
     }
 }

@@ -2,18 +2,21 @@ package com.huanmin.utils.null_chain.base;
 
 import com.huanmin.utils.common.base.LambdaUtil;
 import com.huanmin.utils.common.base.UniversalException;
+import com.huanmin.utils.common.multithreading.executor.ExecutorUtil;
+import com.huanmin.utils.common.multithreading.executor.ThreadFactoryUtil;
 import com.huanmin.utils.common.obj.copy.BeanCopyUtil;
 import com.huanmin.utils.null_chain.NULL;
-import com.huanmin.utils.null_chain.async.NullChainAsync;
-import com.huanmin.utils.null_chain.NullFun;
 import com.huanmin.utils.null_chain.NullBuild;
+import com.huanmin.utils.null_chain.NullFun;
+import com.huanmin.utils.null_chain.NullFunEx;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.locks.LockSupport;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -21,6 +24,7 @@ import java.util.function.Supplier;
  * @author huanmin
  * @date 2024/1/11
  */
+@Slf4j
 public class NullChainBase<T extends Serializable> extends NullConvertBase<T> implements NullChain<T> {
     private static final long serialVersionUID = 123456791011L;
 
@@ -41,10 +45,10 @@ public class NullChainBase<T extends Serializable> extends NullConvertBase<T> im
     @SuppressWarnings("unchecked")
     public <U extends Serializable> NullChain<U> of(NullFun<? super T, ? extends U> function) {
         try {
-            String methodName = LambdaUtil.methodInvocation(function);
             if (isNull) {
                 return NullBuild.empty(linkLog);
             }
+            String methodName = LambdaUtil.methodInvocation(function);
             //反射获取值
             Class<?> aClass = value.getClass();
             Method methodName1 = aClass.getMethod(methodName);
@@ -74,10 +78,10 @@ public class NullChainBase<T extends Serializable> extends NullConvertBase<T> im
     @SuppressWarnings("unchecked")
     public <U extends Serializable> NullChain<U> no(NullFun<? super T, ? extends U> function) {
         try {
-            String methodName = LambdaUtil.methodInvocation(function);
             if (isNull) {
                 return NullBuild.empty(linkLog);
             }
+            String methodName = LambdaUtil.methodInvocation(function);
             //反射获取值
             Class<?> aClass = value.getClass();
             Method methodName1 = aClass.getMethod(methodName);
@@ -176,12 +180,33 @@ public class NullChainBase<T extends Serializable> extends NullConvertBase<T> im
         return NULL.of(BeanCopyUtil.deepCopy(value));
     }
 
-
     @Override
-    public NullChainAsync<T> async(NullFun<? super T, ?> handler) {
-        return null;
-    }
+    public  <U extends Serializable> NullChainAsync<U> async(NullFunEx<NullChain<T>,U> consumer) throws RuntimeException  {
+        String key = UUID.randomUUID().toString();
+        NullChainAsync<U> nullChainAsync = new NullChainAsyncBase<>(key,linkLog);
+        if (isNull) {
+            linkLog.append("async?");
+            log.warn(linkLog.toString());
+            return nullChainAsync;
+        }
+        ExecutorUtil.create(ThreadFactoryUtil.ThreadConfig.NULL,  ()->{
+            try {
+                NullBuild.threadMap.put(key, new ConcurrentLinkedQueue<>());
+                NullBuild.stopMap.put(key, false);
+                T t = this.get();//获取值
+                U apply = consumer.apply(NULL.of(t));
+                NullBuild.resultMap.put(key,apply );
+                //唤醒后一个任务
+                Queue<Thread> threads = NullBuild.threadMap.get(key);
+                Thread poll = threads.poll();
+                LockSupport.unpark(poll);
 
+            } catch (Throwable e) {
+                UniversalException.logError(e,linkLog.toString());
+            }
+        });
+        return nullChainAsync;
+    }
 
 
 }

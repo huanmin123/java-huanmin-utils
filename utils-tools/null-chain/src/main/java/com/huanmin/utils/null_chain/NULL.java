@@ -4,7 +4,7 @@ import com.huanmin.utils.common.json.JsonJacksonUtil;
 import com.huanmin.utils.common.obj.copy.BeanCopyUtil;
 import com.huanmin.utils.common.obj.serializable.SerializeUtil;
 import com.huanmin.utils.null_chain.base.NullChain;
-import com.huanmin.utils.null_chain.sync.NullChainSyncDefault;
+import com.huanmin.utils.null_chain.base.NullChainBase;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -54,7 +54,7 @@ public class NULL {
         if (bytes == null) {
             return NullBuild.empty();
         }
-        NullChain<T> unserialize = SerializeUtil.unserialize(bytes, NullChainSyncDefault.class);
+        NullChain<T> unserialize = SerializeUtil.unserialize(bytes, NullChainBase.class);
         if (unserialize == null) {
             return NullBuild.empty();
         }
@@ -142,12 +142,13 @@ public class NULL {
         }
     }
 
-    public static <B, R extends Serializable> NullChain<R> merge(Class<R> tClass, NullChain<B>... nullChains) {
+    public static <B extends Serializable, R extends Serializable> NullChain<R> merge(Class<R> tClass, NullChain<B>... nullChains) {
         if (nullChains == null||nullChains.length==0) {
             return NullBuild.empty();
         }
         return merge(tClass, Arrays.asList(nullChains));
     }
+
 
 
 

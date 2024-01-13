@@ -4,8 +4,6 @@ import com.huanmin.utils.common.enums.DateEnum;
 import com.huanmin.utils.common.json.JsonJacksonUtil;
 import com.huanmin.utils.common.obj.serializable.SerializeUtil;
 import com.huanmin.utils.common.string.StringUtil;
-import com.huanmin.utils.null_chain.NullFun;
-
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -136,4 +134,5 @@ public  class NullConvertBase<T extends Serializable> extends NullFinalityBase<T
         }
         return JsonJacksonUtil.toJson(value);
     }
+
 }

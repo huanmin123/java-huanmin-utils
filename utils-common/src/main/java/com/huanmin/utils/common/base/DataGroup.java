@@ -55,6 +55,7 @@ public class DataGroup {
      * @param sum  总数
      * @param num 一次分组每段分配多少
      * @param num1 二次分组每段分配的个数(就是根据第一次分组后的总长度再次分组)
+     *  意思就是segmentation是数据的总分割,segmentationGoup是segmentation的分割
      * @return    segmentation   segmentationGoup
      */
     public static   Map<String,List<long[]>>   dataGrouptWice(long sum,long num,long num1) {

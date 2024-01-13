@@ -7,5 +7,6 @@ import java.io.Serializable;
  * @date 2024/1/11
  */
 @FunctionalInterface
-public interface NullFun<T, R> extends java.util.function.Function<T, R>, Serializable {
+public interface NullFunEx<T, R> extends  Serializable {
+    R apply(T t) throws Throwable;
 }

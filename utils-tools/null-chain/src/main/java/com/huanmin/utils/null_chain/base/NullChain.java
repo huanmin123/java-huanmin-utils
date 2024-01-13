@@ -1,10 +1,12 @@
 package com.huanmin.utils.null_chain.base;
 
-import com.huanmin.utils.null_chain.async.NullChainAsync;
+import com.huanmin.utils.null_chain.ConsumerEx;
 import com.huanmin.utils.null_chain.NullFun;
+import com.huanmin.utils.null_chain.NullFunEx;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.concurrent.Future;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -12,7 +14,7 @@ import java.util.function.Supplier;
  * @author huanmin
  * @date 2024/1/11
  */
-public interface NullChain<T> extends  NullConvert<T>, NullFinality<T> {
+public interface NullChain<T extends Serializable> extends  NullConvert<T>, NullFinality<T> {
 
 
 
@@ -34,10 +36,6 @@ public interface NullChain<T> extends  NullConvert<T>, NullFinality<T> {
     <U  extends Serializable> NullChain<U> convert(NullFun<? super T, ? extends U> mapper);
 
 
-    //异步执行,
-    NullChainAsync<T > async(NullFun<? super T, ?> handler);
-
-
     //将单个NullChain转换为新的NullChain,用于提取一个NullChain<T>中多个值,然后产生一个新的NullChain<T>, 如果是空的那么就不取
     <U> NullChain<T> pick(NullFun<? super T, ? extends U> ...mapper);
     <U> NullChain<T> pick(List<NullFun<? super T, ? extends U>> mapper);
@@ -46,5 +44,8 @@ public interface NullChain<T> extends  NullConvert<T>, NullFinality<T> {
     //复制深拷贝
     NullChain<T> deepCopy();
 
+
+
+    <U extends Serializable> NullChainAsync<U> async(NullFunEx<NullChain<T>,U> consumer)  ;
 
 }

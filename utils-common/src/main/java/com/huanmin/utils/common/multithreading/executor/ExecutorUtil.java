@@ -1,7 +1,7 @@
 package com.huanmin.utils.common.multithreading.executor;
 
 import com.huanmin.utils.common.base.UniversalException;
-
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -36,7 +36,8 @@ public class ExecutorUtil {
         executor.submit(runnable);
     }
 
-    public static Future<?> createFutureR(ThreadFactoryUtil.ThreadConfig config, Callable callable) {
+
+    public static  <T  extends Serializable> Future<T> createFutureR(ThreadFactoryUtil.ThreadConfig config, Callable<T> callable) {
         ThreadPoolExecutor executor = ThreadFactoryUtil.getExecutor(config);
         return executor.submit(callable);
 
@@ -45,8 +46,9 @@ public class ExecutorUtil {
     public static Future<?> createFuture(ThreadFactoryUtil.ThreadConfig config, Runnable runnable) {
         ThreadPoolExecutor executor = ThreadFactoryUtil.getExecutor(config);
         return executor.submit(runnable);
-
     }
+
+
 
 
     public static Collection<Future<?>> createFutures(  List<Runnable> runnables,ThreadFactoryUtil.ThreadConfig config) {
