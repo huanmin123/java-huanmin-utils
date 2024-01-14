@@ -1,4 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.huanmin.utils.jdbc_extend.config.JdbcExtendConfig
+org.huanmin.utils.jdbc_extend.config.JdbcExtendConfig
 
 

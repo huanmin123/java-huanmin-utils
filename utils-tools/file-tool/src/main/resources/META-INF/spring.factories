@@ -1,5 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.huanmin.utils.file_tool.config.FileToolConfig
+org.huanmin.utils.file_tool.config.FileToolConfig
 
 
 

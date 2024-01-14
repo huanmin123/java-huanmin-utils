@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--命名空间 绑定 接口类-->
-<mapper namespace="com.huanmin.utils.dynamic_datasource.dal.mapper.DatasourceMapper">
+<mapper namespace="org.huanmin.utils.dynamic_datasource.dal.mapper.DatasourceMapper">
     <!--查询全部数据条数-->
-    <select id="getDataSources" resultType="com.huanmin.utils.dynamic_datasource.entity.DataSourceEneity">
+    <select id="getDataSources" resultType="org.huanmin.utils.dynamic_datasource.entity.DataSourceEneity">
         SELECT * FROM t_datasource WHERE state= 1
     </select>
 

@@ -1,5 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.huanmin.utils.dynamic_datasource.config.DynamicDatasourceMainConfig
+org.huanmin.utils.dynamic_datasource.config.DynamicDatasourceMainConfig
 
 
 
