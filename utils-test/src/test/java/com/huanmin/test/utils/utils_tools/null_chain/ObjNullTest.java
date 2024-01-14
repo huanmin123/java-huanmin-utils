@@ -28,21 +28,29 @@ public class ObjNullTest {
         userEntitys[0] = userEntity;
 
     }
-
+    @Test
+    public void test0() throws ParseException, InterruptedException {
+        NULL.of(userEntity).of((data)->{
+            return data.getRoleData();
+        }).get();
+    }
     @Test
     public void test1() throws ParseException, InterruptedException {
         //Void.TYPE
-        NULL.of(userEntity).of(UserEntity::getRoleData).async((data)->{
+        NULL.of(userEntity).of(UserEntity::getName).async((data)->{
             Thread.sleep(1000);
             System.out.println("111111111111async111111111111111");
-            return data.get().getRoleName();
+            return "啊啊啊啊";
         }).async((data)->{
-            System.out.println("222222222222async222222222222222"+data.get());
+            System.out.println("222222222222async222222222222222"+data);
+            return "休息休息";
+        }).async((data)->{
+            System.out.println("3333333333333333333333333333----"+data);
             return Void.TYPE;
         });
 
         System.out.println("main");
-        Thread.sleep(4000);
+        Thread.sleep(500000);
 
     }
 

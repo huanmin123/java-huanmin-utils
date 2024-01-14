@@ -2,7 +2,9 @@ package com.huanmin.utils.common.multithreading.executor;
 
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.huanmin.utils.common.base.CodeTimeUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.apache.bcel.classfile.Code;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -31,19 +33,19 @@ public class ThreadFactoryUtil {
     // CPU密集型任务配置尽可能小的线程，如配置cpu+1个线程的线程池。
     // IO密集型任务则由于线程并不是一直在执行任务，则配置尽可能多的线程,基本有多少个任务就配置多少个线程
     public   enum   ThreadConfig {
-        TEST("TEST",20,100,"TEST"),
-        ThreadUniteTransactionManager("ThreadUniteTransactionManager",100,1000,"主子线程事物统一处理"),
-        BlockUtil("BlockUtil",20,1000,"BlockUtil"),
-        FileNumberSortSection("FileNumberSortSection",20,1000,"FileNumberSortSection"),
-        FileUtil("FileUtil",20,1000,"FileUtil"),
-        Timer("Timer",20,1000,"Timer"),
-        LinkedTransferQueueUtils("LinkedTransferQueueUtils",20,1000,"LinkedTransferQueueUtils"),
-        CustomTimerUtils("CustomTimerUtils",20,1000,"CustomTimerUtils"),
-        FIleSliceUploadController("FIleSliceUploadController",20,1000,"FIleSliceUploadController"),
-        SynchronousQueueUtil("SynchronousQueueUtils",20,1000,"SynchronousQueueUtils"),
-        BucketSortUtil("BucketSortUtil",200,10000,"BucketSortUtil"),
-        Netty("Netty",20,1000,"Netty"),
-        NULL("NULL",100,5000,"NULL");
+        TEST("TEST",1000,10000,"TEST"),
+        ThreadUniteTransactionManager("ThreadUniteTransactionManager",1000,10000,"主子线程事物统一处理"),
+        BlockUtil("BlockUtil",1000,10000,"BlockUtil"),
+        FileNumberSortSection("FileNumberSortSection",1000,10000,"FileNumberSortSection"),
+        FileUtil("FileUtil",1000,10000,"FileUtil"),
+        Timer("Timer",1000,10000,"Timer"),
+        LinkedTransferQueueUtils("LinkedTransferQueueUtils",1000,10000,"LinkedTransferQueueUtils"),
+        CustomTimerUtils("CustomTimerUtils",1000,1000,"CustomTimerUtils"),
+        FIleSliceUploadController("FIleSliceUploadController",1000,10000,"FIleSliceUploadController"),
+        SynchronousQueueUtil("SynchronousQueueUtils",1000,10000,"SynchronousQueueUtils"),
+        BucketSortUtil("BucketSortUtil",1000,10000,"BucketSortUtil"),
+        Netty("Netty",1000,10000,"Netty"),
+        NULL("NULL",1000,10000,"NULL");
 
         private String threadNamePrefix; //线程名称,前缀
         private int maximumPoolSize;//最大线程数
@@ -62,16 +64,21 @@ public class ThreadFactoryUtil {
     }
     //配置当前项目所需的线程池
     static {
-        Map<ThreadConfig,ThreadPoolExecutor> map=new HashMap<>();
-        //遍历枚举类
-        for (ThreadConfig threadConfig : ThreadConfig.values()) {
-            //创建线程池
-            ThreadPoolExecutor executor = create(threadConfig);
-            //将线程池放入map中
-            map.put(threadConfig,executor);
+        try {
+            CodeTimeUtil.creator("通用线程池初始化时间",()->{
+                Map<ThreadConfig,ThreadPoolExecutor> map=new HashMap<>();
+                //遍历枚举类
+                for (ThreadConfig threadConfig : ThreadConfig.values()) {
+                    //创建线程池
+                    ThreadPoolExecutor executor = create(threadConfig);
+                    //将线程池放入map中
+                    map.put(threadConfig,executor);
+                }
+                executorMap=Collections.unmodifiableMap(map);//不可修改的map
+            });
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
-        executorMap=Collections.unmodifiableMap(map);//不可修改的map
-
     }
 
 

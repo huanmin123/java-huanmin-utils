@@ -9,6 +9,13 @@ public class StackTraceUtil {
         Optional<StackTraceElement> first = Arrays.stream(Thread.currentThread().getStackTrace()).skip(2).findFirst();
         return first.get();
     }
+    //类名.方法名(类名.java:行号)
+    public static String currentStackTraceString(int num) {
+        Optional<StackTraceElement> stackTrace = Arrays.stream(Thread.currentThread().getStackTrace()).skip(num).findFirst();
+        StackTraceElement stackTraceElement = stackTrace.get();
+        return stackTraceElement.getClassName() + "." + stackTraceElement.getMethodName() + "(" + stackTraceElement.getFileName() + ":" + stackTraceElement.getLineNumber() + ")";
+    }
+
 
 
 }

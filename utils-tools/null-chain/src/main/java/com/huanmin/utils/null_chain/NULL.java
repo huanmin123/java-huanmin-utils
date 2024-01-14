@@ -2,6 +2,7 @@ package com.huanmin.utils.null_chain;
 
 import com.huanmin.utils.common.json.JsonJacksonUtil;
 import com.huanmin.utils.common.obj.copy.BeanCopyUtil;
+import com.huanmin.utils.common.obj.reflect.StackTraceUtil;
 import com.huanmin.utils.common.obj.serializable.SerializeUtil;
 import com.huanmin.utils.null_chain.base.NullChain;
 import com.huanmin.utils.null_chain.base.NullChainBase;
@@ -27,15 +28,28 @@ import java.util.stream.Collectors;
  */
 public class NULL {
     public static <T extends Serializable> NullChain<T> of(T o) {
+        StringBuffer linkLog = new StringBuffer();
+        String stackTraceString = StackTraceUtil.currentStackTraceString(3);
+        linkLog.append(stackTraceString);
         if (o == null) {
-            return NullBuild.empty();
+            linkLog.append(" NULL.of?");
+            return NullBuild.empty(linkLog);
         }
-        return NullBuild.noEmpty(o);
+        linkLog.append(" NULL.of->");
+        return NullBuild.noEmpty(o,linkLog);
     }
 
     //遇到空直接抛异常
     public static <T extends Serializable> NullChain<T> no(T object) {
-        return NullBuild.noEmpty(Objects.requireNonNull(object));
+        StringBuffer linkLog = new StringBuffer();
+        String stackTraceString = StackTraceUtil.currentStackTraceString(3);
+        linkLog.append(stackTraceString);
+        if (object == null) {
+            linkLog.append(" NULL.no?");
+            throw new NullPointerException(linkLog.toString());
+        }
+        linkLog.append(" NULL.no->");
+        return NullBuild.noEmpty(object);
     }
 
 

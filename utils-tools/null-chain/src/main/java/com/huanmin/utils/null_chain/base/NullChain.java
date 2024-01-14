@@ -24,6 +24,7 @@ public interface NullChain<T extends Serializable> extends  NullConvert<T>, Null
     <U extends Serializable> NullChain<U> of(NullFun<? super T, ? extends U > function, Consumer<U> consumer);
 
 
+
     <U extends Serializable> NullChain<U> no(NullFun<? super T, ? extends U> function);
 
     <U extends Serializable> NullChain<U> no(NullFun<? super T, ? extends U> function,Consumer<U> consumer);
@@ -44,8 +45,9 @@ public interface NullChain<T extends Serializable> extends  NullConvert<T>, Null
     //复制深拷贝
     NullChain<T> deepCopy();
 
+    <U extends Serializable> NullChainAsync<U> async(NullFunEx<NullChain<? super T>,? extends U> consumer)  ;
 
 
-    <U extends Serializable> NullChainAsync<U> async(NullFunEx<NullChain<T>,U> consumer)  ;
+
 
 }

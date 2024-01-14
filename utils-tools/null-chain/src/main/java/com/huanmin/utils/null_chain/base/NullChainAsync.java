@@ -10,7 +10,7 @@ import java.io.Serializable;
 public interface NullChainAsync<T extends Serializable> {
 
 
-    <U extends Serializable> NullChainAsync<U> async(NullFunEx<NullChain<T>,U> consumer) ;
+    <U extends Serializable> NullChainAsync<U> async(NullFunEx<NullChain<? super T>,? extends U> consumer) ;
 
 
 

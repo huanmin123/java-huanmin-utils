@@ -18,19 +18,9 @@ public  class NullFinalityBase<T extends Serializable> implements NullFinality<T
         this.value = value;
     }
 
-    public void setLinkLog(StringBuffer linkLog) {
-        this.linkLog = linkLog;
-    }
-
     public void setNull(boolean aNull) {
         isNull = aNull;
     }
-
-    public StringBuffer getLinkLog() {
-        return linkLog;
-    }
-
-
 
     @Override
     public boolean is() {

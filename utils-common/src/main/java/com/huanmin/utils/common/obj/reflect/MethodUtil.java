@@ -173,7 +173,7 @@ public final class MethodUtil {
             name = name.substring(2);
         } else {
             if (!name.startsWith("get") && !name.startsWith("set")) {
-                throw new UniversalException("Error parsing property name '" + name + "'.  Didn't start with 'is', 'get' or 'set'.");
+                return null;
             }
 
             name = name.substring(3);

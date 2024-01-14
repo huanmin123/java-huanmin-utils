@@ -15,12 +15,26 @@ import java.util.function.Function;
 public class LambdaUtil {
     public static<T,U> String fieldInvocation(Function<T,U> myFun) {
         Map<String, String> stringStringMap = lambdaInvocation(myFun);
-        return stringStringMap.get("fieldName");
+        if (stringStringMap == null) {
+            return null;
+        }
+        String fieldName = stringStringMap.get("fieldName");
+        if (fieldName == null) {
+            return null;
+        }
+        return fieldName;
     }
 
     public static<T,U> String methodInvocation(Function<T,U> myFun) {
         Map<String, String> stringStringMap = lambdaInvocation(myFun);
-        return stringStringMap.get("methodName");
+        if (stringStringMap == null) {
+            return null;
+        }
+        String methodName = stringStringMap.get("methodName");
+        if (methodName == null||methodName.startsWith("lambda$")) {
+            return null;
+        }
+        return  methodName;
     }
 
     /**
@@ -45,8 +59,11 @@ public class LambdaUtil {
             map.put("fieldName", MethodUtil.methodToProperty(serializedLambda.getImplMethodName()));
 
         } catch (Exception e) {
-            throw  new UniversalException(e,"methodInvocation获取方法名失败:{}",myFun);
+            return null;
+//            throw  new UniversalException(e,"methodInvocation获取方法名失败:{}",myFun);
         }
         return map;
     }
+
+
 }
