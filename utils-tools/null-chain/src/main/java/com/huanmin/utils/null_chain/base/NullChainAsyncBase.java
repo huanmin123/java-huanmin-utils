@@ -1,10 +1,10 @@
 package com.huanmin.utils.null_chain.base;
 
-import com.huanmin.utils.common.base.UniversalException;
 import com.huanmin.utils.common.multithreading.executor.ExecutorUtil;
 import com.huanmin.utils.common.multithreading.executor.ThreadFactoryUtil;
 import com.huanmin.utils.null_chain.NULL;
 import com.huanmin.utils.null_chain.NullBuild;
+import com.huanmin.utils.null_chain.NullChainException;
 import com.huanmin.utils.null_chain.NullFunEx;
 import lombok.extern.slf4j.Slf4j;
 
@@ -81,7 +81,7 @@ public class NullChainAsyncBase<T extends Serializable> implements NullChainAsyn
                 LockSupport.unpark(poll);
 
             } catch (Throwable e) {
-                UniversalException.logError(e,linkLog.toString());
+                NullChainException.logError(e,linkLog.toString());
             }
         });
         return nullChainAsync;

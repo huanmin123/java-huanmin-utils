@@ -1,15 +1,10 @@
 package com.huanmin.utils.null_chain.base;
 
 import com.huanmin.utils.common.base.LambdaUtil;
-import com.huanmin.utils.common.base.UniversalException;
 import com.huanmin.utils.common.multithreading.executor.ExecutorUtil;
 import com.huanmin.utils.common.multithreading.executor.ThreadFactoryUtil;
 import com.huanmin.utils.common.obj.copy.BeanCopyUtil;
-import com.huanmin.utils.common.obj.reflect.StackTraceUtil;
-import com.huanmin.utils.null_chain.NULL;
-import com.huanmin.utils.null_chain.NullBuild;
-import com.huanmin.utils.null_chain.NullFun;
-import com.huanmin.utils.null_chain.NullFunEx;
+import com.huanmin.utils.null_chain.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serializable;
@@ -52,7 +47,7 @@ public class NullChainBase<T extends Serializable> extends NullConvertBase<T> im
             String methodName = LambdaUtil.methodInvocation(function);
             if (methodName == null) {
                 linkLog.append("of? 请检查是否使用了lambda表达式  [类::方法]  的形式");
-                throw new NullPointerException(linkLog.toString());
+                throw new NullChainException(linkLog.toString());
             }
             //反射获取值
             Class<?> aClass = value.getClass();
@@ -66,7 +61,7 @@ public class NullChainBase<T extends Serializable> extends NullConvertBase<T> im
                 return NullBuild.noEmpty((U) invoke, linkLog);
             }
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            throw new UniversalException(e, "请检测类是否实现了get和set方法,建议在类上加上lombok的@Data注解");
+            throw new NullChainException(e, "请检测类是否实现了get和set方法,建议在类上加上lombok的@Data注解");
         }
     }
 
@@ -91,7 +86,7 @@ public class NullChainBase<T extends Serializable> extends NullConvertBase<T> im
             String methodName = LambdaUtil.methodInvocation(function);
             if (methodName == null) {
                 linkLog.append("no? 请检查是否使用了lambda表达式  [类::方法]  的形式");
-                throw new NullPointerException(linkLog.toString());
+                throw new NullChainException(linkLog.toString());
             }
             //反射获取值
             Class<?> aClass = value.getClass();
@@ -99,13 +94,13 @@ public class NullChainBase<T extends Serializable> extends NullConvertBase<T> im
             Object invoke = methodName1.invoke(value);
             if (invoke == null) {
                 linkLog.append(methodName).append("?");
-                throw new NullPointerException(linkLog.toString());
+                throw new NullChainException(linkLog.toString());
             } else {
                 linkLog.append(methodName).append("->");
             }
             return NullBuild.noEmpty((U) invoke, linkLog);
         } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
-            throw new UniversalException(e, "请检测类是否实现了get和set方法,建议在类上加上lombok的@Data注解");
+            throw new NullChainException(e, "请检测类是否实现了get和set方法,建议在类上加上lombok的@Data注解");
         }
     }
 
@@ -234,7 +229,7 @@ public class NullChainBase<T extends Serializable> extends NullConvertBase<T> im
                 LockSupport.unpark(poll);
 
             } catch (Throwable e) {
-                UniversalException.logError(e,linkLog.toString());
+                NullChainException.logError(e,linkLog.toString());
             }
         });
         return nullChainAsync;

@@ -1,6 +1,8 @@
 package com.huanmin.utils.null_chain.base;
 
 
+import com.huanmin.utils.null_chain.NullChainException;
+
 import java.io.Serializable;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -47,7 +49,7 @@ public  class NullFinalityBase<T extends Serializable> implements NullFinality<T
     @Override
     public T get() throws NullPointerException {
         if (isNull) {
-            throw new NullPointerException(linkLog.toString());
+            throw new NullChainException(linkLog.toString());
         }
         return value;
     }
